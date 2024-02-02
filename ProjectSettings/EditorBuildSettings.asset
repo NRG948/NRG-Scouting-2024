@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SubjectiveScout.unity
     guid: 7f966d436d2447e4d941750f4835d363
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stored Data.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: 5e57e1c3798d8f0478338e30e6c05941
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 502709e56d1da644da57ce4b14dcbd75
   m_configObjects: {}
