@@ -27,14 +27,19 @@ public class SubjTextBox : MonoBehaviour
     public void GetText(string value)
     {
         if (value == "") { return; }
-        if (key == "MatchNumber" || key == "TeamNumber")
+        if (key == "MatchNumber" || key == "TeamNumber" || key == "Team1" || key == "Team2" || key == "Team3")
         {
             if (value.Length >= 10) { return; } // Edge case in an edge case
-            dataManager.SetInt(key, Int32.Parse(value),true); // Random edge case
+            try
+            {
+                dataManager.SetInt(key, Int32.Parse(value), true); // Random edge case
+            } catch
+            {
+                GetComponent<TMP_InputField>().text = "";
+            }
         }
         else
         {
-
             dataManager.SetString(key, value,true);
         }
     }

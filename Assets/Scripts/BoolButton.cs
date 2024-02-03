@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoolButton : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class BoolButton : MonoBehaviour
     // Update is called once per frame
     public void Get(bool value)
     {
-        dataManager.SetBool(key, value);
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { dataManager.SetBool(key, value, true); }
+        else
+        {
+            dataManager.SetBool(key, value);
+        }
     }
 }
