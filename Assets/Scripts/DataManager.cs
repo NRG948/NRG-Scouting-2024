@@ -23,15 +23,15 @@ public class DataManager : MonoBehaviour
     {
         
     }
-    public void SetBool (string key, bool value)
+    public void SetBool (string key, bool value,bool subj=false)
     {
         match.GetType().GetField(key).SetValue(match, value);
     }
-    public void SetString(string key, string value)
+    public void SetString(string key, string value,bool subj=false)
     {
         match.GetType().GetField(key).SetValue(match, value);
     }
-    public void SetInt(string key, int value)
+    public void SetInt(string key, int value, bool subj = false)
     {
         match.GetType().GetField(key).SetValue(match,value);;
     }
@@ -101,7 +101,9 @@ public class DataManager : MonoBehaviour
         public int HighNotes;
         public int HighNotePotential;
         public int Harmony;
-        public string Comments;
+        public string Team1Comments;
+        public string Team2Comments;
+        public string Team3Comments;
 
     }
     

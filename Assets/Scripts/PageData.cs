@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class PageData : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class PageData : MonoBehaviour
     public RectTransform scrollViewDimensions;
     public float pageWidth;
     public float pageWidthNoSpacing;
+    public TMP_InputField Team1;
+    public TMP_InputField Team2;
+    public TMP_InputField Team3;
     public TMP_Text txt;
     void Start()
     {
@@ -30,6 +35,10 @@ public class PageData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout")
+        {
+            pageNames = new string[] {"Setup","General", Team1.text,Team2.text,Team3.text};
+        }
         currentPage = (int) (-panelDimensions.localPosition.x / pageWidth);
         txt.text = pageNames[currentPage];
     }
@@ -37,4 +46,5 @@ public class PageData : MonoBehaviour
     public void setPage(int page) {
         currentPage = page;
     }
+
 }
