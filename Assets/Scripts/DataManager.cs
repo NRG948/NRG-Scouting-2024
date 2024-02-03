@@ -25,15 +25,27 @@ public class DataManager : MonoBehaviour
     }
     public void SetBool (string key, bool value,bool subj=false)
     {
-        match.GetType().GetField(key).SetValue(match, value);
+
+        if (!subj) { match.GetType().GetField(key).SetValue(match, value); } else
+        {
+            allianceMatch.GetType().GetField (key).SetValue(allianceMatch, value);
+        }
     }
     public void SetString(string key, string value,bool subj=false)
     {
-        match.GetType().GetField(key).SetValue(match, value);
+        if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
+        else
+        {
+            allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
+        }
     }
     public void SetInt(string key, int value, bool subj = false)
     {
-        match.GetType().GetField(key).SetValue(match,value);;
+        if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
+        else
+        {
+            allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
+        }
     }
 
     public void SaveRobotScout()
@@ -77,6 +89,7 @@ public class DataManager : MonoBehaviour
         public bool Trap;
         public string Comments;
     }
+    [System.Serializable]
     public class AllianceMatch
     {
         public int MatchNumber;
@@ -84,6 +97,7 @@ public class DataManager : MonoBehaviour
         public int DataQuality;
         public bool Replay;
         public string AllianceColor;
+        public int DriverStation;
         public string ScouterName;
         public int Team1; // Anything after with the suffix "1" refers to robot 1
         public int Team2; // Anything after with the suffix "2" refers to robot 2
@@ -97,10 +111,11 @@ public class DataManager : MonoBehaviour
         public int Team2DriverSkill;
         public int Team3DriverSkill;
         public int AmplifyCount;
+        public int Fouls;
         public bool Coopertition;
         public int HighNotes;
         public int HighNotePotential;
-        public int Harmony;
+        public string Harmony;
         public string Team1Comments;
         public string Team2Comments;
         public string Team3Comments;

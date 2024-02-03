@@ -37,7 +37,7 @@ public class PageData : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "SubjectiveScout")
         {
-            pageNames = new string[] {"Setup","General", Team1.text,Team2.text,Team3.text};
+            pageNames = new string[] {"Setup","General", Team1.text == "" ? "Team 1" : Team1.text,Team2.text == "" ? "Team 2" : Team2.text,Team3.text == "" ? "Team 3" : Team3.text};
         }
         currentPage = (int) (-panelDimensions.localPosition.x / pageWidth);
         txt.text = pageNames[currentPage];
