@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 public class PageData : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string[] pageNames = {"Setup", "Auto", "Tele-Op", "Endgame", "Save"};
+    public string[] pageNames = {"Setup", "Auto", "Tele-Op", "Endgame"};
     public int currentPage = 0;
     //1970
     public GameObject panel;
