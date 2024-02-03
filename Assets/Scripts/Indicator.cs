@@ -1,17 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using TMPro;
-using UnityEngine.SceneManagement;
-using System.Runtime.CompilerServices;
 
-public class PageData : MonoBehaviour
+public class Indicator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public string[] pageNames = {"Setup", "Auto", "Tele-Op", "Endgame", "Save"};
-    public int currentPage = 0;
-    //1970
     public GameObject panel;
     public HorizontalLayoutGroup panelLayout;
     public RectTransform panelDimensions;
@@ -19,10 +15,8 @@ public class PageData : MonoBehaviour
     public RectTransform scrollViewDimensions;
     public float pageWidth;
     public float pageWidthNoSpacing;
-    public TMP_InputField Team1;
-    public TMP_InputField Team2;
-    public TMP_InputField Team3;
-    public TMP_Text txt;
+    public int currentPage;
+    // Start is called before the first frame update
     void Start()
     {
         scrollViewDimensions = scrollView.GetComponent<RectTransform>();
@@ -30,21 +24,19 @@ public class PageData : MonoBehaviour
         panelDimensions = panel.GetComponent<RectTransform>();
         pageWidth = scrollViewDimensions.rect.width + panelLayout.spacing;
         pageWidthNoSpacing = scrollViewDimensions.rect.width;
+        currentPage = 122341;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout")
-        {
-            pageNames = new string[] {"Setup","General", Team1.text,Team2.text,Team3.text};
+        if (currentPage != (int)(-panelDimensions.localPosition.x / pageWidth))
+        { 
+
+            if (currentPage != 122341) { transform.GetChild(currentPage).GetChild(0).gameObject.SetActive(false); }
+            currentPage = (int)(-panelDimensions.localPosition.x / pageWidth);
+            transform.GetChild(currentPage).GetChild(0).gameObject.SetActive(true);
         }
-        currentPage = (int) (-panelDimensions.localPosition.x / pageWidth);
-        txt.text = pageNames[currentPage];
+        
     }
-
-    public void setPage(int page) {
-        currentPage = page;
-    }
-
 }
