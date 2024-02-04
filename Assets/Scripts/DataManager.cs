@@ -50,21 +50,35 @@ public class DataManager : MonoBehaviour
 
     public void SaveRobotScout()
     {
-      string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/robot/";
+      string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/obj/";
       if (!(Directory.Exists(objectivePath)))
         {
             Directory.CreateDirectory(objectivePath);
         }
-      string currentTime = (DateTime.UtcNow - new DateTime(1970,1,1)).TotalSeconds.ToString();
+      string currentTime = (DateTime.UtcNow - new DateTime(1970,1,1)).TotalSeconds.ToString().Truncate(10,"");
       string fileName = $"{match.TeamNumber}_{match.MatchType}_{match.MatchNumber}_{currentTime}.json";
       string jsonData = JsonUtility.ToJson(match,true);
       File.WriteAllText(objectivePath + fileName, jsonData);
+      StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
+    }
+    public void SaveAllianceScout()
+    {
+        string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
+        if (!(Directory.Exists(objectivePath)))
+        {
+            Directory.CreateDirectory(objectivePath);
+        }
+        string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10,"");
+        string fileName = $"{allianceMatch.MatchType}_{allianceMatch.MatchNumber}_{allianceMatch.AllianceColor}_{currentTime}.json";
+        string jsonData = JsonUtility.ToJson(allianceMatch, true);
+        File.WriteAllText(objectivePath + fileName, jsonData);
     }
     [System.Serializable]
     public class Match
     {
         public int TeamNumber;
         public string MatchType;
+        public int DataQuality;
         public int MatchNumber;
         public bool Replay;
         public string AllianceColor;
@@ -83,6 +97,7 @@ public class DataManager : MonoBehaviour
         public int SpeakerNotesAmped;
         public int AmpNotes;
         public bool Feeder;
+        public bool Coopertition;
         public bool Onstage;
         public bool Park;
         public bool Spotlight;

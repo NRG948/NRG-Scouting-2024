@@ -13,11 +13,15 @@ public class Rater : MonoBehaviour
     void Awake()
     {
         dataManager = dataManObject.GetComponent<DataManager>();
-        UpdateRating(3);
     }
 
-    public void UpdateRating(int rating)
+    public void UpdateRating(int rating) // This is used by subjective data raters
     {
         dataManager.SetInt(key, rating, true);
+    }
+
+    public void UpdateRatingObjective(int rating)
+    {
+        dataManager.SetInt(key, rating);
     }
 }

@@ -27,9 +27,12 @@ public class IncrementerScript : MonoBehaviour
     }
 
     public void increase() {
-        counter++;
-        txt.text = counter.ToString();
-        dataManager.SetInt(key, counter);
+        if (counter < 99)
+        {
+            counter++;
+            txt.text = counter.ToString();
+            dataManager.SetInt(key, counter);
+        }
     }
 
     public void decrease() {

@@ -19,7 +19,7 @@ public class BoolButton : MonoBehaviour
     // Update is called once per frame
     public void Get(bool value)
     {
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { dataManager.SetBool(key, value, true); }
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout") { dataManager.SetBool(key, value, true); }
         else
         {
             dataManager.SetBool(key, value);

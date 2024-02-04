@@ -35,9 +35,9 @@ public class PageData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout")
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout")
         {
-            pageNames = new string[] {"Setup","General", Team1.text == "" ? "Team 1" : Team1.text,Team2.text == "" ? "Team 2" : Team2.text,Team3.text == "" ? "Team 3" : Team3.text};
+            pageNames = new string[] {"Setup","Early Game", Team1.text == "" ? "Team 1" : Team1.text,Team2.text == "" ? "Team 2" : Team2.text,Team3.text == "" ? "Team 3" : Team3.text,"Endgame"};
         }
         currentPage = (int) (-panelDimensions.localPosition.x / pageWidth);
         txt.text = pageNames[currentPage];
