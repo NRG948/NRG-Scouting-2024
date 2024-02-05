@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using TMPro;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class AlertBox : MonoBehaviour
@@ -78,6 +77,10 @@ public class AlertBox : MonoBehaviour
                 GameObject.Find("Scripts").GetComponent<SaveSystem>().DeletData(); break;
             case "objSave":
                 GameObject.Find("DataManager").GetComponent<DataManager>().SaveRobotScout(); break;
+            case "subjSave":
+                GameObject.Find("DataManager").GetComponent<DataManager>().SaveAllianceScout(); break;
+            case "menu":
+                GameObject.Find("HomeButton").GetComponent<HomeButton>().homeButton(); break;
         }
     }
 }

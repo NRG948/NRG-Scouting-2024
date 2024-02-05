@@ -3603,7 +3603,7 @@ GameObject:
   - component: {fileID: 6076425539201569952}
   - component: {fileID: 4154718653983359046}
   m_Layer: 5
-  m_Name: Logo
+  m_Name: HomeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
