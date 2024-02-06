@@ -20,6 +20,10 @@ public class BoolButton : MonoBehaviour
     public void Get(bool value)
     {
         if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout") { dataManager.SetBool(key, value, true); }
+        else if (SceneManager.GetActiveScene().name == "PitScout")
+        {
+            dataManager.SetBool(key, value, pit: true);
+        }
         else
         {
             dataManager.SetBool(key, value);
