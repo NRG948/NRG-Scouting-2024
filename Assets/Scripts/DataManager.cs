@@ -10,7 +10,8 @@ public class DataManager : MonoBehaviour
 {
     public Match match;
     public AllianceMatch allianceMatch;
-    
+    public Pit pit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,27 +22,39 @@ public class DataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void SetBool (string key, bool value,bool subj=false)
-    {
 
-        if (!subj) { match.GetType().GetField(key).SetValue(match, value); } else
-        {
-            allianceMatch.GetType().GetField (key).SetValue(allianceMatch, value);
-        }
     }
-    public void SetString(string key, string value,bool subj=false)
+    public void SetBool(string key, bool value, bool subj = false, bool pit = false)
     {
-        if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
+        if (pit)
+        {
+            pit.GetType().GetField(key).SetValue(match, value);
+        }
+        else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
         {
             allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
         }
     }
-    public void SetInt(string key, int value, bool subj = false)
+    public void SetString(string key, string value, bool subj = false, bool pit = false)
     {
-        if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
+        if (pit)
+        {
+            pit.GetType().GetField(key).SetValue(match, value);
+        }
+        else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
+        else
+        {
+            allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
+        }
+    }
+    public void SetInt(string key, int value, bool subj = false, bool pit = false)
+    {
+        if (pit)
+        {
+            pit.GetType().GetField(key).SetValue(match, value);
+        }
+        else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
         {
             allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
@@ -50,16 +63,16 @@ public class DataManager : MonoBehaviour
 
     public void SaveRobotScout()
     {
-      string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/obj/";
-      if (!(Directory.Exists(objectivePath)))
+        string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/obj/";
+        if (!(Directory.Exists(objectivePath)))
         {
             Directory.CreateDirectory(objectivePath);
         }
-      string currentTime = (DateTime.UtcNow - new DateTime(1970,1,1)).TotalSeconds.ToString().Truncate(10,"");
-      string fileName = $"{match.TeamNumber}_{match.MatchType}_{match.MatchNumber}_{currentTime}.json";
-      string jsonData = JsonUtility.ToJson(match,true);
-      File.WriteAllText(objectivePath + fileName, jsonData);
-      StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
+        string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
+        string fileName = $"{match.TeamNumber}_{match.MatchType}_{match.MatchNumber}_{currentTime}.json";
+        string jsonData = JsonUtility.ToJson(match, true);
+        File.WriteAllText(objectivePath + fileName, jsonData);
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
     }
     public void SaveAllianceScout()
     {
@@ -74,14 +87,14 @@ public class DataManager : MonoBehaviour
         {
             Directory.CreateDirectory(objectivePath);
         }
-        string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10,"");
+        string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
         string fileName = $"{allianceMatch.MatchType}_{allianceMatch.MatchNumber}_{allianceMatch.AllianceColor}_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(allianceMatch, true);
         File.WriteAllText(objectivePath + fileName, jsonData);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
     }
 
- 
+
     [System.Serializable]
     public class Match
     {
@@ -176,4 +189,4 @@ public class DataManager : MonoBehaviour
         public string TeamComments;
         public string PersonalComments;
     }
- }
+}
