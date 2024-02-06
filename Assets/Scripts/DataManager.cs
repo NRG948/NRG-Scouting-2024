@@ -145,4 +145,35 @@ public class DataManager : MonoBehaviour
         public string Team3Comments;
 
     }
+    [System.Serializable]
+    public class Pit
+    {
+        public string TeamName;
+        public int TeamNumber;
+        public string Interviewer;
+        public string Interviewee;
+        public string RobotHeight;
+        public string RobotWeight;
+        public bool Vision;
+        public string VisionCapability;
+        public string DriveTrain;
+        public string RobotMechanism;
+
+        public int AutoPieces;
+        public bool ScoresAmp;
+        public bool ScoresSpeaker;
+        public bool LeaveWing;
+
+        public string ScoringPreference;
+        public bool CanScoreAmp;
+        public bool CanScoreSpeaker;
+        public int CycleTimeSpeaker;
+        public int CycleTimeAmp;
+        public bool PickupFromGround;
+        public bool PickupFromSource;
+
+        public string DriverExperience;
+        public string TeamComments;
+        public string PersonalComments;
+    }
  }
