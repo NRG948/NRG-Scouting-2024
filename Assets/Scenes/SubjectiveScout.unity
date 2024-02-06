@@ -3178,71 +3178,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133832827}
   m_CullTransparentMesh: 1
---- !u!1 &136612706
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 136612707}
-  - component: {fileID: 136612708}
-  m_Layer: 5
-  m_Name: Page Data
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &136612707
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136612706}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1896017285}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2639.9995, y: 4694.7646}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &136612708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136612706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2dcbe72ee310364a9ce8d39c1b7d069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pageNames:
-  - Setup
-  - Auto
-  - Tele-Op
-  - Endgame
-  currentPage: 0
-  panel: {fileID: 911707195}
-  panelLayout: {fileID: 0}
-  panelDimensions: {fileID: 0}
-  scrollView: {fileID: 1846407082}
-  scrollViewDimensions: {fileID: 0}
-  pageWidth: 0
-  pageWidthNoSpacing: 0
-  Team1: {fileID: 727574755}
-  Team2: {fileID: 1598957928}
-  Team3: {fileID: 1598957928}
-  txt: {fileID: 99109494933468603}
 --- !u!1 &141072733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5456891723490889611, guid: 67a5a719e29a7b84f9cf2206588e33f9,
@@ -9339,6 +9274,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: Team3
   matchTitle: {fileID: 0}
+--- !u!114 &366969204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 243810769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366969199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368096300
 GameObject:
   m_ObjectHideFlags: 0
@@ -10790,6 +10737,31 @@ MonoBehaviour:
     Team1Comments: 
     Team2Comments: 
     Team3Comments: 
+  pit:
+    TeamName: 
+    TeamNumber: 0
+    Interviewer: 
+    Interviewee: 
+    RobotHeight: 
+    RobotWeight: 
+    Vision: 0
+    VisionCapability: 
+    DriveTrain: 
+    RobotMechanism: 
+    AutoPieces: 0
+    ScoresAmp: 0
+    ScoresSpeaker: 0
+    LeaveWing: 0
+    ScoringPreference: 
+    CanScoreAmp: 0
+    CanScoreSpeaker: 0
+    CycleTimeSpeaker: 0
+    CycleTimeAmp: 0
+    PickupFromGround: 0
+    PickupFromSource: 0
+    DriverExperience: 
+    TeamComments: 
+    PersonalComments: 
 --- !u!4 &449999452
 Transform:
   m_ObjectHideFlags: 0
@@ -17861,18 +17833,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 311016495}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &727574755 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 311016495}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727574753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &727574758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23721,7 +23681,6 @@ RectTransform:
   m_LocalScale: {x: 1.0000103, y: 1.0000103, z: 1.0000103}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5859020310777995673}
   - {fileID: 3252892436955962915}
   - {fileID: 3212288029700874720}
   - {fileID: 1846407083}
@@ -36351,18 +36310,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1598957925}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1598957928 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1598957925}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145674567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1598957931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38612,6 +38559,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: Team2
   matchTitle: {fileID: 0}
+--- !u!114 &1707273611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 800468852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707273606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1709299534
 GameObject:
   m_ObjectHideFlags: 0
@@ -43130,7 +43089,7 @@ RectTransform:
   - {fileID: 717440520}
   - {fileID: 1870397979}
   - {fileID: 968573302}
-  - {fileID: 136612707}
+  - {fileID: 5859020310777995673}
   - {fileID: 7289004499267385968}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43710,6 +43669,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: Team1
   matchTitle: {fileID: 0}
+--- !u!114 &1942898330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 485364183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942898325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1944982088
 GameObject:
   m_ObjectHideFlags: 0
@@ -55514,17 +55485,17 @@ RectTransform:
   m_GameObject: {fileID: 1531092255590715762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000103, y: 1.0000103, z: 1.0000103}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8064043548790824577}
   - {fileID: 6069924377985261762}
   - {fileID: 8138668459810410474}
-  m_Father: {fileID: 968573302}
+  m_Father: {fileID: 1896017285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00022535828, y: -100}
+  m_AnchoredPosition: {x: 0.00022535828, y: -99.98352}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5871234987374814387
@@ -58575,6 +58546,7 @@ GameObject:
   - component: {fileID: 8138668459810410474}
   - component: {fileID: 7859359877046489010}
   - component: {fileID: 99109494933468603}
+  - component: {fileID: 8537792568435350939}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -58582,6 +58554,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8537792568435350939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8537792568435350938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b157c16a3a22847a09dce5de9c1163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageNames: []
+  Team1: {fileID: 1942898330}
+  Team2: {fileID: 1707273611}
+  Team3: {fileID: 366969204}
+  Content: {fileID: 3252892436684965158}
 --- !u!222 &8558662410410952662
 CanvasRenderer:
   m_ObjectHideFlags: 0
