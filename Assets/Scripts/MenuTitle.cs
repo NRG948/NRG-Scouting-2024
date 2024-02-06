@@ -22,7 +22,7 @@ public class MenuTitle : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "PitScout")
         {
-            pageNames = new string[] { "Setup", "Auto", "Scoring", "Pickup" };
+            pageNames = new string[] { "Setup", "Robot", "Auto", "Scoring", "Pickup", "Comments" };
         }
         UpdatePage(0);
     }
