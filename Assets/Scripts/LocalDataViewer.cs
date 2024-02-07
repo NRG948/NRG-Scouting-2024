@@ -17,7 +17,7 @@ public class LocalDataViewer : MonoBehaviour
     public GameObject objSpawner;
     public string deletionFilepath;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         filePath = Application.persistentDataPath;
         objPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\obj";
@@ -48,6 +48,7 @@ public class LocalDataViewer : MonoBehaviour
     {
         
     }
+
 
     public void edit(string filePath) {
         Debug.Log("Editing " + filePath); 

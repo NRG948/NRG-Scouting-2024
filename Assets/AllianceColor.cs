@@ -11,6 +11,7 @@ public class AllianceColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        data = gameObject.GetComponent<DataManager>();
         image = gameObject.GetComponent<Image>();
     }
 

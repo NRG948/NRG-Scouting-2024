@@ -22,7 +22,7 @@ public class LDV_Buttons : MonoBehaviour
         switch (key)
         {
             case "edit":
-                GameObject.Find("LocalDataViewer").transform.GetComponent<LocalDataViewer>().edit(filePath); break;
+                GameObject.Find("EditMatch").GetComponent<LDV_EditMatch>().startMenu(filePath); break;
             case "delete":
                 GameObject.Find("LocalDataViewer").transform.GetComponent<LocalDataViewer>().delete(filePath); break;
         }
