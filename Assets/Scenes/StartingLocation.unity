@@ -4283,7 +4283,7 @@ MonoBehaviour:
   selector: {fileID: 445899683}
   myRectTransform: {fileID: 504083898}
   manager: {fileID: 542322590}
-  color: red
+  color: Red
 --- !u!114 &504083896
 MonoBehaviour:
   m_ObjectHideFlags: 0
