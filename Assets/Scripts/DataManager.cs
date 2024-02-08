@@ -102,7 +102,7 @@ public class DataManager : MonoBehaviour
             Directory.CreateDirectory(objectivePath);
         }
         string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
-        string fileName = $"{pit.TeamNumber}_{pit.TeamName}_pit_{currentTime}.json";
+        string fileName = $"{pit.TeamNumber}_pit_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(pit, true);
         File.WriteAllText(objectivePath + fileName, jsonData);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
