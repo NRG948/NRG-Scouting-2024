@@ -28,6 +28,13 @@ public class LocalDataViewer : MonoBehaviour
         objPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\obj";
         subjPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\subj";
         pitPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\pit";
+        foreach (var i in new string[] {objPath, subjPath,pitPath})
+        {
+            if (!Directory.Exists(i))
+            {
+                Directory.CreateDirectory(i);
+            }
+        }
         
 
         // Objective Reload
@@ -41,9 +48,10 @@ public class LocalDataViewer : MonoBehaviour
             {
                 Match objFileJson = JsonUtility.FromJson<Match>(File.ReadAllText(match));
                 GameObject newObjPrefab = objPrefab;
-                newObjPrefab.transform.GetChild(0).GetComponent<RawImage>().color = (objFileJson.AllianceColor == "Red" ? new Color(0.8862745098f, 0.3294117647f, 0.3294117647f) : new Color(0.3294117647f, 0.60784313725f, 0.8862745098f));
+                newObjPrefab.transform.GetChild(0).GetChild(0).transform.GetComponent<RawImage>().color = (objFileJson.AllianceColor == "Red" ? new Color(0.8f,0f,0f) : new Color(0f,0.8f, 0.8f));
+                newObjPrefab.transform.GetChild(0).GetChild(1).transform.GetComponent<TMP_Text>().text = objFileJson.DriverStation.ToString();
                 newObjPrefab.transform.GetChild(2).GetComponent<TMP_Text>().text = objFileJson.TeamNumber.ToString();
-                newObjPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = objFileJson.MatchType;
+                newObjPrefab.transform.GetChild(3).GetChild(0).transform.GetComponent<TMP_Text>().text = objFileJson.MatchType;
                 newObjPrefab.transform.GetChild(4).GetComponent<TMP_Text>().text = objFileJson.MatchNumber.ToString();
                 newObjPrefab.transform.GetChild(6).GetComponent<TMP_Text>().text = objFileJson.ScouterName;
                 newObjPrefab.transform.GetChild(8).GetComponent<TMP_Text>().text = objFileJson.Comments == "" ? "" : objFileJson.Comments;
@@ -67,8 +75,8 @@ public class LocalDataViewer : MonoBehaviour
             {
                 AllianceMatch subjFileJson = JsonUtility.FromJson<AllianceMatch>(File.ReadAllText(match));
                 GameObject newSubjPrefab = subjPrefab;
-                newSubjPrefab.transform.GetChild(0).GetComponent<RawImage>().color = (subjFileJson.AllianceColor == "Red" ? new Color(0.8862745098f, 0.3294117647f, 0.3294117647f) : new Color(0.3294117647f, 0.60784313725f, 0.8862745098f));
-                newSubjPrefab.transform.GetChild(1).GetComponent<TMP_Text>().text = subjFileJson.MatchType;
+                newSubjPrefab.transform.GetChild(0).GetChild(0).GetComponent<RawImage>().color = (subjFileJson.AllianceColor == "Red" ? new Color(0.8f,0f,0f) : new Color(0f,0.8f,0.8f));
+                newSubjPrefab.transform.GetChild(1).GetChild(0).transform.GetComponent<TMP_Text>().text = subjFileJson.MatchType;
                 newSubjPrefab.transform.GetChild(2).GetComponent<TMP_Text>().text = subjFileJson.MatchNumber.ToString();
                 newSubjPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = $"{subjFileJson.Team1.ToString()} | {subjFileJson.Team2.ToString()} | {subjFileJson.Team3.ToString()}";
                 newSubjPrefab.transform.GetChild(5).GetComponent<TMP_Text>().text = subjFileJson.ScouterName;
@@ -81,7 +89,30 @@ public class LocalDataViewer : MonoBehaviour
         {
             Instantiate(noMatch, subjSpawner.transform);
         }
-
+        // Pits Reload
+        for (int i = 0; i < pitSpawner.transform.childCount; i++)
+        {
+            Destroy(pitSpawner.transform.GetChild(i).gameObject);
+        }
+        if (Directory.GetFiles(pitPath).Length > 0)
+        {
+            // Subjective Spawn
+            foreach (var match in Directory.GetFiles(pitPath))
+            {
+                Pit pitFileJson = JsonUtility.FromJson<Pit>(File.ReadAllText(match));
+                GameObject newPitPrefab = pitPrefab;
+                newPitPrefab.transform.GetChild(1).GetComponent<TMP_Text>().text = $"{pitFileJson.TeamNumber.ToString()} - {pitFileJson.TeamName}";
+                newPitPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = "Interviewer: " + pitFileJson.Interviewer;
+                newPitPrefab.transform.GetChild(5).GetComponent<TMP_Text>().text = "Interviewee: " + pitFileJson.Interviewee;
+                newPitPrefab.transform.GetChild(6).GetComponent<LDV_Buttons>().filePath = match;
+                newPitPrefab.transform.GetChild(7).GetComponent<LDV_Buttons>().filePath = match;
+                Instantiate(newPitPrefab, pitSpawner.transform);
+            }
+        }
+        else
+        {
+            Instantiate(noMatch, pitSpawner.transform);
+        }
 
     }
     

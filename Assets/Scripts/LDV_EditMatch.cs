@@ -13,6 +13,7 @@ public class LDV_EditMatch : MonoBehaviour
 {
     LocalDataViewer.Match objFileJson;
     LocalDataViewer.AllianceMatch subjFileJson;
+    LocalDataViewer.Pit pitFileJson;
     public string mode;
     string[] fieldNames;
     FieldInfo[] fields;
@@ -53,6 +54,15 @@ public class LDV_EditMatch : MonoBehaviour
                 transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().ClearOptions();
                 transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().AddOptions(fieldNames.Select(option => new TMP_Dropdown.OptionData(option)).ToList());
                 transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text = $"Editing Match {subjFileJson.MatchNumber} on the {subjFileJson} alliance"; break;
+            case "pit":
+                pitFileJson = JsonUtility.FromJson<LocalDataViewer.Pit>(File.ReadAllText(filePath));
+                fields = pitFileJson.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
+                fieldNames = new string[fields.Length];
+                for (int i = 0; i < fields.Length; i++) { fieldNames[i] = fields[i].Name; } // i hate this
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().ClearOptions();
+                transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().AddOptions(fieldNames.Select(option => new TMP_Dropdown.OptionData(option)).ToList());
+                transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text = $"Editing {pitFileJson.Interviewer}'s pit scout of {pitFileJson.TeamNumber.ToString()}"; break;
         }
         updateMenu(0);
     }
@@ -64,6 +74,8 @@ public class LDV_EditMatch : MonoBehaviour
                 transform.GetChild(0).GetChild(3).GetComponent<TMP_InputField>().text = objFileJson.GetType().GetField(transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().options[index].text).GetValue(objFileJson).ToString(); break;
             case "subj":
                 transform.GetChild(0).GetChild(3).GetComponent<TMP_InputField>().text = subjFileJson.GetType().GetField(transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().options[index].text).GetValue(subjFileJson).ToString(); break;
+            case "pit":
+                transform.GetChild(0).GetChild(3).GetComponent<TMP_InputField>().text = pitFileJson.GetType().GetField(transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().options[index].text).GetValue(pitFileJson).ToString(); break;
         }
         
         
@@ -108,6 +120,24 @@ public class LDV_EditMatch : MonoBehaviour
                         localField.SetValue(subjFileJson, savedValue); break;
                 }
                 File.WriteAllText(globalFilePath, JsonUtility.ToJson(subjFileJson));
+                transform.GetChild(0).gameObject.SetActive(false);
+                GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
+                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
+                break;
+            case "pit":
+                localField = pitFileJson.GetType().GetField(transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().captionText.text);
+                switch (localField.FieldType.ToString())
+                {
+                    case "System.Int32":
+                        Int32 parsedValue;
+                        bool parseSuccess = Int32.TryParse(savedValue, out parsedValue);
+                        localField.SetValue(pitFileJson, parseSuccess ? parsedValue : localField.GetValue(pitFileJson)); break;
+                    case "System.Boolean":
+                        localField.SetValue(pitFileJson, savedValue.ToLower() == "true" ? true : false); break;
+                    case "System.String":
+                        localField.SetValue(pitFileJson, savedValue); break;
+                }
+                File.WriteAllText(globalFilePath, JsonUtility.ToJson(pitFileJson));
                 transform.GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
                 GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
