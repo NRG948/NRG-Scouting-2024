@@ -24,11 +24,11 @@ public class DataManager : MonoBehaviour
     {
 
     }
-    public void SetBool(string key, bool value, bool subj = false, bool pit = false)
+    public void SetBool(string key, bool value, bool subj = false, bool isPit = false)
     {
-        if (pit)
+        if (isPit)
         {
-            pit.GetType().GetField(key).SetValue(match, value);
+            pit.GetType().GetField(key).SetValue(pit, value);
         }
         else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
@@ -36,11 +36,11 @@ public class DataManager : MonoBehaviour
             allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
         }
     }
-    public void SetString(string key, string value, bool subj = false, bool pit = false)
+    public void SetString(string key, string value, bool subj = false, bool isPit = false)
     {
-        if (pit)
+        if (isPit)
         {
-            pit.GetType().GetField(key).SetValue(match, value);
+            pit.GetType().GetField(key).SetValue(pit, value);
         }
         else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
@@ -48,11 +48,11 @@ public class DataManager : MonoBehaviour
             allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
         }
     }
-    public void SetInt(string key, int value, bool subj = false, bool pit = false)
+    public void SetInt(string key, int value, bool subj = false, bool isPit = false)
     {
-        if (pit)
+        if (isPit)
         {
-            pit.GetType().GetField(key).SetValue(match, value);
+            pit.GetType().GetField(key).SetValue(pit, value);
         }
         else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
