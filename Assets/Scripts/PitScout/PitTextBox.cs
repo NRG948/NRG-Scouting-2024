@@ -25,7 +25,7 @@ public class PitTextBox : MonoBehaviour
     public void GetText(string value)
     {
         if (value == "") { return; }
-        bool IsInt = key == "RobotHeight" || key == "TeamNumber" || key == "RobotWeight" || key == "AutoPieces" || key == "CycleTimeSpeaker" || key == "CycleTimeAmp";
+        bool IsInt = key == "TeamNumber" || key == "AutoPieces" || key == "CycleTimeSpeaker" || key == "CycleTimeAmp";
         if (IsInt)
         {
             if (value.Length >= 10) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case
