@@ -12,6 +12,7 @@ public class MenuTitle : MonoBehaviour
     public TMP_InputField Team2;
     public TMP_InputField Team3;
     public GameObject Content;
+    public AlertBox alert;
     private int currentPage = 0;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,10 @@ public class MenuTitle : MonoBehaviour
         {
             pageNames = new string[] { "Setup", "Early Game", Team1.text == "" ? "Team 1" : Team1.text, Team2.text == "" ? "Team 2" : Team2.text, Team3.text == "" ? "Team 3" : Team3.text, "Endgame" };
         }
-        transform.GetComponent<TMP_Text>().text = pageNames[currentPage];
+
+        if (currentPage < pageNames.Length) {
+            transform.GetComponent<TMP_Text>().text = pageNames[currentPage];
+        }
     }
     // Update is called once per frame
     void Update()
@@ -46,6 +50,9 @@ public class MenuTitle : MonoBehaviour
         {
             currentPage = (int)-Math.Round(Content.GetComponent<RectTransform>().anchoredPosition.x / 2400);
             UpdatePage(currentPage);
+        }
+        if (Input. GetMouseButton(0) && -Content.GetComponent<RectTransform>().anchoredPosition.x / 2400 > pageNames.Length - 0.8) {
+            alert.outwardFacing("Are you sure you want to save?|objSave");
         }
     }
 }
