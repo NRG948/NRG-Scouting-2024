@@ -83,6 +83,8 @@ public class AlertBox : MonoBehaviour
                 GameObject.Find("DataManager").GetComponent<DataManager>().SavePitScout(); break;
             case "menu":
                 GameObject.Find("HomeButton").GetComponent<HomeButton>().homeButton(); break;
+            case "ldvDelete":
+                GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().confirmDelete(); break;
         }
     }
 }

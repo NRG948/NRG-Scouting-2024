@@ -15,6 +15,11 @@ public class LocalDataViewer : MonoBehaviour
     private string pitPath;
     public GameObject objPrefab;
     public GameObject objSpawner;
+    public GameObject subjPrefab;
+    public GameObject subjSpawner;
+    public GameObject pitPrefab;
+    public GameObject pitSpawner;
+    public GameObject noMatch;
     public string deletionFilepath;
     // Start is called before the first frame update
     public void Start()
@@ -24,23 +29,60 @@ public class LocalDataViewer : MonoBehaviour
         subjPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\subj";
         pitPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\pit";
         
+
+        // Objective Reload
         for (int i = 0; i < objSpawner.transform.childCount; i++) {
             Destroy(objSpawner.transform.GetChild(i).gameObject);
         }
-        foreach (var match in Directory.GetFiles(objPath))
+        // Objective Spawn
+        if (Directory.GetFiles(objPath).Length > 0)
         {
-            Match objFileJson = JsonUtility.FromJson<Match>(File.ReadAllText(match));
-            GameObject newObjPrefab = objPrefab;
-            newObjPrefab.transform.GetChild(0).GetComponent<RawImage>().color = (objFileJson.AllianceColor == "Red" ? new Color(0.8862745098f, 0.3294117647f, 0.3294117647f) : new Color(0.3294117647f, 0.60784313725f, 0.8862745098f));
-            newObjPrefab.transform.GetChild(2).GetComponent<TMP_Text>().text = objFileJson.TeamNumber.ToString();
-            newObjPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = objFileJson.MatchType;
-            newObjPrefab.transform.GetChild(4).GetComponent<TMP_Text>().text = objFileJson.MatchNumber.ToString();
-            newObjPrefab.transform.GetChild(6).GetComponent<TMP_Text>().text = objFileJson.ScouterName;
-            newObjPrefab.transform.GetChild(8).GetComponent<TMP_Text>().text = objFileJson.Comments == "" ? "" : objFileJson.Comments;
-            newObjPrefab.transform.GetChild(9).GetComponent<LDV_Buttons>().filePath = match;
-            newObjPrefab.transform.GetChild(10).GetComponent<LDV_Buttons>().filePath = match;
-            Instantiate(newObjPrefab,objSpawner.transform);
+            foreach (var match in Directory.GetFiles(objPath))
+            {
+                Match objFileJson = JsonUtility.FromJson<Match>(File.ReadAllText(match));
+                GameObject newObjPrefab = objPrefab;
+                newObjPrefab.transform.GetChild(0).GetComponent<RawImage>().color = (objFileJson.AllianceColor == "Red" ? new Color(0.8862745098f, 0.3294117647f, 0.3294117647f) : new Color(0.3294117647f, 0.60784313725f, 0.8862745098f));
+                newObjPrefab.transform.GetChild(2).GetComponent<TMP_Text>().text = objFileJson.TeamNumber.ToString();
+                newObjPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = objFileJson.MatchType;
+                newObjPrefab.transform.GetChild(4).GetComponent<TMP_Text>().text = objFileJson.MatchNumber.ToString();
+                newObjPrefab.transform.GetChild(6).GetComponent<TMP_Text>().text = objFileJson.ScouterName;
+                newObjPrefab.transform.GetChild(8).GetComponent<TMP_Text>().text = objFileJson.Comments == "" ? "" : objFileJson.Comments;
+                newObjPrefab.transform.GetChild(9).GetComponent<LDV_Buttons>().filePath = match;
+                newObjPrefab.transform.GetChild(10).GetComponent<LDV_Buttons>().filePath = match;
+                Instantiate(newObjPrefab, objSpawner.transform);
+            }
+        } else
+        {
+            Instantiate(noMatch, objSpawner.transform);
         }
+        // Subjective Reload
+        for (int i = 0; i < subjSpawner.transform.childCount; i++)
+        {
+            Destroy(subjSpawner.transform.GetChild(i).gameObject);
+        }
+        if (Directory.GetFiles(subjPath).Length > 0)
+        {
+            // Subjective Spawn
+            foreach (var match in Directory.GetFiles(subjPath))
+            {
+                AllianceMatch subjFileJson = JsonUtility.FromJson<AllianceMatch>(File.ReadAllText(match));
+                GameObject newSubjPrefab = subjPrefab;
+                newSubjPrefab.transform.GetChild(0).GetComponent<RawImage>().color = (subjFileJson.AllianceColor == "Red" ? new Color(0.8862745098f, 0.3294117647f, 0.3294117647f) : new Color(0.3294117647f, 0.60784313725f, 0.8862745098f));
+                newSubjPrefab.transform.GetChild(1).GetComponent<TMP_Text>().text = subjFileJson.MatchType;
+                newSubjPrefab.transform.GetChild(2).GetComponent<TMP_Text>().text = subjFileJson.MatchNumber.ToString();
+                newSubjPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = $"{subjFileJson.Team1.ToString()} | {subjFileJson.Team2.ToString()} | {subjFileJson.Team3.ToString()}";
+                newSubjPrefab.transform.GetChild(5).GetComponent<TMP_Text>().text = subjFileJson.ScouterName;
+                newSubjPrefab.transform.GetChild(7).GetComponent<TMP_Text>().text = "Team 1: " + subjFileJson.Team1Comments + "\nTeam 2: " + subjFileJson.Team2Comments + "\nTeam 3: " + subjFileJson.Team3Comments;
+                newSubjPrefab.transform.GetChild(8).GetComponent<LDV_Buttons>().filePath = match;
+                newSubjPrefab.transform.GetChild(9).GetComponent<LDV_Buttons>().filePath = match;
+                Instantiate(newSubjPrefab, subjSpawner.transform);
+            }
+        } else
+        {
+            Instantiate(noMatch, subjSpawner.transform);
+        }
+
+
     }
     
     // Update is called once per frame

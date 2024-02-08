@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 88617397662c79e489290acfd988cd84
+  - enabled: 1
+    path: Assets/Scenes/LocalDataViewer.unity
+    guid: ab6e505d083472c45b61bd9f187b8147
   m_configObjects: {}
