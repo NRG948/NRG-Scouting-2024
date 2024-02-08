@@ -29,13 +29,13 @@ public class SubjTextBox : MonoBehaviour
         if (value == "") { return; }
         if (key == "MatchNumber" || key == "TeamNumber" || key == "Team1" || key == "Team2" || key == "Team3")
         {
-            if (value.Length >= 10) { return; } // Edge case in an edge case
+            if (value.Length >= 8) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case
             try
             {
                 dataManager.SetInt(key, Int32.Parse(value), true); // Random edge case
             } catch
             {
-                GetComponent<TMP_InputField>().text = "";
+                GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1);
             }
         }
         else
