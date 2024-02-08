@@ -18220,6 +18220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5271597000676509236}
   - component: {fileID: 1316525188877996421}
+  - component: {fileID: 5271597000676509237}
   m_Layer: 0
   m_Name: AlertBox
   m_TagString: Untagged
@@ -20327,6 +20328,18 @@ Transform:
   - {fileID: 1571743445978720013}
   m_Father: {fileID: 999658373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5271597000676509237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758287453651319012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b32b04e2d4463488888594b8e8144d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5352222382142493884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21732,6 +21745,7 @@ MonoBehaviour:
   Team2: {fileID: 0}
   Team3: {fileID: 0}
   Content: {fileID: 8216665869801134490}
+  alert: {fileID: 1316525188877996421}
 --- !u!114 &7237191193473035902
 MonoBehaviour:
   m_ObjectHideFlags: 0
