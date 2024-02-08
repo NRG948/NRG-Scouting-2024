@@ -31,7 +31,7 @@ public class PitTextBox : MonoBehaviour
             if (value.Length >= 10) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case
             try
             {
-                dataManager.SetInt(key, Int32.Parse(value), pit: true); // Random edge case}
+                dataManager.SetInt(key, Int32.Parse(value), isPit: true); // Random edge case}
             }
             catch
             {
@@ -41,7 +41,7 @@ public class PitTextBox : MonoBehaviour
         else
         {
 
-            dataManager.SetString(key, value, pit: true);
+            dataManager.SetString(key, value, isPit: true);
         }
     }
 }

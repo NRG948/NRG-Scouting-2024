@@ -22,7 +22,7 @@ public class BoolButton : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout") { dataManager.SetBool(key, value, true); }
         else if (SceneManager.GetActiveScene().name == "PitScout")
         {
-            dataManager.SetBool(key, value, pit: true);
+            dataManager.SetBool(key, value, isPit: true);
         }
         else
         {

@@ -22,6 +22,6 @@ public class PitDropdown : MonoBehaviour
     {
         string craaaazyValue = GetComponent<TMP_Dropdown>().options[index].text;
 
-        dataManager.SetString(key, craaaazyValue, pit: true);
+        dataManager.SetString(key, craaaazyValue, isPit: true);
     }
 }
