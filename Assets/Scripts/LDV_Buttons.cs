@@ -24,7 +24,9 @@ public class LDV_Buttons : MonoBehaviour
             case "edit":
                 GameObject.Find("EditMatch").GetComponent<LDV_EditMatch>().startMenu(filePath, "obj"); break;
             case "editSubj":
-                GameObject.Find("EditMatch").GetComponent<LDV_EditMatch>().startMenu(filePath, "subj");break;
+                GameObject.Find("EditMatch").GetComponent<LDV_EditMatch>().startMenu(filePath, "subj"); break;
+            case "editPit":
+                GameObject.Find("EditMatch").GetComponent<LDV_EditMatch>().startMenu(filePath, "pit"); break;
             case "delete":
                 GameObject.Find("LocalDataViewer").transform.GetComponent<LocalDataViewer>().delete(filePath); break;
         }
