@@ -151,6 +151,7 @@ public class LocalDataViewer : MonoBehaviour
         public int DriverStation;
         public string ScouterName;
         public bool Preload;
+        public string StartPos;
         public bool LeftWing;
         public int AutoSpeaker;
         public int AutoAmp;

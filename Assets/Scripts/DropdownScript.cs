@@ -31,5 +31,10 @@ public class DropdownScript : MonoBehaviour
         {
         dataManager.SetString(key, craaaazyValue);
         }
+
+        if (key == "AllianceColor" || key == "MatchType")
+        {
+            dataManager.AutofillTeamNumberObjective();
+        }
     }
 }

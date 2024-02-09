@@ -20,6 +20,7 @@ public class TouchSelect : MonoBehaviour
         data = dataManObject.GetComponent<DataManager>();
         myRectTransform = GetComponent<RectTransform>();
         fieldRect = field.myRectTransform;
+        data.SetString("StartPos", "0,0");
     }
 
     // Update is called once per frame
@@ -33,12 +34,13 @@ public class TouchSelect : MonoBehaviour
         img.enabled = true;
         transform.position = Input.mousePosition;
         Vector2 coords = getCoords();
-        Debug.Log(coords.x + ", " + coords.y);
+        data.SetString("StartPos",coords.x + ", " + coords.y);
     }
 
     public void reset()
     {
         img.enabled = false;
+        data.SetString("StartPos","0,0");
     }
 
     public Vector2 getCoords()

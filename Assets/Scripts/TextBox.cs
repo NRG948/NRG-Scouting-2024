@@ -44,5 +44,9 @@ public class TextBox : MonoBehaviour
 
             dataManager.SetString(key, value);
         }
+        if (key == "MatchNumber")
+        {
+            dataManager.AutofillTeamNumberObjective();
+        }
     }
 }

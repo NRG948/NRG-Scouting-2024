@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ public class DataManager : MonoBehaviour
     public Match match;
     public AllianceMatch allianceMatch;
     public Pit pit;
+    public APIMatchFile apiMatch;
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +110,40 @@ public class DataManager : MonoBehaviour
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
     }
 
+    public void AutofillTeamNumberObjective()
+    {
+        string matchNum = GameObject.Find("Match Number").GetComponent<TMP_InputField>().text;
+        string matchType = GameObject.Find("Match Type").GetComponent<TMP_Dropdown>().captionText.text;
+        string allianceColor = GameObject.Find("Alliance Color Number").GetComponent<TMP_Dropdown>().captionText.text.Split(" ")[0]; // First word of alliance color
+        int teamIndex = Int32.Parse(GameObject.Find("Alliance Color Number").GetComponent<TMP_Dropdown>().captionText.text.Split(" ")[1]) - 1; // Index in a list
+        string matchKey = PlayerPrefs.GetString("EventKey");
+        if (PlayerPrefs.GetInt("Autofill") == 0 || !(PlayerPrefs.HasKey("Autofill"))) { return; }
+        if (matchNum == "") { return; }
+        switch (matchType)
+        {
+            case "Qualifications": matchKey = matchKey + "_qm" + matchNum; break;
+            case "Playoffs": matchKey = matchKey + "_sf" + matchNum + "m1";break;
+            case "Finals": matchKey = matchKey + "_f1m" + matchNum;break;
+        }
+        string filePath = Application.persistentDataPath + "/cache";
+        if (!(Directory.Exists(filePath))) { return; }
+        filePath = filePath + "/" + PlayerPrefs.GetString("EventKey") + ".json";
+        apiMatch = JsonUtility.FromJson<APIMatchFile>(File.ReadAllText(filePath));
+
+        foreach (var match in apiMatch.matches)
+        {
+            if (match.key == matchKey)
+            {
+
+                switch (allianceColor)
+                {
+                    case "Red": GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[teamIndex].TrimStart("frc"); return;
+                    case "Blue": GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[teamIndex].TrimStart("frc"); return;
+                }
+            }
+        }
+        GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = "";
+    }
 
     [System.Serializable]
     public class Match
@@ -121,6 +157,7 @@ public class DataManager : MonoBehaviour
         public int DriverStation;
         public string ScouterName;
         public bool Preload;
+        public string StartPos;
         public bool LeftWing;
         public int AutoSpeaker;
         public int AutoAmp;
@@ -202,5 +239,34 @@ public class DataManager : MonoBehaviour
         public string DriverExperience;
         public string TeamComments;
         public string PersonalComments;
+    }
+    [System.Serializable]
+    public class APIMatchFile
+    {
+        public APIMatch[] matches;
+    }
+
+    [System.Serializable]
+    public class APIMatch
+    {
+        public Alliances alliances;
+        public string key;
+    }
+    [System.Serializable]
+    public class Alliances
+    {
+        public Blue blue;
+        public Red red;
+    }
+    [System.Serializable]
+    public class Blue
+    {
+        public string[] team_keys;
+    }
+
+    [System.Serializable]
+    public class Red
+    {
+        public string[] team_keys;
     }
 }
