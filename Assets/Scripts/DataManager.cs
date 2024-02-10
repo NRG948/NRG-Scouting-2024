@@ -84,29 +84,29 @@ public class DataManager : MonoBehaviour
         { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check defense ratings.")); return; }
         if (allianceMatch.Team1DriverSkill == allianceMatch.Team2DriverSkill || allianceMatch.Team2DriverSkill == allianceMatch.Team3DriverSkill || allianceMatch.Team1DriverSkill == allianceMatch.Team3DriverSkill)
         { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check driver skill ratings.")); return; }
-        string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
-        if (!(Directory.Exists(objectivePath)))
+        string subjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
+        if (!(Directory.Exists(subjectivePath)))
         {
-            Directory.CreateDirectory(objectivePath);
+            Directory.CreateDirectory(subjectivePath);
         }
         string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
         string fileName = $"{allianceMatch.MatchType}_{allianceMatch.MatchNumber}_{allianceMatch.AllianceColor}_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(allianceMatch, true);
-        File.WriteAllText(objectivePath + fileName, jsonData);
+        File.WriteAllText(subjectivePath + fileName, jsonData);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
     }
 
     public void SavePitScout()
     {
-        string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/pit/";
-        if (!(Directory.Exists(objectivePath)))
+        string pitjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/pit/";
+        if (!(Directory.Exists(pitjectivePath)))
         {
-            Directory.CreateDirectory(objectivePath);
+            Directory.CreateDirectory(pitjectivePath);
         }
         string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
         string fileName = $"{pit.TeamNumber}_pit_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(pit, true);
-        File.WriteAllText(objectivePath + fileName, jsonData);
+        File.WriteAllText(pitjectivePath + fileName, jsonData);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data"));
     }
 
@@ -116,7 +116,7 @@ public class DataManager : MonoBehaviour
         string matchType = GameObject.Find("Match Type").GetComponent<TMP_Dropdown>().captionText.text;
         string allianceColor = GameObject.Find("Alliance Color Number").GetComponent<TMP_Dropdown>().captionText.text.Split(" ")[0]; // First word of alliance color
         int teamIndex = Int32.Parse(GameObject.Find("Alliance Color Number").GetComponent<TMP_Dropdown>().captionText.text.Split(" ")[1]) - 1; // Index in a list
-        string matchKey = PlayerPrefs.GetString("EventKey");
+        string matchKey = PlayerPrefs.GetString("EventKey","2002nrg");
         if (PlayerPrefs.GetInt("Autofill") == 0 || !(PlayerPrefs.HasKey("Autofill"))) { return; }
         if (matchNum == "") { return; }
         switch (matchType)

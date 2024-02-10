@@ -25,9 +25,9 @@ public class LocalDataViewer : MonoBehaviour
     public void Start()
     {
         filePath = Application.persistentDataPath;
-        objPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\obj";
-        subjPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\subj";
-        pitPath = filePath + $"\\{PlayerPrefs.GetString("EventKey")}\\pit";
+        objPath = filePath + $"/{PlayerPrefs.GetString("EventKey","2002nrg")}/obj";
+        subjPath = filePath + $"/{PlayerPrefs.GetString("EventKey","2002nrg")}/subj";
+        pitPath = filePath + $"/{PlayerPrefs.GetString("EventKey", "2002nrg")}/pit";
         foreach (var i in new string[] {objPath, subjPath,pitPath})
         {
             if (!Directory.Exists(i))
@@ -61,6 +61,7 @@ public class LocalDataViewer : MonoBehaviour
             }
         } else
         {
+            noMatch.GetComponent<TMP_Text>().text = "No matches found at " + objPath;
             Instantiate(noMatch, objSpawner.transform);
         }
         // Subjective Reload

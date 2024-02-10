@@ -17,7 +17,7 @@ public class TextBox : MonoBehaviour
         dataManager = dataManObject.GetComponent<DataManager>();
         if (key == "ScouterName")
         {
-            GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("Name");
+            GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("Name","Anonymous");
             matchTitle.GetComponent<TMP_Text>().text = "MATCH - " + PlayerPrefs.GetString("EventKey").ToUpper();
         }
 

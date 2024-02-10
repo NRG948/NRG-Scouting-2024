@@ -17,16 +17,16 @@ public class SaveSystem : MonoBehaviour
 
     void Start()
     {
-        inputField.text = PlayerPrefs.GetString("Name");
-        inputFieldID.text = PlayerPrefs.GetString("EventKey");
-        autoFill.isOn = PlayerPrefs.GetInt("Autofill") == 1;
+        inputField.text = PlayerPrefs.GetString("Name","Anonymous");
+        inputFieldID.text = PlayerPrefs.GetString("EventKey","2002nrg");
+        autoFill.isOn = PlayerPrefs.GetInt("Autofill",0) == 1;
 
     }
 
     public void SaveData()
     {
         PlayerPrefs.SetString("Name", inputField.text);
-        PlayerPrefs.SetString("EventKey", inputFieldID.text);
+        PlayerPrefs.SetString("EventKey", inputFieldID.text == "" ? "2002nrg" : inputFieldID.text);
         PlayerPrefs.SetInt("Autofill", autoFill.isOn ? 1 : 0);
 
         if (autoFill.isOn) { ApiRequest(inputFieldID.text); }
