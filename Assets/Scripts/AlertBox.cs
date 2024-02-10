@@ -87,6 +87,10 @@ public class AlertBox : MonoBehaviour
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().confirmDelete(); break;
             case "exit":
                 Application.Quit(); break;
+            case "ldvDeleteAllConfirm":
+                StartCoroutine(ShowBox("Please understand that you are DELETING ALL SAVED DATA FOR THIS EVENT. Your scouting team will not be held responsible for your actions.", "ldvDeleteAll"));break;
+            case "ldvDeleteAll":
+                GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().deleteFullEvent();break;
         }
     }
 }
