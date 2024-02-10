@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5709,7 +5709,6 @@ MonoBehaviour:
     DataQuality: 0
     Replay: 0
     AllianceColor: 
-    DriverStation: 0
     ScouterName: 
     Team1: 0
     Team2: 0
@@ -7495,6 +7494,7 @@ MonoBehaviour:
   Team3: {fileID: 0}
   Content: {fileID: 3252892435862703159}
   alert: {fileID: 0}
+  alertOn: 0
 --- !u!1 &2077666296
 GameObject:
   m_ObjectHideFlags: 0
@@ -7634,6 +7634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: VisionCapability
 --- !u!114 &2084341139
 MonoBehaviour:
@@ -7795,6 +7796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: TeamNumber
 --- !u!1 &2117727761
 GameObject:
@@ -18249,6 +18251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: DriveTrain
 --- !u!224 &6644107484405908917
 RectTransform:
@@ -18282,6 +18285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: AutoPieces
 --- !u!224 &6644107484645743349
 RectTransform:
@@ -18315,6 +18319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: CycleTimeAmp
 --- !u!224 &6644107484784840880
 RectTransform:
@@ -18348,6 +18353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: Interviewee
 --- !u!224 &6644107484936123766
 RectTransform:
@@ -18381,6 +18387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: RobotWeight
 --- !u!224 &6644107485000625185
 RectTransform:
@@ -18414,6 +18421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: RobotHeight
 --- !u!224 &6644107485097953071
 RectTransform:
@@ -18447,6 +18455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: CycleTimeSpeaker
 --- !u!224 &6644107485461484792
 RectTransform:
@@ -18500,6 +18509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: TeamName
 --- !u!224 &6644107485863189848
 RectTransform:
@@ -18533,6 +18543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: Interviewer
 --- !u!224 &6705941677337303731
 RectTransform:
@@ -21706,6 +21717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203fa352fc1adce4d84fb6f810832eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: ScoringPreference
 --- !u!222 &8989125482554425649
 CanvasRenderer:
@@ -21892,6 +21904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: DriverExperience
 --- !u!224 &9042968749031472094
 RectTransform:
@@ -21926,6 +21939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: TeamComments
 --- !u!224 &9042968749429332216
 RectTransform:
@@ -21960,6 +21974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: RobotMechanism
 --- !u!224 &9042968749432541280
 RectTransform:
@@ -21994,6 +22009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManObject: {fileID: 1548446332}
   key: PersonalComments
 --- !u!114 &9054010596016873868
 MonoBehaviour:
