@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22056,7 +22056,7 @@ GameObject:
   - component: {fileID: 928604513}
   - component: {fileID: 928604514}
   m_Layer: 5
-  m_Name: Match Type
+  m_Name: Harmony
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61767,6 +61767,7 @@ MonoBehaviour:
   Team3: {fileID: 4155563866890135312}
   Content: {fileID: 3252892436684965158}
   alert: {fileID: 0}
+  alertOn: 0
 --- !u!225 &8557492662294099331
 CanvasGroup:
   m_ObjectHideFlags: 0

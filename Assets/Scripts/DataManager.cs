@@ -171,7 +171,8 @@ public class DataManager : MonoBehaviour
 
                 switch (allianceColor)
                 {
-                    case "Red": GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[0].TrimStart("frc");
+                    case "Red": 
+                        GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[0].TrimStart("frc");
                         GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[1].TrimStart("frc");
                         GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[2].TrimStart("frc");
                         return;
