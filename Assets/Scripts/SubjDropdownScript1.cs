@@ -22,13 +22,14 @@ public class SubjDropdownScript1 : MonoBehaviour
     public void Get(Int32 index)
     {
         string craaaazyValue = GetComponent<TMP_Dropdown>().options[index].text;
-        if (key == "AllianceColor")
+        if (false)//key == "AllianceColor")
         {
             string[] splitValue = craaaazyValue.Split(" ");
             dataManager.SetString("AllianceColor", splitValue[0],true);
             dataManager.SetInt("DriverStation", Int32.Parse(splitValue[1]),true);
         } else
         {
+         
         dataManager.SetString(key, craaaazyValue,true);
         }
     }
