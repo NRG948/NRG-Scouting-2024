@@ -215,6 +215,7 @@ public class LocalDataViewer : MonoBehaviour
         public string RankingComments;
         public string StratComments;
         public string OtherComments;
+        public bool WinMatch;
 
     }
     [System.Serializable]
