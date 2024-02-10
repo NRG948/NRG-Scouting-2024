@@ -18,8 +18,10 @@ public class SaveSystem : MonoBehaviour
 
     void Start()
     {
-        inputField.text = PlayerPrefs.GetString("Name","Anonymous");
-        inputFieldID.text = PlayerPrefs.GetString("EventKey","2002nrg");
+        if (!PlayerPrefs.HasKey("Name")) { PlayerPrefs.SetString("Name", "Anonymous"); }
+        if (!PlayerPrefs.HasKey("EventKey")) { PlayerPrefs.SetString("EventKey", "2002nrg"); }
+        inputField.text = PlayerPrefs.GetString("Name");
+        inputFieldID.text = PlayerPrefs.GetString("EventKey");
         autoFill.isOn = PlayerPrefs.GetInt("Autofill",0) == 1;
         flipField.isOn = PlayerPrefs.GetInt("FlipField",0) == 1;
 

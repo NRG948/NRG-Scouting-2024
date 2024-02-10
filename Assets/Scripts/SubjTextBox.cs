@@ -16,7 +16,7 @@ public class SubjTextBox : MonoBehaviour
     {
         dataManObject = GameObject.Find("DataManager");
         dataManager = dataManObject.GetComponent<DataManager>();
-        menuTitle.GetComponent<MenuTitle>().UpdateTeamNames();
+        try { menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); } catch { }
         if (key == "ScouterName")
         {
             GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("Name");

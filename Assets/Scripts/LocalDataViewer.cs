@@ -25,9 +25,10 @@ public class LocalDataViewer : MonoBehaviour
     public void Start()
     {
         filePath = Application.persistentDataPath;
-        objPath = filePath + $"/{PlayerPrefs.GetString("EventKey","2002nrg")}/obj";
-        subjPath = filePath + $"/{PlayerPrefs.GetString("EventKey","2002nrg")}/subj";
-        pitPath = filePath + $"/{PlayerPrefs.GetString("EventKey", "2002nrg")}/pit";
+        if (!PlayerPrefs.HasKey("EventKey")) { PlayerPrefs.SetString("EventKey", "2002nrg"); }
+        objPath = filePath + $"/{PlayerPrefs.GetString("EventKey")}/obj";
+        subjPath = filePath + $"/{PlayerPrefs.GetString("EventKey")}/subj";
+        pitPath = filePath + $"/{PlayerPrefs.GetString("EventKey")}/pit";
         foreach (var i in new string[] {objPath, subjPath,pitPath})
         {
             if (!Directory.Exists(i))
@@ -61,7 +62,7 @@ public class LocalDataViewer : MonoBehaviour
             }
         } else
         {
-            noMatch.GetComponent<TMP_Text>().text = "No matches found at " + objPath;
+            noMatch.GetComponent<TMP_Text>().text = $"No matches found :(\n\nShowing matches for {PlayerPrefs.GetString("EventKey")} (are you sure this is the correct event?)";
             Instantiate(noMatch, objSpawner.transform);
         }
         // Subjective Reload
@@ -81,13 +82,14 @@ public class LocalDataViewer : MonoBehaviour
                 newSubjPrefab.transform.GetChild(2).GetComponent<TMP_Text>().text = subjFileJson.MatchNumber.ToString();
                 newSubjPrefab.transform.GetChild(3).GetComponent<TMP_Text>().text = $"{subjFileJson.Team1.ToString()} | {subjFileJson.Team2.ToString()} | {subjFileJson.Team3.ToString()}";
                 newSubjPrefab.transform.GetChild(5).GetComponent<TMP_Text>().text = subjFileJson.ScouterName;
-                newSubjPrefab.transform.GetChild(7).GetComponent<TMP_Text>().text = "Team 1: " + subjFileJson.Team1Comments + "\nTeam 2: " + subjFileJson.Team2Comments + "\nTeam 3: " + subjFileJson.Team3Comments;
+                newSubjPrefab.transform.GetChild(7).GetComponent<TMP_Text>().text = subjFileJson.RankingComments;
                 newSubjPrefab.transform.GetChild(8).GetComponent<LDV_Buttons>().filePath = match;
                 newSubjPrefab.transform.GetChild(9).GetComponent<LDV_Buttons>().filePath = match;
                 Instantiate(newSubjPrefab, subjSpawner.transform);
             }
         } else
         {
+            noMatch.GetComponent<TMP_Text>().text = $"No matches found :(\n\nShowing matches for {PlayerPrefs.GetString("EventKey")} (are you sure this is the correct event?)";
             Instantiate(noMatch, subjSpawner.transform);
         }
         // Pits Reload
@@ -112,6 +114,7 @@ public class LocalDataViewer : MonoBehaviour
         }
         else
         {
+            noMatch.GetComponent<TMP_Text>().text = $"No matches found :(\n\nShowing matches for {PlayerPrefs.GetString("EventKey")} (are you sure this is the correct event?)";
             Instantiate(noMatch, pitSpawner.transform);
         }
 
@@ -180,28 +183,30 @@ public class LocalDataViewer : MonoBehaviour
         public int DataQuality;
         public bool Replay;
         public string AllianceColor;
-        public int DriverStation;
         public string ScouterName;
         public int Team1; // Anything after with the suffix "1" refers to robot 1
         public int Team2; // Anything after with the suffix "2" refers to robot 2
         public int Team3; // Anything after with the suffix "3" refers to robot 3
         public int TeamAtAmp;
         public int AutoCenterNotes;
-        public int Team1Defense;
-        public int Team2Defense;
-        public int Team3Defense;
-        public int Team1DriverSkill;
-        public int Team2DriverSkill;
-        public int Team3DriverSkill;
+        public int Team1TravelSpeed;
+        public int Team2TravelSpeed;
+        public int Team3TravelSpeed;
+        public int Team1AlignSpeed;
+        public int Team2AlignSpeed;
+        public int Team3AlignSpeed;
+        public int Team1Avoid;
+        public int Team2Avoid;
+        public int Team3Avoid;
         public int AmplifyCount;
         public int Fouls;
         public bool Coopertition;
         public int HighNotes;
         public int HighNotePotential;
         public string Harmony;
-        public string Team1Comments;
-        public string Team2Comments;
-        public string Team3Comments;
+        public string RankingComments;
+        public string StratComments;
+        public string OtherComments;
 
     }
     [System.Serializable]

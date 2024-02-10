@@ -19,6 +19,8 @@ public class DataManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "ObjectiveScout") { match = new Match(); }
         if (SceneManager.GetActiveScene().name == "SubjectiveScout") { allianceMatch = new AllianceMatch(); }
+        if (!PlayerPrefs.HasKey("EventKey")) { PlayerPrefs.SetString("EventKey", "2002nrg"); }
+        if (!PlayerPrefs.HasKey("Name")) { PlayerPrefs.SetString("Name", "Anonymous"); }
     }
 
     // Update is called once per frame
