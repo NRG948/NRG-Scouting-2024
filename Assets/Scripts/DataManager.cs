@@ -147,11 +147,16 @@ public class DataManager : MonoBehaviour
 
     public void AutoFillTeamNumberSubjective()
     {
+        Debug.Log("start");
         string matchNum = GameObject.Find("Match Number").GetComponent<TMP_InputField>().text;
         string matchType = GameObject.Find("Match Type").GetComponent<TMP_Dropdown>().captionText.text;
         string allianceColor = GameObject.Find("Alliance Color").GetComponent<TMP_Dropdown>().captionText.text;
         string matchKey = PlayerPrefs.GetString("EventKey", "2002nrg");
+        Debug.Log("get valuess");
+
         if (PlayerPrefs.GetInt("Autofill") == 0 || !(PlayerPrefs.HasKey("Autofill"))) { return; }
+        Debug.Log("get valuess");
+
         if (matchNum == "") { return; }
         switch (matchType)
         {
@@ -164,21 +169,30 @@ public class DataManager : MonoBehaviour
         filePath = filePath + "/" + PlayerPrefs.GetString("EventKey") + ".json";
         apiMatch = JsonUtility.FromJson<APIMatchFile>(File.ReadAllText(filePath));
 
+        Debug.Log("foreach");
         foreach (var match in apiMatch.matches)
         {
+            Debug.Log("key");
+            Debug.Log(matchKey);
             if (match.key == matchKey)
             {
+                Debug.Log("alliance color");
 
                 switch (allianceColor)
                 {
-                    case "Red": GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[0].TrimStart("frc");
+                    case "Red": 
+                        GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[0].TrimStart("frc");
                         GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[1].TrimStart("frc");
                         GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[2].TrimStart("frc");
+                        Debug.Log("fill");
+
                         return;
                     case "Blue":
                         GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[0].TrimStart("frc");
                         GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[1].TrimStart("frc");
                         GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[2].TrimStart("frc");
+                        Debug.Log("fill");
+
                         return;
                 }
             }
