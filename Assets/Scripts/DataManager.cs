@@ -255,6 +255,7 @@ public class DataManager : MonoBehaviour
         public string RankingComments;
         public string StratComments;
         public string OtherComments;
+        public bool WinMatch;
 
     }
     [System.Serializable]
