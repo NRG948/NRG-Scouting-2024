@@ -185,7 +185,6 @@ public class DataManager : MonoBehaviour
         public int DataQuality;
         public bool Replay;
         public string AllianceColor;
-        public int DriverStation;
         public string ScouterName;
         public int Team1; // Anything after with the suffix "1" refers to robot 1
         public int Team2; // Anything after with the suffix "2" refers to robot 2
