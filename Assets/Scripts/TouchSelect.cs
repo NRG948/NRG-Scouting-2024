@@ -21,6 +21,7 @@ public class TouchSelect : MonoBehaviour
         myRectTransform = GetComponent<RectTransform>();
         fieldRect = field.myRectTransform;
         data.SetString("StartPos", "0,0");
+        
     }
 
     // Update is called once per frame
@@ -35,6 +36,7 @@ public class TouchSelect : MonoBehaviour
         transform.position = Input.mousePosition;
         Vector2 coords = getCoords();
         data.SetString("StartPos",coords.x + ", " + coords.y);
+        Debug.Log(getCoords());
     }
 
     public void reset()
@@ -69,6 +71,8 @@ public class TouchSelect : MonoBehaviour
         //Adjusting based on alliance color
         if (field.color == "Red") {
             diffX = FIELD_LENGTH_METERS - diffX;
+        }
+        if (PlayerPrefs.GetInt("FlipField",0) == 1) {
             diffY = FIELD_WIDTH_METERS - diffY;
         }
 

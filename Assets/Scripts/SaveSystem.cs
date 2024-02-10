@@ -12,6 +12,7 @@ public class SaveSystem : MonoBehaviour
     public TMP_InputField inputField;
     public TMP_InputField inputFieldID;
     public Toggle autoFill;
+    public Toggle flipField;
     public APIMatchFile matchJson;
 
 
@@ -20,6 +21,7 @@ public class SaveSystem : MonoBehaviour
         inputField.text = PlayerPrefs.GetString("Name","Anonymous");
         inputFieldID.text = PlayerPrefs.GetString("EventKey","2002nrg");
         autoFill.isOn = PlayerPrefs.GetInt("Autofill",0) == 1;
+        flipField.isOn = PlayerPrefs.GetInt("FlipField",0) == 1;
 
     }
 
@@ -28,6 +30,7 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetString("Name", inputField.text);
         PlayerPrefs.SetString("EventKey", inputFieldID.text == "" ? "2002nrg" : inputFieldID.text);
         PlayerPrefs.SetInt("Autofill", autoFill.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("FlipField", flipField.isOn ? 1 : 0);
 
         if (autoFill.isOn) { ApiRequest(inputFieldID.text); }
         // Extra stuff
