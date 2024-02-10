@@ -2336,6 +2336,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341374093}
   m_CullTransparentMesh: 1
+--- !u!1 &342557812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 342557813}
+  - component: {fileID: 342557815}
+  - component: {fileID: 342557814}
+  m_Layer: 5
+  m_Name: Robot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &342557813
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342557812}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1955467988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &342557814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342557812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3647059, g: 0.13725491, b: 0.11764706, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f8363ee40ed1eba41ae0591ca6b2f10e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &342557815
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342557812}
+  m_CullTransparentMesh: 1
 --- !u!1 &348105848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4068,27 +4143,31 @@ MonoBehaviour:
     Team3: 0
     TeamAtAmp: 0
     AutoCenterNotes: 0
-    Team1Defense: 0
-    Team2Defense: 0
-    Team3Defense: 0
-    Team1DriverSkill: 0
-    Team2DriverSkill: 0
-    Team3DriverSkill: 0
+    Team1TravelSpeed: 0
+    Team2TravelSpeed: 0
+    Team3TravelSpeed: 0
+    Team1AlignSpeed: 0
+    Team2AlignSpeed: 0
+    Team3AlignSpeed: 0
+    Team1Avoid: 0
+    Team2Avoid: 0
+    Team3Avoid: 0
     AmplifyCount: 0
     Fouls: 0
     Coopertition: 0
     HighNotes: 0
     HighNotePotential: 0
     Harmony: 
-    Team1Comments: 
-    Team2Comments: 
-    Team3Comments: 
+    RankingComments: 
+    StratComments: 
+    OtherComments: 
   pit:
     TeamName: 
     TeamNumber: 0
     Interviewer: 
     Interviewee: 
     RobotHeight: 
+    RobotLengthWidth: 
     RobotWeight: 
     Vision: 0
     VisionCapability: 
@@ -7715,7 +7794,7 @@ PrefabInstance:
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
@@ -7729,6 +7808,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1955467990}
@@ -7739,12 +7823,22 @@ PrefabInstance:
       objectReference: {fileID: 1577780086}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 342557812}
+    - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
@@ -7759,6 +7853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: FieldIcon, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -7769,12 +7868,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662634433918833625, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8708232032916010342, guid: 2e504f3e53c5ae846b97f2ee405b3e99,
@@ -9246,6 +9355,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: TouchSelect, Assembly-CSharp
         m_MethodName: reset
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 342557812}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11290,6 +11411,8 @@ MonoBehaviour:
   dataManObject: {fileID: 542322589}
   myRectTransform: {fileID: 1581856704}
   fieldRect: {fileID: 1577780089}
+  robotIcon: {fileID: 342557812}
+  fieldIcon: {fileID: 1955467988}
   FIELD_WIDTH_METERS: 8.21
   FIELD_LENGTH_METERS: 16.54
 --- !u!114 &1581856706
@@ -14154,7 +14277,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 342557813}
   m_Father: {fileID: 1015533049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}

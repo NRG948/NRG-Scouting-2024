@@ -11,6 +11,8 @@ public class TouchSelect : MonoBehaviour
     public RectTransform myRectTransform;
     public RectTransform fieldRect;
     private DataManager data;
+    public GameObject robotIcon;
+    public RectTransform fieldIcon;
     public float FIELD_WIDTH_METERS = 8.21f;
     public float FIELD_LENGTH_METERS = 16.54f;
     // Start is called before the first frame update
@@ -57,6 +59,19 @@ public class TouchSelect : MonoBehaviour
 
         float diffX = (rawX - CORNER_X) * CONVERSION_RATE;
         float diffY = (rawY - CORNER_Y) * CONVERSION_RATE;
+
+        float iconX = fieldIcon.rect.width * (rawX - CORNER_X) / fieldRect.rect.width;
+        float iconY = fieldIcon.rect.height * (rawY - CORNER_Y) / fieldRect.rect.height;
+        if (field.color == "Red") {
+            iconX = fieldIcon.rect.width - iconX;
+        }
+        if (PlayerPrefs.GetInt("FlipField",0) == 1) {
+            iconY = fieldIcon.rect.height - iconY;
+        }
+
+        robotIcon.SetActive(true);
+
+        robotIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(iconX, iconY);
 
         /* For debugging
 
