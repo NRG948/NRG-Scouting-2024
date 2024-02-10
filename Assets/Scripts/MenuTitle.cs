@@ -14,6 +14,7 @@ public class MenuTitle : MonoBehaviour
     public GameObject Content;
     public AlertBox alert;
     private int currentPage = 0;
+    public bool alertOn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +52,11 @@ public class MenuTitle : MonoBehaviour
             currentPage = (int)-Math.Round(Content.GetComponent<RectTransform>().anchoredPosition.x / 2400);
             UpdatePage(currentPage);
         }
-        if (Input. GetMouseButton(0) && -Content.GetComponent<RectTransform>().anchoredPosition.x / 2400 > pageNames.Length - 0.8) {
+        if (!alertOn && Input.GetMouseButton(0) && -Content.GetComponent<RectTransform>().anchoredPosition.x / 2400 > pageNames.Length - 0.8) {
             alert.outwardFacing("Are you sure you want to save?|objSave");
+            alertOn = true;
         }
+
+        if (!Input.GetMouseButton(0)) { alertOn = false; }
     }
 }

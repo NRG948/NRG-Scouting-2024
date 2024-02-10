@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PitTextBox : MonoBehaviour
 {
+    [SerializeField]
     private GameObject dataManObject;
     private DataManager dataManager;
     public string key;
@@ -13,7 +14,6 @@ public class PitTextBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dataManObject = GameObject.Find("DataManager");
         dataManager = dataManObject.GetComponent<DataManager>();
         if (key == "Interviewer")
         {
