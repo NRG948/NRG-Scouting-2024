@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LocalDataViewer : MonoBehaviour
@@ -141,6 +142,13 @@ public class LocalDataViewer : MonoBehaviour
         Debug.Log("Deleting " + deletionFilepath);
         File.Delete(deletionFilepath);
         Start();
+    }
+
+    public void deleteFullEvent()
+    {
+        Directory.Delete(filePath + "/" + PlayerPrefs.GetString("EventKey"),true);
+        File.Delete(filePath + $"/cache/{PlayerPrefs.GetString("EventKey")}.json");
+        SceneManager.LoadScene(0);
     }
 
     [System.Serializable]
