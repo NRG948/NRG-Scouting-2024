@@ -78,12 +78,12 @@ public class DataManager : MonoBehaviour
     }
     public void SaveAllianceScout()
     {
-        if (allianceMatch.Team1DriverSkill == 0 || allianceMatch.Team2DriverSkill == 0 || allianceMatch.Team3DriverSkill == 0 || allianceMatch.Team1Defense == 0 || allianceMatch.Team2Defense == 0 || allianceMatch.Team3Defense == 0)
-        { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("MISSING DATA DETECTED! DATA NOT SAVED! Please rank every team before continuing.")); return; }
-        if (allianceMatch.Team1Defense == allianceMatch.Team2Defense || allianceMatch.Team2Defense == allianceMatch.Team3Defense || allianceMatch.Team1Defense == allianceMatch.Team3Defense)
-        { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check defense ratings.")); return; }
-        if (allianceMatch.Team1DriverSkill == allianceMatch.Team2DriverSkill || allianceMatch.Team2DriverSkill == allianceMatch.Team3DriverSkill || allianceMatch.Team1DriverSkill == allianceMatch.Team3DriverSkill)
-        { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check driver skill ratings.")); return; }
+        //if (allianceMatch.Team1DriverSkill == 0 || allianceMatch.Team2DriverSkill == 0 || allianceMatch.Team3DriverSkill == 0 || allianceMatch.Team1Defense == 0 || allianceMatch.Team2Defense == 0 || allianceMatch.Team3Defense == 0)
+        //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("MISSING DATA DETECTED! DATA NOT SAVED! Please rank every team before continuing.")); return; }
+        //if (allianceMatch.Team1Defense == allianceMatch.Team2Defense || allianceMatch.Team2Defense == allianceMatch.Team3Defense || allianceMatch.Team1Defense == allianceMatch.Team3Defense)
+        //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check defense ratings.")); return; }
+        //if (allianceMatch.Team1DriverSkill == allianceMatch.Team2DriverSkill || allianceMatch.Team2DriverSkill == allianceMatch.Team3DriverSkill || allianceMatch.Team1DriverSkill == allianceMatch.Team3DriverSkill)
+        //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check driver skill ratings.")); return; }
         string subjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
         if (!(Directory.Exists(subjectivePath)))
         {
@@ -235,21 +235,24 @@ public class DataManager : MonoBehaviour
         public int Team3; // Anything after with the suffix "3" refers to robot 3
         public int TeamAtAmp;
         public int AutoCenterNotes;
-        public int Team1Defense;
-        public int Team2Defense;
-        public int Team3Defense;
-        public int Team1DriverSkill;
-        public int Team2DriverSkill;
-        public int Team3DriverSkill;
+        public int Team1TravelSpeed;
+        public int Team2TravelSpeed;
+        public int Team3TravelSpeed;
+        public int Team1AlignSpeed;
+        public int Team2AlignSpeed;
+        public int Team3AlignSpeed;
+        public int Team1Avoid;
+        public int Team2Avoid;
+        public int Team3Avoid;
         public int AmplifyCount;
         public int Fouls;
         public bool Coopertition;
         public int HighNotes;
         public int HighNotePotential;
         public string Harmony;
-        public string Team1Comments;
-        public string Team2Comments;
-        public string Team3Comments;
+        public string RankingComments;
+        public string StratComments;
+        public string OtherComments;
 
     }
     [System.Serializable]
@@ -260,6 +263,7 @@ public class DataManager : MonoBehaviour
         public string Interviewer;
         public string Interviewee;
         public string RobotHeight;
+        public string RobotLengthWidth;
         public string RobotWeight;
         public bool Vision;
         public string VisionCapability;

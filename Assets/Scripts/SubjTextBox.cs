@@ -10,11 +10,13 @@ public class SubjTextBox : MonoBehaviour
     private DataManager dataManager;
     public string key;
     public GameObject matchTitle;
+    public GameObject menuTitle;
     // Start is called before the first frame update
     void Start()
     {
         dataManObject = GameObject.Find("DataManager");
         dataManager = dataManObject.GetComponent<DataManager>();
+        menuTitle.GetComponent<MenuTitle>().UpdateTeamNames();
         if (key == "ScouterName")
         {
             GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("Name");
@@ -37,6 +39,8 @@ public class SubjTextBox : MonoBehaviour
             {
                 GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1);
             }
+            if (!(key == "MatchNumber")) { menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); }
+            
         }
         else
         {

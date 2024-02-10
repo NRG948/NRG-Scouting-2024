@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,17 +31,33 @@ public class MenuTitle : MonoBehaviour
         {
             pageNames = new string[] { "Objective", "Subjective", "Pits" };
         }
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout")
+        {
+            pageNames = new string[] { "Setup", "Early Game", "Rankings I", "Rankings II", "Comments", "Late Game" };
+        }
         UpdatePage(0);
     }
     public void UpdatePage(Int32 currentPage)
     {
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout")
-        {
-            pageNames = new string[] { "Setup", "Early Game", Team1.text == "" ? "Team 1" : Team1.text, Team2.text == "" ? "Team 2" : Team2.text, Team3.text == "" ? "Team 3" : Team3.text, "Endgame" };
-        }
+    
 
         if (currentPage < pageNames.Length) {
             transform.GetComponent<TMP_Text>().text = pageNames[currentPage];
+        }
+    }
+
+    public void UpdateTeamNames()
+    {
+        foreach (var nameText in Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Team1Name")) {
+            nameText.GetComponent<TMP_Text>().text = Team1.text == "" ? "Team 1" : Team1.text;
+        }
+        foreach (var nameText in Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Team2Name"))
+        {
+            nameText.GetComponent<TMP_Text>().text = Team2.text == "" ? "Team 2" : Team2.text;
+        }
+        foreach (var nameText in Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Team3Name"))
+        {
+            nameText.GetComponent<TMP_Text>().text = Team3.text == "" ? "Team 3" : Team3.text;
         }
     }
     // Update is called once per frame
