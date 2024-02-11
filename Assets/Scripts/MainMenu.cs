@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    
     void Start()
     {
-        if (!(Directory.Exists($"{Application.persistentDataPath}/cache/teams"))) {
-            //GameObject.Find("AlertBox").GetComponent<AlertBox>().outwardFacing("Team names have not been downloaded. Would you like to do so now? This requires an internet connection.");
+        if (!(Directory.Exists($"{Application.persistentDataPath}/cache/teams"))) { 
+            GameObject.Find("AlertBox").GetComponent<AlertBox>().outwardFacing("Team names have not been downloaded. Would you like to do so now? This requires an internet connection.|downloadMatches");
         }
     }
 

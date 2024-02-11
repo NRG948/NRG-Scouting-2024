@@ -35,6 +35,7 @@ public class DropdownScript : MonoBehaviour
         if (key == "AllianceColor" || key == "MatchType")
         {
             dataManager.AutofillTeamNumberObjective();
+            dataManager.AutoFillTeamNameObjective();
         }
     }
 }

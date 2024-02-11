@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
@@ -42,9 +43,8 @@ public class AlertBox : MonoBehaviour
         no = false;
         yes = false;
         yesButton.GetComponent<AlertBoxButton>().on = false; noButton.GetComponent<AlertBoxButton>().on = false;
-        transform.GetChild(0).gameObject.SetActive (true);
+        transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
-
         transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>().text = message;
         while (!(no || yes))
         {
@@ -91,6 +91,8 @@ public class AlertBox : MonoBehaviour
                 StartCoroutine(ShowBox("Please understand that you are DELETING ALL SAVED DATA FOR THIS EVENT. Your scouting team will not be held responsible for your actions.", "ldvDeleteAll"));break;
             case "ldvDeleteAll":
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().deleteFullEvent();break;
+            case "downloadMatches":
+                GameObject.Find("MatchDownloader").GetComponent<MatchDownloader>().downloadMatches();break;
         }
     }
 }
