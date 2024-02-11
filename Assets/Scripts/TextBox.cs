@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class TextBox : MonoBehaviour
         dataManager = dataManObject.GetComponent<DataManager>();
         if (key == "ScouterName")
         {
-            GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("Name","Anonymous");
+            GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("Name", "Anonymous");
             matchTitle.GetComponent<TMP_Text>().text = "MATCH - " + PlayerPrefs.GetString("EventKey").ToUpper();
         }
 
@@ -44,9 +45,16 @@ public class TextBox : MonoBehaviour
 
             dataManager.SetString(key, value);
         }
-        if (key == "MatchNumber")
+        if (key == "MatchNumber" || key == "TeamNumber")
         {
-            dataManager.AutofillTeamNumberObjective();
+            if (key == "MatchNumber")
+            {
+                dataManager.AutofillTeamNumberObjective();
+            }
+            if (Directory.Exists(Application.persistentDataPath + "/cache/teams"))
+            {
+                dataManager.AutoFillTeamNameObjective();
+            }
         }
     }
 }
