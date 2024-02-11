@@ -76,12 +76,17 @@ public class SaveSystem : MonoBehaviour
                 }
                 else
                 {
+                    
+                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
+                    Debug.Log($"Error: {response.StatusCode}");
                     return $"Error: {response.StatusCode}";
                 }
             }
         }
         catch (WebException ex)
         {
+            Debug.Log($"WebException: {ex.Message}");
+            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
             return $"WebException: {ex.Message}";
         }
     }

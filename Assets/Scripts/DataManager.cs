@@ -130,6 +130,7 @@ public class DataManager : MonoBehaviour
         string filePath = Application.persistentDataPath + "/cache";
         if (!(Directory.Exists(filePath))) { return; }
         filePath = filePath + "/" + PlayerPrefs.GetString("EventKey") + ".json";
+        if (!File.Exists(filePath)) { return; }
         apiMatch = JsonUtility.FromJson<APIMatchFile>(File.ReadAllText(filePath));
 
         foreach (var match in apiMatch.matches)
@@ -164,6 +165,7 @@ public class DataManager : MonoBehaviour
         string filePath = Application.persistentDataPath + "/cache";
         if (!(Directory.Exists(filePath))) { return; }
         filePath = filePath + "/" + PlayerPrefs.GetString("EventKey") + ".json";
+        if (!File.Exists(filePath)) { return; }
         apiMatch = JsonUtility.FromJson<APIMatchFile>(File.ReadAllText(filePath));
 
         foreach (var match in apiMatch.matches)
