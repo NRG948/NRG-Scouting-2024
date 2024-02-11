@@ -71,7 +71,7 @@ public class LocalDataViewer : MonoBehaviour
                 newObjPrefab.transform.GetChild(8).GetComponent<TMP_Text>().text = objFileJson.Comments == "" ? "" : objFileJson.Comments;
                 newObjPrefab.transform.GetChild(9).GetComponent<LDV_Buttons>().filePath = match;
                 newObjPrefab.transform.GetChild(10).GetComponent<LDV_Buttons>().filePath = match;
-                newObjPrefab.transform.GetChild(11).GetComponent<TMP_Text>().text = UnixConverter.UnixTimeStampToDateTime(match.Split("_")[3].TrimEnd(".json")).ToString("HH:mm:ss");
+                newObjPrefab.transform.GetChild(11).GetComponent<TMP_Text>().text = UnixConverter.UnixTimeStampToDateTime(match.Split("_")[3].TrimEnd(".json")).ToString(Convert.ToBoolean(PlayerPrefs.GetInt("MilitaryTime",0)) ? "HH:mm:ss" : "hh:mm:ss tt");
                 Instantiate(newObjPrefab, objSpawner.transform);
             }
         } else
@@ -99,7 +99,7 @@ public class LocalDataViewer : MonoBehaviour
                 newSubjPrefab.transform.GetChild(7).GetComponent<TMP_Text>().text = subjFileJson.RankingComments;
                 newSubjPrefab.transform.GetChild(8).GetComponent<LDV_Buttons>().filePath = match;
                 newSubjPrefab.transform.GetChild(9).GetComponent<LDV_Buttons>().filePath = match;
-                newSubjPrefab.transform.GetChild(10).GetComponent<TMP_Text>().text = UnixConverter.UnixTimeStampToDateTime(match.Split("_")[3].TrimEnd(".json")).ToString("HH:mm:ss");
+                newSubjPrefab.transform.GetChild(10).GetComponent<TMP_Text>().text = UnixConverter.UnixTimeStampToDateTime(match.Split("_")[3].TrimEnd(".json")).ToString(Convert.ToBoolean(PlayerPrefs.GetInt("MilitaryTime",0)) ? "HH:mm:ss" : "hh:mm:ss tt");
                 Instantiate(newSubjPrefab, subjSpawner.transform);
             }
         } else
@@ -124,7 +124,7 @@ public class LocalDataViewer : MonoBehaviour
                 newPitPrefab.transform.GetChild(5).GetComponent<TMP_Text>().text = "Interviewee: " + pitFileJson.Interviewee;
                 newPitPrefab.transform.GetChild(6).GetComponent<LDV_Buttons>().filePath = match;
                 newPitPrefab.transform.GetChild(7).GetComponent<LDV_Buttons>().filePath = match;
-                newPitPrefab.transform.GetChild(8).GetComponent<TMP_Text>().text = UnixConverter.UnixTimeStampToDateTime(match.Split("_")[2].TrimEnd(".json")).ToString("HH:mm:ss");
+                newPitPrefab.transform.GetChild(8).GetComponent<TMP_Text>().text = UnixConverter.UnixTimeStampToDateTime(match.Split("_")[2].TrimEnd(".json")).ToString(Convert.ToBoolean(PlayerPrefs.GetInt("MilitaryTime",0)) ? "HH:mm:ss" : "hh:mm:ss tt");
 
                 Instantiate(newPitPrefab, pitSpawner.transform);
             }
