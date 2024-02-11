@@ -3639,7 +3639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a0720cff61e454dbbb5ff2424f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataManObject: {fileID: 0}
+  dataManObject: {fileID: 1548446332}
   key: RobotLengthWidth
 --- !u!114 &915404228
 MonoBehaviour:
@@ -6201,6 +6201,7 @@ MonoBehaviour:
     RankingComments: 
     StratComments: 
     OtherComments: 
+    WinMatch: 0
   pit:
     TeamName: 
     TeamNumber: 0
