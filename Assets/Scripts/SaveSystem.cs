@@ -12,14 +12,22 @@ public class SaveSystem : MonoBehaviour
     public TMP_InputField inputField;
     public TMP_InputField inputFieldID;
     public Toggle autoFill;
+    public Toggle flipField;
+    public Toggle militaryTime;
     public APIMatchFile matchJson;
 
 
     void Start()
     {
-        inputField.text = PlayerPrefs.GetString("Name","Anonymous");
-        inputFieldID.text = PlayerPrefs.GetString("EventKey","2002nrg");
+        if (!PlayerPrefs.HasKey("Name")) { PlayerPrefs.SetString("Name", "Anonymous"); }
+        if (!PlayerPrefs.HasKey("EventKey")) { PlayerPrefs.SetString("EventKey", "2002nrg"); }
+        inputField.text = PlayerPrefs.GetString("Name");
+        inputFieldID.text = PlayerPrefs.GetString("EventKey");
         autoFill.isOn = PlayerPrefs.GetInt("Autofill",0) == 1;
+        flipField.isOn = PlayerPrefs.GetInt("FlipField",0) == 1;
+        militaryTime.isOn = PlayerPrefs.GetInt("MilitaryTime",0) == 1;
+
+        
 
     }
 
@@ -28,6 +36,8 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetString("Name", inputField.text);
         PlayerPrefs.SetString("EventKey", inputFieldID.text == "" ? "2002nrg" : inputFieldID.text);
         PlayerPrefs.SetInt("Autofill", autoFill.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("FlipField", flipField.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("MilitaryTime", militaryTime.isOn ? 1 : 0);
 
         if (autoFill.isOn) { ApiRequest(inputFieldID.text); }
         // Extra stuff
@@ -71,12 +81,17 @@ public class SaveSystem : MonoBehaviour
                 }
                 else
                 {
+                    
+                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
+                    Debug.Log($"Error: {response.StatusCode}");
                     return $"Error: {response.StatusCode}";
                 }
             }
         }
         catch (WebException ex)
         {
+            Debug.Log($"WebException: {ex.Message}");
+            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
             return $"WebException: {ex.Message}";
         }
     }

@@ -11,6 +11,8 @@ public class TouchSelect : MonoBehaviour
     public RectTransform myRectTransform;
     public RectTransform fieldRect;
     private DataManager data;
+    public GameObject robotIcon;
+    public RectTransform fieldIcon;
     public float FIELD_WIDTH_METERS = 8.21f;
     public float FIELD_LENGTH_METERS = 16.54f;
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class TouchSelect : MonoBehaviour
         myRectTransform = GetComponent<RectTransform>();
         fieldRect = field.myRectTransform;
         data.SetString("StartPos", "0,0");
+        
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class TouchSelect : MonoBehaviour
         transform.position = Input.mousePosition;
         Vector2 coords = getCoords();
         data.SetString("StartPos",coords.x + ", " + coords.y);
+        Debug.Log(getCoords());
     }
 
     public void reset()
@@ -45,20 +49,32 @@ public class TouchSelect : MonoBehaviour
 
     public Vector2 getCoords()
     {
-        //color = data.match.AllianceColor;
         float rawX = myRectTransform.anchoredPosition.x;
         float rawY = myRectTransform.anchoredPosition.y;
-        
-        //height/width flipped because the entire field is turned sideways
-        float CORNER_X = fieldRect.anchoredPosition.x - fieldRect.rect.height / 2;
-        float CORNER_Y = fieldRect.anchoredPosition.y + fieldRect.rect.width / 2;
+
+        float CORNER_Y = fieldRect.anchoredPosition.x - fieldRect.rect.height / 2;
+        float CORNER_X = fieldRect.anchoredPosition.y - fieldRect.rect.width / 2;
 
         float CONVERSION_RATE = FIELD_WIDTH_METERS / fieldRect.rect.height;
 
         float diffX = (rawX - CORNER_X) * CONVERSION_RATE;
-        float diffY = (CORNER_Y - rawY) * CONVERSION_RATE;
+        float diffY = (rawY - CORNER_Y) * CONVERSION_RATE;
 
-        /*
+        float iconX = fieldIcon.rect.width * (rawX - CORNER_X) / fieldRect.rect.width;
+        float iconY = fieldIcon.rect.height * (rawY - CORNER_Y) / fieldRect.rect.height;
+        if (field.color == "Red") {
+            iconX = fieldIcon.rect.width - iconX;
+        }
+        if (PlayerPrefs.GetInt("FlipField",0) == 1) {
+            iconY = fieldIcon.rect.height - iconY;
+        }
+
+        robotIcon.SetActive(true);
+
+        robotIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(iconX, iconY);
+
+        /* For debugging
+
         Debug.Log(
             "Raw Coords: " + rawX + ", " + rawY +
             "\nRaw Corner: " + CORNER_X + ", " + CORNER_Y +
@@ -69,10 +85,12 @@ public class TouchSelect : MonoBehaviour
 
         //Adjusting based on alliance color
         if (field.color == "Red") {
-            diffX = FIELD_WIDTH_METERS - diffX;
-            diffY = FIELD_LENGTH_METERS - diffY;
+            diffX = FIELD_LENGTH_METERS - diffX;
+        }
+        if (PlayerPrefs.GetInt("FlipField",0) == 1) {
+            diffY = FIELD_WIDTH_METERS - diffY;
         }
 
-        return new Vector2(diffY, diffX); //returning with X and Y flipped because the field is turned sideways
+        return new Vector2(diffX, diffY);
     }
 }
