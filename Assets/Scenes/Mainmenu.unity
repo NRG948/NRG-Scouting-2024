@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'BETA Feb 11 Update
+  m_text: 'BETA Feb 11 Update - Tablet
 
 '
   m_isRightToLeft: 0
@@ -4858,15 +4858,15 @@ RectTransform:
   m_GameObject: {fileID: 2109918581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 96083911}
   m_Father: {fileID: 231458556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000020981, y: -621.1}
+  m_AnchoredPosition: {x: -0.000020981, y: -451}
   m_SizeDelta: {x: 1809.388, y: 317.98193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109918583
