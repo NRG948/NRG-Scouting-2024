@@ -16,11 +16,11 @@ public class FieldSelect : MonoBehaviour, IPointerClickHandler
 
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
             var temp = myRectTransform.localScale;
-            temp.y = -1;
+            temp.y = -0.8f;
             myRectTransform.localScale = temp;
         } else {
             var temp = myRectTransform.localScale;
-            temp.y = 1;
+            temp.y = 0.8f;
             myRectTransform.localScale = temp;
         }
         changeColor();
@@ -45,11 +45,11 @@ public class FieldSelect : MonoBehaviour, IPointerClickHandler
 
         if (color == "Red") {
             var temp = myRectTransform.localScale;
-            temp.x = -1;
+            temp.x = -0.8f;
             myRectTransform.localScale = temp;
         } else {
             var temp = myRectTransform.localScale;
-            temp.x = 1;
+            temp.x = 0.8f;
             myRectTransform.localScale = temp;
         }
     }
