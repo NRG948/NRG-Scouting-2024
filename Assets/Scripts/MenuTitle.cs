@@ -46,7 +46,7 @@ public class MenuTitle : MonoBehaviour
         }
     }
 
-    public void UpdateTeamNames()
+    public void UpdateTeamNames() // Updates the team NUMBERS, im bad at naming things
     {
         foreach (var nameText in Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Team1Name")) {
             nameText.GetComponent<TMP_Text>().text = Team1.text == "" ? "Team 1" : Team1.text;

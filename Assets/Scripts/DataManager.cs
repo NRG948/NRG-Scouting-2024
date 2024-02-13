@@ -209,6 +209,7 @@ public class DataManager : MonoBehaviour
     public void AutoFillTeamNameObjective()
     {
         int pageNum = match.TeamNumber / 500;
+        if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find("TeamName").GetComponent<TMP_Text>().text = ""; return; }
         TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
         foreach (APITeam team in teamNameJson.teams)
         {
@@ -220,6 +221,35 @@ public class DataManager : MonoBehaviour
         }
         GameObject.Find("TeamName").GetComponent<TMP_Text>().text = "";
     }
+
+    public void AutoFillTeamNameSubjective()
+    {
+        for (int i = 1; i <= 3; i++) {
+            int teamNum = Int32.Parse(allianceMatch.GetType().GetField($"Team{i}").GetValue(allianceMatch).ToString());
+            if (teamNum == 0) { GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = ""; continue; } // Failsafe if team number is empty
+            int pageNum = teamNum / 500; // JSON Files are organized into "pages" of 500
+            if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = ""; return; }
+            TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
+            GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = "";
+            foreach (APITeam team in teamNameJson.teams)
+            {
+                if (teamNum == team.team_number)
+                {
+                    GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = $"{team.team_number} - {team.nickname}";
+                    break;
+                }
+            }
+        }
+    }
+
+    public void ClearTeam(int num=0)
+    {
+        string numString = num == 0 ? "" : num.ToString();
+        GameObject.Find($"TeamName{numString}").GetComponent<TMP_Text>().text = ""; // Clears team name
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { allianceMatch.GetType().GetField($"Team{num}").SetValue(allianceMatch, 0); } // Resets team number (Subjective)
+        if (SceneManager.GetActiveScene().name == "ObjectiveScout") { match.TeamNumber = 0; } // Resets team number (Objective)
+    }
+    
 
     [System.Serializable]
     public class APITeam
