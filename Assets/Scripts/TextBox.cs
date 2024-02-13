@@ -27,7 +27,7 @@ public class TextBox : MonoBehaviour
     // Update is called once per frame
     public void GetText(string value)
     {
-        if (value == "") { return; }
+        if (value == "") { dataManager.ClearTeam();return; }
         if (key == "MatchNumber" || key == "TeamNumber")
         {
             if (value.Length >= 10) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case

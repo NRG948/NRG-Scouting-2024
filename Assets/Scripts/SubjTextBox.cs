@@ -28,7 +28,8 @@ public class SubjTextBox : MonoBehaviour
     // Update is called once per frame
     public void GetText(string value)
     {
-        if (value == "") { return; }
+        if (value == "" && (key == "Team1" || key == "Team2" || key == "Team3")) { dataManager.ClearTeam(Int32.Parse(key.Substring(4))); menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); return; } // Clears team number/name for specified team
+        if (value == "") { return; } // Edge case not involving team numbers
         if (key == "MatchNumber" || key == "TeamNumber" || key == "Team1" || key == "Team2" || key == "Team3")
         {
             if (value.Length >= 8) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case
@@ -39,7 +40,7 @@ public class SubjTextBox : MonoBehaviour
             {
                 GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1);
             }
-            if (!(key == "MatchNumber")) { menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); }
+            if (!(key == "MatchNumber")) { menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); dataManager.AutoFillTeamNameSubjective(); }
             
         }
         else
