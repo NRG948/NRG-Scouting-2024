@@ -49,7 +49,7 @@ public class SplashTexts : MonoBehaviour
         "No, the grey arrows aren't buttons",
         "Can you hear the music?",
         "Also try Terraria!",
-        $"{PlayerPrefs.GetString("ScouterName","Anonymous")} is you!"
+        "${SCOUTERNAME} is you!"
     };
 
     void Start()
