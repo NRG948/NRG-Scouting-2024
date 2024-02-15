@@ -26,7 +26,7 @@ public class SplashTexts : MonoBehaviour
         "Have you turned it off and on again?",
         "The only thing I can pull are my commits",
         "Sushi Wannabe",
-        "99.1% Pure",
+        "[SPLASH TEXT NOT S&P APPROVED]",
         "Red and Gold!",
         "Dark mode when",
         "FIRE IN THE HOLE",
@@ -44,6 +44,12 @@ public class SplashTexts : MonoBehaviour
         "Zero factor authentication",
         "Accept cookies? \\(•ω•`)o",
         "error 1002: ; Expected",
+        "Did we cook?",
+        "Now with 95% less consistent variable names!",
+        "No, the grey arrows aren't buttons",
+        "Can you hear the music?",
+        "Also try Terraria!",
+        $"{PlayerPrefs.GetString("ScouterName","Anonymous")} is you!"
     };
 
     void Start()
