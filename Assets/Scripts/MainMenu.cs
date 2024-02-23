@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         if (!(Directory.Exists($"{Application.persistentDataPath}/cache/teams"))) { 
-            GameObject.Find("AlertBox").GetComponent<AlertBox>().outwardFacing("Team names have not been downloaded. Would you like to do so now? This requires an internet connection.|downloadMatches");
+            GameObject.Find("AlertBox").GetComponent<AlertBox>().outwardFacing("OPTIONAL: Downloading team names allows for additional QOL features. Would you like to proceed? This requires an internet connection. (398KB)|downloadMatches");
         }
     }
 
