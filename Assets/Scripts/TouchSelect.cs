@@ -41,10 +41,10 @@ public class TouchSelect : MonoBehaviour
         Debug.Log(getCoords());
     }
 
-    public void reset()
+    public void resetCoords(DataManager dataManager)
     {
         img.enabled = false;
-        data.SetString("StartPos","0,0");
+        dataManager.SetString("StartPos","0,0");
     }
 
     public Vector2 getCoords()

@@ -38,7 +38,7 @@ public class FieldSelect : MonoBehaviour, IPointerClickHandler
 
     public void changeColor() {
         if (color != manager.match.AllianceColor) {
-            selector.reset(); //Resets pointer position if alliance color switches
+            selector.resetCoords(manager); //Resets pointer position if alliance color switches
         }
 
         color = manager.match.AllianceColor;
