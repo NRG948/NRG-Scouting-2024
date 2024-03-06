@@ -8118,7 +8118,7 @@ MonoBehaviour:
   Team2: {fileID: 0}
   Team3: {fileID: 0}
   Content: {fileID: 3252892435862703159}
-  alert: {fileID: 0}
+  alert: {fileID: 1718400561}
   alertOn: 0
 --- !u!1 &2077666296
 GameObject:

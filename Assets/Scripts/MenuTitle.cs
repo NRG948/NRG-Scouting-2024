@@ -69,9 +69,16 @@ public class MenuTitle : MonoBehaviour
             currentPage = (int)-Math.Round(Content.GetComponent<RectTransform>().anchoredPosition.x / 2400);
             UpdatePage(currentPage);
         }
-        if (!alertOn && Input.GetMouseButton(0) && -Content.GetComponent<RectTransform>().anchoredPosition.x / 2400 > pageNames.Length - 0.98) {
-            alert.outwardFacing("Are you sure you want to save?|objSave");
-            alertOn = true;
+        if (!alertOn && Input.GetMouseButton(0)) {
+            if (-Content.GetComponent<RectTransform>().anchoredPosition.x / 2400 > pageNames.Length - 0.98)
+            {
+                alert.outwardFacing($"Are you sure you want to save?|{(SceneManager.GetActiveScene().name == "ObjectiveScout" ? "objsave" : SceneManager.GetActiveScene().name == "SubjectiveScout" ? "subjSave" : "pitSave")}");
+                alertOn = true;
+            }
+            if (Content.GetComponent<RectTransform>().anchoredPosition.x > 100) {
+                alert.outwardFacing($"Are you sure you want to quit? All unsaved data will be lost!|menu");
+                alertOn = true;
+            }
         }
 
         if (!Input.GetMouseButton(0)) { alertOn = false; }
