@@ -12,16 +12,17 @@ public class FieldIcon : MonoBehaviour
     
     void Start()
     {
+        var temp = myRectTransform.localScale;
+
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
-            var temp = myRectTransform.localScale;
             temp.y = -1;
-            myRectTransform.localScale = temp;
         } else {
-            var temp = myRectTransform.localScale;
             temp.y = 1;
-            myRectTransform.localScale = temp;
         }
-        changeColor();
+
+        temp.x = -1;
+
+        myRectTransform.localScale = temp;
     }
 
     // Update is called once per frame
@@ -32,15 +33,14 @@ public class FieldIcon : MonoBehaviour
 
     public void changeColor() {
         color = manager.match.AllianceColor;
+        var temp = myRectTransform.localScale;
 
         if (color == "Red") {
-            var temp = myRectTransform.localScale;
             temp.x = -1;
-            myRectTransform.localScale = temp;
         } else {
-            var temp = myRectTransform.localScale;
             temp.x = 1;
-            myRectTransform.localScale = temp;
         }
+        
+        myRectTransform.localScale = temp;
     }
 }

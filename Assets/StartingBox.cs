@@ -42,6 +42,9 @@ public class StartingBox : MonoBehaviour
             } else {
                 timer = 0;
                 animationState = "none";
+                var tempColor = screen.color;
+                tempColor.a = 0.8f;
+                screen.color = tempColor;
             }
         } else if (animationState == "out") {
             if (timer > 0) {
