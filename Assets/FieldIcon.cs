@@ -14,13 +14,18 @@ public class FieldIcon : MonoBehaviour
     {
         var temp = myRectTransform.localScale;
 
+        temp.x = -1;
+
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
             temp.y = -1;
+            if (color == "Red") {
+                temp.x = 1;
+            } else {
+                temp.x = -1;
+            }
         } else {
             temp.y = 1;
         }
-
-        temp.x = -1;
 
         myRectTransform.localScale = temp;
     }
@@ -39,6 +44,14 @@ public class FieldIcon : MonoBehaviour
             temp.x = -1;
         } else {
             temp.x = 1;
+        }
+
+        if (PlayerPrefs.GetInt("FlipField",0) == 1) {
+            if (color == "Red") {
+                temp.x = 1;
+            } else {
+                temp.x = -1;
+            }
         }
         
         myRectTransform.localScale = temp;

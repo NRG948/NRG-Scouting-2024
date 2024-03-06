@@ -13,17 +13,21 @@ public class FieldSelect : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         myRectTransform = GetComponent<RectTransform>();
+        var temp = myRectTransform.localScale;
+
+        temp.x = -1;
 
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
-            var temp = myRectTransform.localScale;
             temp.y = -1;
-            myRectTransform.localScale = temp;
+            if (color == "Red") {
+                temp.x = 1;
+            } else {
+                temp.x = -1;
+            }
         } else {
-            var temp = myRectTransform.localScale;
             temp.y = 1;
-            myRectTransform.localScale = temp;
         }
-        changeColor();
+        myRectTransform.localScale = temp;
     }
 
     // Update is called once per frame
@@ -42,15 +46,21 @@ public class FieldSelect : MonoBehaviour, IPointerClickHandler
         }
 
         color = manager.match.AllianceColor;
+        var temp = myRectTransform.localScale;
 
         if (color == "Red") {
-            var temp = myRectTransform.localScale;
             temp.x = -1;
-            myRectTransform.localScale = temp;
         } else {
-            var temp = myRectTransform.localScale;
             temp.x = 1;
-            myRectTransform.localScale = temp;
         }
+
+        if (PlayerPrefs.GetInt("FlipField",0) == 1) {
+            if (color == "Red") {
+                temp.x = 1;
+            } else {
+                temp.x = -1;
+            }
+        }
+        myRectTransform.localScale = temp;
     }
 }

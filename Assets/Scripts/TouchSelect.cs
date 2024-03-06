@@ -67,6 +67,7 @@ public class TouchSelect : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
             iconY = fieldIcon.rect.height - iconY;
+            iconX = fieldIcon.rect.width - iconX;
         }
 
         robotIcon.SetActive(true);
@@ -89,6 +90,7 @@ public class TouchSelect : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
             diffY = FIELD_WIDTH_METERS - diffY;
+            diffX = FIELD_LENGTH_METERS - diffX;
         }
 
         return new Vector2(diffX, diffY);
