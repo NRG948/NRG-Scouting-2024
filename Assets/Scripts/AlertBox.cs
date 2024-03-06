@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlertBox : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class AlertBox : MonoBehaviour
         string key = messageKey.Split("|")[1];
         StartCoroutine(ShowBox(message, key));
     }
-    public IEnumerator ShowBoxNoResponse(string message)
+    public IEnumerator ShowBoxNoResponse(string message,bool kick=false)
     {
         yes = false;
         yesButton.GetComponent<AlertBoxButton>().on = false;
@@ -37,6 +38,7 @@ public class AlertBox : MonoBehaviour
             yield return null;
         }
         transform.GetChild(0).gameObject.SetActive(false);
+        if (kick) { SceneManager.LoadScene(0); }
     }
     private IEnumerator ShowBox(string message,string key)
     {
