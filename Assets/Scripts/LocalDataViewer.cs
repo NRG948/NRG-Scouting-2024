@@ -163,7 +163,7 @@ public class LocalDataViewer : MonoBehaviour
     public void deleteFullEvent()
     {
         Directory.Delete(filePath + "/" + PlayerPrefs.GetString("EventKey"),true);
-        File.Delete(filePath + $"/cache/{PlayerPrefs.GetString("EventKey")}.json");
+        //File.Delete(filePath + $"/cache/{PlayerPrefs.GetString("EventKey")}.json"); Why the actual FLUFF would i do this
         SceneManager.LoadScene(0);
     }
 
