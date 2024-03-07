@@ -23,15 +23,18 @@ public class MainMenu : MonoBehaviour
 
     public void pitScout()
     {
+        HapticManager.LightFeedback();
         SceneManager.LoadScene(1);
     }
     public void objectiveScout()
     {
+        HapticManager.LightFeedback();
         SceneManager.LoadScene(2);
     }
 
     public void subjectiveScout() 
     {
+        HapticManager.LightFeedback();
         SceneManager.LoadScene(3);
     }
     public void settings()
