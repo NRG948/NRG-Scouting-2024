@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DropdownScript : MonoBehaviour
+public class DropdownScript : MonoBehaviour, IPointerClickHandler
 {
     private GameObject dataManObject;
     private DataManager dataManager;
@@ -37,5 +38,10 @@ public class DropdownScript : MonoBehaviour
             dataManager.AutofillTeamNumberObjective();
             dataManager.AutoFillTeamNameObjective();
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        HapticManager.LightFeedback();
     }
 }
