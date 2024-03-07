@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SubjDropdownScript1 : MonoBehaviour
+public class SubjDropdownScript1 : MonoBehaviour, IPointerClickHandler
 {
     private GameObject dataManObject;
     private DataManager dataManager;
@@ -32,5 +33,10 @@ public class SubjDropdownScript1 : MonoBehaviour
          
         dataManager.SetString(key, craaaazyValue,true);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        HapticManager.LightFeedback();
     }
 }

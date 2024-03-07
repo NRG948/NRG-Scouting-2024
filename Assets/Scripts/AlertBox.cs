@@ -27,6 +27,7 @@ public class AlertBox : MonoBehaviour
     }
     public IEnumerator ShowBoxNoResponse(string message,bool kick=false)
     {
+        HapticManager.LightFeedback();
         yes = false;
         yesButton.GetComponent<AlertBoxButton>().on = false;
         transform.GetChild(0).gameObject.SetActive(true);
@@ -37,11 +38,13 @@ public class AlertBox : MonoBehaviour
             yes = yesButton.GetComponent<AlertBoxButton>().on;
             yield return null;
         }
+        HapticManager.HeavyFeedback();
         transform.GetChild(0).gameObject.SetActive(false);
         if (kick) { SceneManager.LoadScene(0); }
     }
     private IEnumerator ShowBox(string message,string key)
     {
+        HapticManager.LightFeedback();
         no = false;
         yes = false;
         yesButton.GetComponent<AlertBoxButton>().on = false; noButton.GetComponent<AlertBoxButton>().on = false;
@@ -55,6 +58,7 @@ public class AlertBox : MonoBehaviour
             yield return null;
 
         };
+        HapticManager.HeavyFeedback();
         transform.GetChild(0).gameObject.SetActive(false);
         if (yes)
         {
