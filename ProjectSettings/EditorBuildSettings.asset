@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/WIP/OldMainmenu.unity
     guid: 13ed4e474c376f94f8d883ccb7512af3
   - enabled: 1
     path: Assets/Scenes/PitScout.unity
