@@ -14,6 +14,7 @@ public class DropdownSample: MonoBehaviour
 
 	public void OnButtonClick()
 	{
+		HapticManager.LightFeedback();
 		text.text = dropdownWithPlaceholder.value > -1 ? "Selected values:\n" + dropdownWithoutPlaceholder.value + " - " + dropdownWithPlaceholder.value : "Error: Please make a selection";
 	}
 }

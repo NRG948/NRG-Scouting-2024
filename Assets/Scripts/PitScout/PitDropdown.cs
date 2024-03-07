@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PitDropdown : MonoBehaviour
+public class PitDropdown : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
     private GameObject dataManObject;
@@ -23,5 +24,10 @@ public class PitDropdown : MonoBehaviour
         string craaaazyValue = GetComponent<TMP_Dropdown>().options[index].text;
 
         dataManager.SetString(key, craaaazyValue, isPit: true);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        HapticManager.LightFeedback();
     }
 }
