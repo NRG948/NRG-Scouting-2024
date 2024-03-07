@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
         }
         GameObject.Find("WelcomeText").GetComponent<TMP_Text>().text = PlayerPrefs.HasKey("Name") ? $"Welcome back, {PlayerPrefs.GetString("Name")}" : "Welcome, Anonymous";
         GameObject.Find("EventText").GetComponent<TMP_Text>().text = (PlayerPrefs.HasKey("EventKey") && PlayerPrefs.GetString("EventKey") != "2002nrg") ? $"Scouting event {PlayerPrefs.GetString("EventKey")}" : "Not currently scouting an event";
+        if(!(PlayerPrefs.HasKey("Haptic"))) { PlayerPrefs.SetInt("Haptic", 1); }
     }
 
     public void pitScout()

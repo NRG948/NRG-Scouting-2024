@@ -1,3 +1,4 @@
+using CandyCoded.HapticFeedback;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ public class DataManager : MonoBehaviour
         {
             allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
         }
+        if (value) { HapticManager.LightFeedback(); } else { HapticManager.HeavyFeedback(); }
     }
     public void SetString(string key, string value, bool subj = false, bool isPit = false)
     {

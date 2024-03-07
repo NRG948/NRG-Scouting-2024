@@ -55,6 +55,7 @@ public class AlertBox : MonoBehaviour
             yield return null;
 
         };
+
         transform.GetChild(0).gameObject.SetActive(false);
         if (yes)
         {
