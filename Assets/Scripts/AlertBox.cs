@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,7 +26,7 @@ public class AlertBox : MonoBehaviour
         string key = messageKey.Split("|")[1];
         StartCoroutine(ShowBox(message, key));
     }
-    public IEnumerator ShowBoxNoResponse(string message,bool kick=false)
+    public IEnumerator ShowBoxNoResponse(string message,bool kick=false,bool important=false)
     {
         HapticManager.LightFeedback();
         yes = false;
@@ -36,13 +37,14 @@ public class AlertBox : MonoBehaviour
         while (!(yes))
         {
             yes = yesButton.GetComponent<AlertBoxButton>().on;
+            if (important) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
         }
         HapticManager.HeavyFeedback();
         transform.GetChild(0).gameObject.SetActive(false);
         if (kick) { SceneManager.LoadScene(0); }
     }
-    private IEnumerator ShowBox(string message,string key)
+    private IEnumerator ShowBox(string message,string key,bool important=false)
     {
         HapticManager.LightFeedback();
         no = false;
@@ -55,6 +57,7 @@ public class AlertBox : MonoBehaviour
         {
             yes = yesButton.GetComponent<AlertBoxButton>().on;
             no = noButton.GetComponent<AlertBoxButton>().on;
+            if (important) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
 
         };
@@ -94,7 +97,7 @@ public class AlertBox : MonoBehaviour
             case "exit":
                 Application.Quit(); break;
             case "ldvDeleteAllConfirm":
-                StartCoroutine(ShowBox("Please understand that you are DELETING ALL SAVED DATA FOR THIS EVENT. Your scouting team will not be held responsible for your actions.", "ldvDeleteAll"));break;
+                StartCoroutine(ShowBox("Please understand that you are DELETING ALL SAVED DATA FOR THIS EVENT. Your scouting team will not be held responsible for your actions.", "ldvDeleteAll",true));break;
             case "ldvDeleteAll":
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().deleteFullEvent();break;
             case "downloadMatches":
