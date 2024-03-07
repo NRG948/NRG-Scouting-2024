@@ -29,6 +29,7 @@ public class IncrementerScript : MonoBehaviour
     public void increase() {
         if (counter < 99)
         {
+            HapticManager.LightFeedback();
             counter++;
             txt.text = counter.ToString();
             dataManager.SetInt(key, counter);
@@ -38,6 +39,7 @@ public class IncrementerScript : MonoBehaviour
     public void decrease() {
         if (counter > 0)
         {
+            HapticManager.HeavyFeedback();
             counter--;
             txt.text = counter.ToString();
             dataManager.SetInt(key, counter);
