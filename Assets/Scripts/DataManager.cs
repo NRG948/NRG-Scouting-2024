@@ -69,7 +69,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveRobotScout()
     {
-        if (match.TeamNumber == 0 || match.MatchNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team or match number."));return; }
+        if (match.TeamNumber == 0 || match.MatchNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team or match number.",false,true));return; }
         string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/obj/";
         if (!(Directory.Exists(objectivePath)))
         {
@@ -83,7 +83,7 @@ public class DataManager : MonoBehaviour
     }
     public void SaveAllianceScout()
     {
-        if (allianceMatch.MatchNumber == 0 || allianceMatch.Team1 == 0 || allianceMatch.Team2 == 0 || allianceMatch.Team3 == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing match number.")); return; }
+        if (allianceMatch.MatchNumber == 0 || allianceMatch.Team1 == 0 || allianceMatch.Team2 == 0 || allianceMatch.Team3 == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing match number.",false,true)); return; }
         //if (allianceMatch.Team1DriverSkill == 0 || allianceMatch.Team2DriverSkill == 0 || allianceMatch.Team3DriverSkill == 0 || allianceMatch.Team1Defense == 0 || allianceMatch.Team2Defense == 0 || allianceMatch.Team3Defense == 0)
         //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("MISSING DATA DETECTED! DATA NOT SAVED! Please rank every team before continuing.")); return; }
         //if (allianceMatch.Team1Defense == allianceMatch.Team2Defense || allianceMatch.Team2Defense == allianceMatch.Team3Defense || allianceMatch.Team1Defense == allianceMatch.Team3Defense)
