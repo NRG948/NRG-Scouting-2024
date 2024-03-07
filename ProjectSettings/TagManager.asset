@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HighlightRed
+  - HighlightYellow
+  - HighlightGrey
+  - HighlightBlue
+  - TitleText
+  - HighlightRedText
+  - HighlightYellowText
+  - HighlightGreyText
+  - HighlightBlueText
+  - HighlightRedBorder
+  - HighlightYellowBorder
+  - HighlightGreyBorder
+  - HighlightBlueBorder
+  - Background
+  - BackgroundBox
+  - BackgroundDesign
+  - Title
   layers:
   - Default
   - TransparentFX
