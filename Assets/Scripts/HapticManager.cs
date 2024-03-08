@@ -12,8 +12,15 @@ public class HapticManager : MonoBehaviour
         Debug.Log("Light");
         if (!(SystemInfo.supportsVibration) || PlayerPrefs.GetInt("Haptic") == 0) { return; }
         HapticFeedback.LightFeedback();
-        
     }
+
+    public static void LightFeedback(string a)
+    {
+        Debug.Log("Light"+a);
+        if (!(SystemInfo.supportsVibration) || PlayerPrefs.GetInt("Haptic") == 0) { return; }
+        HapticFeedback.LightFeedback();
+    }
+
     public static void HeavyFeedback()
     {
         Debug.Log("Heavy");
