@@ -27,6 +27,9 @@ public class Rater : MonoBehaviour
 
     public void UpdateRatingObjective(int rating)
     {
+        if (toggleGroup.AnyTogglesOn()) { HapticManager.LightFeedback(); }
+        else { HapticManager.HeavyFeedback(); }
+
         dataManager.SetInt(key, rating);
     }
 }

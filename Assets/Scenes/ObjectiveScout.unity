@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -941,6 +941,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1947241039}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LightFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HapticManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4164811926973113720, guid: 67a5a719e29a7b84f9cf2206588e33f9,
         type: 3}
@@ -13187,6 +13222,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1947241039}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LightFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HapticManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155563866663102145, guid: 67a5a719e29a7b84f9cf2206588e33f9,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4164811926973113720, guid: 67a5a719e29a7b84f9cf2206588e33f9,
         type: 3}
       propertyPath: m_fontSize
@@ -17470,7 +17540,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947241039}
+        m_TargetAssemblyTypeName: HapticManager, Assembly-CSharp
+        m_MethodName: LightFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -17571,6 +17653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2674178870413037828}
   - component: {fileID: 3598793116980592765}
+  - component: {fileID: 3598793116980592766}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -17635,6 +17718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005789024378644174}
   - component: {fileID: 6508032879394668153}
+  - component: {fileID: 6508032879394668154}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -18301,7 +18385,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947241039}
+        m_TargetAssemblyTypeName: HapticManager, Assembly-CSharp
+        m_MethodName: LightFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -19777,6 +19873,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &3598793116980592766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885821902318392386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e2a0eccb140ff418ee4a8524010a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &3611781482843678909
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20063,6 +20171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958527698297595438}
   - component: {fileID: 4392641353103823744}
+  - component: {fileID: 4392641353103823745}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -20351,6 +20460,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &4392641353103823745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005886194930460409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e2a0eccb140ff418ee4a8524010a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &4494509645808838052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21878,6 +21999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6883018332912869070}
   - component: {fileID: 5749174387511693040}
+  - component: {fileID: 6883018332912869071}
   m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
@@ -22136,6 +22258,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &6508032879394668154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085388250126246748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e2a0eccb140ff418ee4a8524010a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &6544690933389907742
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22414,6 +22548,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &6883018332912869071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150818990880343738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e2a0eccb140ff418ee4a8524010a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6921521942369371049
 RectTransform:
   m_ObjectHideFlags: 0
