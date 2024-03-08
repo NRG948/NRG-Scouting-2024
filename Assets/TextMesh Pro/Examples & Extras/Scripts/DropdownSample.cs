@@ -16,7 +16,7 @@ public class DropdownSample : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        HapticManager.LightFeedback("b");
+        HapticManager.LightFeedback();
     }
 
     public void OnButtonClick()
