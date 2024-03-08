@@ -33,6 +33,7 @@ public class LDV_EditMatch : MonoBehaviour
 
     public void startMenu(string filePath, string key)
     {
+        HapticManager.LightFeedback();
         mode = key;
         globalFilePath = filePath;
         switch (key) {
@@ -84,6 +85,7 @@ public class LDV_EditMatch : MonoBehaviour
 
     public void saveMenu()
     {
+        HapticManager.HeavyFeedback();
         string savedValue = transform.GetChild(0).GetChild(3).GetComponent<TMP_InputField>().text;
         switch (mode)
         {
@@ -147,6 +149,7 @@ public class LDV_EditMatch : MonoBehaviour
 
     public void cancel()
     {
+        HapticManager.HeavyFeedback();
         transform.GetChild(0).gameObject.SetActive(false);
     }
 }
