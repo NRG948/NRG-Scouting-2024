@@ -331,19 +331,19 @@ public class DataManager : MonoBehaviour
     {
         public int TeamNumber;
         public string MatchType;
-        public int DataQuality;
         public int MatchNumber;
+        public int DataQuality;
         public bool Replay;
         public string AllianceColor;
         public int DriverStation;
         public string ScouterName;
-        public bool HPAtAmp;
-        public bool Coopertition;
+        public bool HumanAtAmp;
+        public string AutoPickups;
         public bool CanScoreSub;
         public bool CanScorePodium;
-        public bool Feeder;
         public bool CanScoreOther;
-        public string Notes;
+        public bool Feeder;
+        public string Comments;
 
     }
     [System.Serializable]
