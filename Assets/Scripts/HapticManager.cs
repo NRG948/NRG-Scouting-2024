@@ -14,9 +14,9 @@ public class HapticManager : MonoBehaviour
         HapticFeedback.LightFeedback();
     }
 
-    public static void LightFeedback(string a)
+    public static void LightFeedback(string location)
     {
-        Debug.Log("Light"+a);
+        Debug.Log("Light"+location);
         if (!(SystemInfo.supportsVibration) || PlayerPrefs.GetInt("Haptic") == 0) { return; }
         HapticFeedback.LightFeedback();
     }
@@ -26,6 +26,30 @@ public class HapticManager : MonoBehaviour
         Debug.Log("Heavy");
         if (!(SystemInfo.supportsVibration) || PlayerPrefs.GetInt("Haptic") == 0) { return; }
         HapticFeedback.HeavyFeedback();
+    }
+
+    /// <summary>
+    /// Repeats HeavyFeedback indefinetly; must call StopCoroutine() to stop
+    /// </summary>
+    public static IEnumerator RepeatedHeavyFeedback()
+    {
+        while (true)
+        {
+            HeavyFeedback();
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    /// <summary>
+    /// Repeats LightFeedback indefinetly; must call StopCoroutine() to stop
+    /// </summary>
+    public static IEnumerator RepeatedLightFeedback()
+    {
+        while (true)
+        {
+            LightFeedback();
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 
 }
