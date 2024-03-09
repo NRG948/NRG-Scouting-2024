@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 30200917}
   m_Layer: 5
   m_Name: DownloadTeamNames
-  m_TagString: Untagged
+  m_TagString: Download
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 452869260}
   m_Layer: 5
   m_Name: Save
-  m_TagString: Untagged
+  m_TagString: Save
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2056,7 +2056,7 @@ GameObject:
   - component: {fileID: 1131243642}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ButtonText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2266,7 +2266,7 @@ GameObject:
   - component: {fileID: 1190767261}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ButtonText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2536,7 +2536,7 @@ GameObject:
   - component: {fileID: 1198437557}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2807,7 +2807,7 @@ GameObject:
   - component: {fileID: 1428461114}
   m_Layer: 5
   m_Name: Delete
-  m_TagString: Untagged
+  m_TagString: Reset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   darkMode: 0
-  pinkMode: 0
+  pinkMode: 1
 --- !u!114 &1502720228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,7 +3471,7 @@ GameObject:
   - component: {fileID: 1639914417}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4535,7 +4535,7 @@ GameObject:
   - component: {fileID: 2089662112}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ButtonText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4982,7 +4982,7 @@ GameObject:
   - component: {fileID: 2114238252}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5682,7 +5682,7 @@ GameObject:
   - component: {fileID: 6472800690558030915}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
