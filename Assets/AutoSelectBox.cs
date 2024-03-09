@@ -46,6 +46,7 @@ public class AutoSelectBox : MonoBehaviour
     }
 
     public void FadeIn() {
+        HapticManager.LightFeedback();
         if (animationState == "none") {
             gameObject.SetActive(true);
             animationState = "in";
@@ -53,6 +54,7 @@ public class AutoSelectBox : MonoBehaviour
     }
 
     public void FadeOut() {
+        HapticManager.HeavyFeedback();
         if (animationState == "none") {
             group.interactable = false;
             animationState = "out";

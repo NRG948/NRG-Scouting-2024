@@ -15,18 +15,6 @@ public class AutoSelectManager : MonoBehaviour
     public Color startingNoteColor;
     public AutoFieldMap field;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void addNote(int id) {
         //Unhighlighting old note, if there is one
         if (currentNoteIndex > -1) {
@@ -48,6 +36,7 @@ public class AutoSelectManager : MonoBehaviour
 
     public void removeLastNote() {
         if (notes.Count > 0) {
+            HapticManager.HeavyFeedback();
             var lastNote = getNote((int) notes[currentNoteIndex]);
             lastNote.Unselect();
             lastNote.UpdateColor();

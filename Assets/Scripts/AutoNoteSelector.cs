@@ -74,10 +74,12 @@ public class AutoNoteSelector : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         if (index == -1) {
+            HapticManager.LightFeedback();
             manager.addNote(id);
             UpdateNumber(manager.currentNoteIndex);
             UpdateColor();
         } else if (index == manager.currentNoteIndex) {
+            HapticManager.HeavyFeedback();
             manager.removeLastNote();
         } else {
             Debug.Log("Note already selected");
