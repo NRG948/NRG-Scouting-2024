@@ -74,4 +74,10 @@ public class AutoSelectManager : MonoBehaviour
     public int[] getAutoPath() {
         return notes.Cast<int>().ToArray();
     }
+    
+    public void UpdateAllLabelOrientations() {
+        foreach (Transform child in transform) {
+            child.gameObject.GetComponent<AutoNoteSelector>().UpdateLabelOrientation();
+        }
+    }
 }

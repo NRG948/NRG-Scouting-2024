@@ -6,7 +6,6 @@ TagManager:
   tags:
   - HighlightRed
   - HighlightYellow
-  - HighlightGrey
   - HighlightBlue
   - TitleText
   - HighlightRedText
@@ -21,8 +20,10 @@ TagManager:
   - BackgroundBox
   - BackgroundDesign
   - Title
-  - SubtitleBox
   - Subtitle
+  - ContentText
+  - TextOnColor
+  - HighlightGrey
   - InputField
   layers:
   - Default

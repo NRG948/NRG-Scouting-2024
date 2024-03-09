@@ -24,6 +24,12 @@ public class ThemeManager : MonoBehaviour
     private Color pinkYellow = new Color(0.9725491f, 0.8588236f, 0.08235294f);
     private Color pinkGrey = new Color(0.5176471f, 0.5529412f, 0.5568628f, 1f);
     private Color pinkBlue = new Color(0.121885f, 0.4774481f, 0.7830189f, 1f);
+    private Color lighterPink = new Color(1f, 0.567f, 1f, 1f);
+    private Color red = new Color(1f, 0f, 0f, 1f);
+    private Color blue = new Color(0f, 0.48f, 1f, 1f);
+    private Color orange = new Color(1f, 0.7267137f, 0f, 1f);
+
+
 
 
     // Start is called before the first frame update
@@ -55,8 +61,8 @@ public class ThemeManager : MonoBehaviour
         }
         if (pinkMode)
         {
-            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "HotPinkHouse"; }
-
+            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "PinkHouse"; }
+            //Main menu
             ColorAllWithTag("HighlightRed", pinkRed);
             ColorAllWithTag("HighlightYellow", pinkYellow);
             ColorAllWithTag("HighlightGrey", pinkGrey);
@@ -72,6 +78,8 @@ public class ThemeManager : MonoBehaviour
             ColorAllWithTag("Background", hotPink);
             ColorAllWithTag("BackgroundBox", lightPink);
             ColorAllWithTag("BackgroundDesign", darkPink);
+            ColorAllWithTag("ContentText", white);
+            ColorAllWithTag("InputField", lighterPink);
         }
     }
 
