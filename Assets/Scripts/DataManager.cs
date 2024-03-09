@@ -243,7 +243,6 @@ public class DataManager : MonoBehaviour
         public int SpeakerNotesUnamped;
         public int SpeakerNotesAmped;
         public int AmpNotes;
-        public bool Feeder;
         public bool Coopertition;
         public bool Onstage;
         public bool Park;
