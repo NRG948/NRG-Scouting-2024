@@ -33,7 +33,7 @@ public class HapticManager : MonoBehaviour
      * <summary> Repeats HeavyFeedback indefinitely; must call StopCoroutine() to stop </summary>
      * <param name="timeInterval"> The time interval between repeats </param>
     */
-    public static IEnumerator RepeatedHeavyFeedback(float timeInterval = 0.3f)
+    public IEnumerator RepeatedHeavyFeedback(float timeInterval = 0.3f)
     {
         while (true)
         {
@@ -46,7 +46,7 @@ public class HapticManager : MonoBehaviour
      * <summary> Repeats LightFeedback indefinitely; must call StopCoroutine() to stop </summary>
      * <param name="timeInterval"> The time interval between repeats </param>
     */
-    public static IEnumerator RepeatedLightFeedback(float timeInterval = 0.3f)
+    public IEnumerator RepeatedLightFeedback(float timeInterval = 0.3f)
     {
         while (true)
         {
@@ -60,7 +60,7 @@ public class HapticManager : MonoBehaviour
      * <param name="x"> times LightFeedback repeats </param>
      * <param name="timeInterval"> time interval between repeats </param>
     */
-    public static IEnumerator RepeatLightFeedback(int x = 1, float timeInterval = 0.3f)
+    public IEnumerator RepeatLightFeedback(int x = 1, float timeInterval = 0.3f)
     {
         for (int i = 0; i < x; i++)
         {
@@ -74,7 +74,7 @@ public class HapticManager : MonoBehaviour
     * <param name="x"> times HeavyFeedback repeats </param>
     * <param name="timeInterval"> time interval between repeats </param>
     */
-    public static IEnumerator RepeatHeavyFeedback(int x = 1, float timeInterval = 0.3f)
+    public IEnumerator RepeatHeavyFeedback(int x = 1, float timeInterval = 0.3f)
     {
         for (int i = 0; i < x; i++)
         {
