@@ -22,21 +22,21 @@ public class AtAmp : MonoBehaviour
     {
         
     }
-    public void valueChanged(int value)
+    /*public void valueChanged(int value)
     {
         if (toggleGroup.AnyTogglesOn()) { HapticManager.LightFeedback(); }
         else { HapticManager.HeavyFeedback(); }
         switch (value)
         {
             case 1:
-                dataManager.allianceMatch.TeamAtAmp = dataManager.allianceMatch.Team1;
+                dataManager.subjectiveMatch.TeamAtAmp = dataManager.subjectiveMatch.Team1;
                 break;
             case 2:
-                dataManager.allianceMatch.TeamAtAmp = dataManager.allianceMatch.Team2;
+                dataManager.subjectiveMatch.TeamAtAmp = dataManager.subjectiveMatch.Team2;
                 break;
             case 3:
-                dataManager.allianceMatch.TeamAtAmp = dataManager.allianceMatch.Team3;
+                dataManager.subjectiveMatch.TeamAtAmp = dataManager.subjectiveMatch.Team3;
                 break;
         }
-    }
+    }*/
 }

@@ -27,8 +27,8 @@ public class AutoSelectManager : MonoBehaviour
     public void removeNote() {
         if (notes.Count > 0) {
             notes.RemoveAt(notes.Count - 1);
-            var lastNote = gameObject.transform.GetChild(notes[currentNoteIndex]).GameObject.GetComponent<AutoNoteSelector>();
-            lastNote.Unselect();
+           // var lastNote = gameObject.transform.GetChild(notes[currentNoteIndex]).GameObject.GetComponent<AutoNoteSelector>();
+           // lastNote.Unselect();
             currentNoteIndex--;
         } else {
             Debug.Log("No Path Selected");

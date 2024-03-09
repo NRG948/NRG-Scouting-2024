@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -28,24 +29,34 @@ public class SubjTextBox : MonoBehaviour
     // Update is called once per frame
     public void GetText(string value)
     {
-        if (value == "" && (key == "Team1" || key == "Team2" || key == "Team3")) { dataManager.ClearTeam(Int32.Parse(key.Substring(4))); menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); return; } // Clears team number/name for specified team
-        if (value == "") { return; } // Edge case not involving team numbers
-        if (key == "MatchNumber" || key == "TeamNumber" || key == "Team1" || key == "Team2" || key == "Team3")
+        if (value == "") { dataManager.ClearTeam(); return; }
+        if (key == "MatchNumber" || key == "TeamNumber")
         {
-            if (value.Length >= 8) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case
+            if (value.Length >= 10) { GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1); return; } // Edge case in an edge case
             try
             {
-                dataManager.SetInt(key, Int32.Parse(value), true); // Random edge case
-            } catch
+                dataManager.SetInt(key, Int32.Parse(value),true); // Random edge case}
+            }
+            catch
             {
                 GetComponent<TMP_InputField>().text = value.Substring(0, value.Length - 1);
             }
-            if (!(key == "MatchNumber")) { menuTitle.GetComponent<MenuTitle>().UpdateTeamNames(); dataManager.AutoFillTeamNameSubjective(); }
-            
         }
         else
         {
+
             dataManager.SetString(key, value,true);
+        }
+        if (key == "MatchNumber" || key == "TeamNumber")
+        {
+            if (key == "MatchNumber")
+            {
+                dataManager.AutofillTeamNumberSubjective();
+            }
+            if (Directory.Exists(Application.persistentDataPath + "/cache/teams"))
+            {
+                dataManager.AutoFillTeamNameSubjective();
+            }
         }
     }
 }
