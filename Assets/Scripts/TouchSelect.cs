@@ -40,6 +40,7 @@ public class TouchSelect : MonoBehaviour
         Vector2 coords = getCoords();
         data.SetString("StartPos",coords.x + ", " + coords.y);
         Debug.Log(getCoords());
+        Debug.Log(getFieldRegion());
     }
 
     public void resetCoords(DataManager dataManager)
@@ -67,16 +68,6 @@ public class TouchSelect : MonoBehaviour
         float iconX = fieldIcon.rect.width * rawDiffX / fieldRect.rect.width;
         float iconY = fieldIcon.rect.height * rawDiffY / fieldRect.rect.height;
 
-        //Harry wants blue coords only
-        //
-        // if (field.color == "Red") {
-        //     iconX = fieldIcon.rect.width - iconX;
-        // }
-        // if (PlayerPrefs.GetInt("FlipField",0) == 1) {
-        //     iconY = fieldIcon.rect.height - iconY;
-        //     iconX = fieldIcon.rect.width - iconX;
-        // }
-
         robotIcon.SetActive(true);
 
         robotIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(iconX, iconY);
@@ -91,15 +82,35 @@ public class TouchSelect : MonoBehaviour
             );
         */
 
-        //Adjusting based on alliance color
-        // if (field.color == "Red") {
-        //     diffX = FIELD_LENGTH_METERS - diffX;
-        // }
-        // if (PlayerPrefs.GetInt("FlipField",0) == 1) {
-        //     diffY = FIELD_WIDTH_METERS - diffY;
-        //     diffX = FIELD_LENGTH_METERS - diffX;
-        // }
-
         return new Vector2(diffX, diffY);
+    }
+
+    public string getFieldRegion(Vector2 coords) {
+        float x = coords.x;
+        float y = coords.y;
+
+        if (x >= 0.9 && InRange(y, 5f, 6f, true)) {
+            return "Subwoofer Middle";
+        } else if (x <= 0.9f && InRange(y, 3.5f, 5f, true)) {
+            return "Wall Subwoofer Source";
+        } else if (x <= 0.9f && y >= 6f) {
+            return "Wall Subwoofer Amp";
+        } else if (x >= 0.9f && InRange(y, 3.5f, 5f, true)) {
+            return "Outer Subwoofer Source";
+        } else if (x >= 0.9f && y >= 6f) {
+            return "Outer Subwoofer Amp";
+        } else if (y <= 3.5f) {
+            return "Source";
+        } else {
+            return "Out Of Bounds";
+        }
+    }
+
+    public string getFieldRegion() {
+        return getFieldRegion(getCoords());
+    }
+
+    public bool InRange(float val, float min, float max, bool inclusive) {
+        return inclusive ? val >= min && val <= max : val > min && val < max;
     }
 }
