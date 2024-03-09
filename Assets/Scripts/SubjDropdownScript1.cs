@@ -23,7 +23,7 @@ public class SubjDropdownScript1 : MonoBehaviour, IPointerClickHandler
     public void Get(Int32 index)
     {
         string craaaazyValue = GetComponent<TMP_Dropdown>().options[index].text;
-        if (false)//key == "AllianceColor")
+        if (key == "AllianceColor")
         {
             string[] splitValue = craaaazyValue.Split(" ");
             dataManager.SetString("AllianceColor", splitValue[0],true);
