@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class DataManager : MonoBehaviour
 {
     public Match match;
-    public AllianceMatch allianceMatch;
+    public SubjectiveMatch subjectiveMatch;
     public Pit pit;
     public APIMatchFile apiMatch;
 
@@ -19,7 +19,7 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "ObjectiveScout") { match = new Match(); }
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { allianceMatch = new AllianceMatch(); }
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { subjectiveMatch = new SubjectiveMatch(); }
         if (!PlayerPrefs.HasKey("EventKey")) { PlayerPrefs.SetString("EventKey", "2002nrg"); }
         if (!PlayerPrefs.HasKey("Name")) { PlayerPrefs.SetString("Name", "Anonymous"); }
     }
@@ -38,7 +38,7 @@ public class DataManager : MonoBehaviour
         else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
         {
-            allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
+            subjectiveMatch.GetType().GetField(key).SetValue(subjectiveMatch, value);
         }
         if (value) { HapticManager.LightFeedback(); } else { HapticManager.HeavyFeedback(); }
     }
@@ -51,7 +51,7 @@ public class DataManager : MonoBehaviour
         else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
         {
-            allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
+            subjectiveMatch.GetType().GetField(key).SetValue(subjectiveMatch, value);
         }
     }
     public void SetInt(string key, int value, bool subj = false, bool isPit = false)
@@ -63,7 +63,7 @@ public class DataManager : MonoBehaviour
         else if (!subj) { match.GetType().GetField(key).SetValue(match, value); }
         else
         {
-            allianceMatch.GetType().GetField(key).SetValue(allianceMatch, value);
+            subjectiveMatch.GetType().GetField(key).SetValue(subjectiveMatch, value);
         }
     }
 
@@ -81,9 +81,23 @@ public class DataManager : MonoBehaviour
         File.WriteAllText(objectivePath + fileName, jsonData);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data",true));
     }
-    public void SaveAllianceScout()
+    public void SaveSubjectiveRobotScout()
     {
-        if (allianceMatch.MatchNumber == 0 || allianceMatch.Team1 == 0 || allianceMatch.Team2 == 0 || allianceMatch.Team3 == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing match number.",false,true)); return; }
+        if (subjectiveMatch.TeamNumber == 0 || subjectiveMatch.MatchNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team or match number.", false, true)); return; }
+        string subjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
+        if (!(Directory.Exists(subjectivePath)))
+        {
+            Directory.CreateDirectory(subjectivePath);
+        }
+        string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
+        string fileName = $"{subjectiveMatch.TeamNumber}_{subjectiveMatch.MatchType}_{subjectiveMatch.MatchNumber}_{currentTime}.json";
+        string jsonData = JsonUtility.ToJson(subjectiveMatch, true);
+        File.WriteAllText(subjectivePath + fileName, jsonData);
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data", true));
+    }
+    /*public void SaveAllianceScout()
+    {
+        if (subjectiveMatch.MatchNumber == 0 || subjectiveMatch.Team1 == 0 || subjectiveMatch.Team2 == 0 || subjectiveMatch.Team3 == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing match number.",false,true)); return; }
         //if (allianceMatch.Team1DriverSkill == 0 || allianceMatch.Team2DriverSkill == 0 || allianceMatch.Team3DriverSkill == 0 || allianceMatch.Team1Defense == 0 || allianceMatch.Team2Defense == 0 || allianceMatch.Team3Defense == 0)
         //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("MISSING DATA DETECTED! DATA NOT SAVED! Please rank every team before continuing.")); return; }
         //if (allianceMatch.Team1Defense == allianceMatch.Team2Defense || allianceMatch.Team2Defense == allianceMatch.Team3Defense || allianceMatch.Team1Defense == allianceMatch.Team3Defense)
@@ -96,11 +110,11 @@ public class DataManager : MonoBehaviour
             Directory.CreateDirectory(subjectivePath);
         }
         string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
-        string fileName = $"{allianceMatch.MatchType}_{allianceMatch.MatchNumber}_{allianceMatch.AllianceColor}_{currentTime}.json";
-        string jsonData = JsonUtility.ToJson(allianceMatch, true);
+        string fileName = $"{subjectiveMatch.MatchType}_{subjectiveMatch.MatchNumber}_{subjectiveMatch.AllianceColor}_{currentTime}.json";
+        string jsonData = JsonUtility.ToJson(subjectiveMatch, true);
         File.WriteAllText(subjectivePath + fileName, jsonData);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data",true));
-    }
+    }*/
 
     public void SavePitScout()
     {
@@ -152,8 +166,22 @@ public class DataManager : MonoBehaviour
         }
         GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = "";
     }
-
-    public void AutoFillTeamNumberSubjective()
+    public void AutofillTeamNumberSubjective()
+    {
+        int pageNum = match.TeamNumber / 500;
+        if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find("TeamName").GetComponent<TMP_Text>().text = ""; return; }
+        TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
+        foreach (APITeam team in teamNameJson.teams)
+        {
+            if (subjectiveMatch.TeamNumber == team.team_number)
+            {
+                GameObject.Find("TeamName").GetComponent<TMP_Text>().text = team.nickname;
+                return;
+            }
+        }
+        GameObject.Find("TeamName").GetComponent<TMP_Text>().text = "";
+    }
+    /*public void AutoFillTeamNumberSubjective()
     {
         Debug.Log("start");
         string matchNum = GameObject.Find("Match Number").GetComponent<TMP_InputField>().text;
@@ -210,7 +238,7 @@ public class DataManager : MonoBehaviour
         GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = "";
         GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = "";
     }
-
+    */
     public void AutoFillTeamNameObjective()
     {
         int pageNum = match.TeamNumber / 500;
@@ -229,29 +257,26 @@ public class DataManager : MonoBehaviour
 
     public void AutoFillTeamNameSubjective()
     {
-        for (int i = 1; i <= 3; i++) {
-            int teamNum = Int32.Parse(allianceMatch.GetType().GetField($"Team{i}").GetValue(allianceMatch).ToString());
-            if (teamNum == 0) { GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = ""; continue; } // Failsafe if team number is empty
-            int pageNum = teamNum / 500; // JSON Files are organized into "pages" of 500
-            if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = ""; return; }
-            TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
-            GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = "";
-            foreach (APITeam team in teamNameJson.teams)
+        int pageNum = subjectiveMatch.TeamNumber / 500;
+        if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find("TeamName").GetComponent<TMP_Text>().text = ""; return; }
+        TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
+        foreach (APITeam team in teamNameJson.teams)
+        {
+            if (subjectiveMatch.TeamNumber == team.team_number)
             {
-                if (teamNum == team.team_number)
-                {
-                    GameObject.Find($"TeamName{i}").GetComponent<TMP_Text>().text = $"{team.team_number} - {team.nickname}";
-                    break;
-                }
+                GameObject.Find("TeamName").GetComponent<TMP_Text>().text = team.nickname;
+                return;
             }
         }
+        GameObject.Find("TeamName").GetComponent<TMP_Text>().text = "";
+    
     }
 
     public void ClearTeam(int num=0)
     {
         string numString = num == 0 ? "" : num.ToString();
         GameObject.Find($"TeamName{numString}").GetComponent<TMP_Text>().text = ""; // Clears team name
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { allianceMatch.GetType().GetField($"Team{num}").SetValue(allianceMatch, 0); } // Resets team number (Subjective)
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { subjectiveMatch.TeamNumber = 0; } // Resets team number (Subjective)
         if (SceneManager.GetActiveScene().name == "ObjectiveScout") { match.TeamNumber = 0; } // Resets team number (Objective)
     }
     
@@ -302,38 +327,23 @@ public class DataManager : MonoBehaviour
         public string Comments;
     }
     [System.Serializable]
-    public class AllianceMatch
+    public class SubjectiveMatch
     {
-        public int MatchNumber;
+        public int TeamNumber;
         public string MatchType;
         public int DataQuality;
+        public int MatchNumber;
         public bool Replay;
         public string AllianceColor;
+        public int DriverStation;
         public string ScouterName;
-        public int Team1; // Anything after with the suffix "1" refers to robot 1
-        public int Team2; // Anything after with the suffix "2" refers to robot 2
-        public int Team3; // Anything after with the suffix "3" refers to robot 3
-        public int TeamAtAmp;
-        public int AutoCenterNotes;
-        public int Team1TravelSpeed;
-        public int Team2TravelSpeed;
-        public int Team3TravelSpeed;
-        public int Team1AlignSpeed;
-        public int Team2AlignSpeed;
-        public int Team3AlignSpeed;
-        public int Team1Avoid;
-        public int Team2Avoid;
-        public int Team3Avoid;
-        public int AmplifyCount;
-        public int Fouls;
+        public bool HPAtAmp;
         public bool Coopertition;
-        public int HighNotes;
-        public int HighNotePotential;
-        public string Harmony;
-        public string RankingComments;
-        public string StratComments;
-        public string OtherComments;
-        public bool WinMatch;
+        public bool CanScoreSub;
+        public bool CanScorePodium;
+        public bool Feeder;
+        public bool CanScoreOther;
+        public string Notes;
 
     }
     [System.Serializable]

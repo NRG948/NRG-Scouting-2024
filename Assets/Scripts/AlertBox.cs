@@ -87,7 +87,7 @@ public class AlertBox : MonoBehaviour
             case "objSave":
                 GameObject.Find("DataManager").GetComponent<DataManager>().SaveRobotScout(); break;
             case "subjSave":
-                GameObject.Find("DataManager").GetComponent<DataManager>().SaveAllianceScout(); break;
+                GameObject.Find("DataManager").GetComponent<DataManager>().SaveSubjectiveRobotScout(); break;
             case "pitSave":
                 GameObject.Find("DataManager").GetComponent<DataManager>().SavePitScout(); break;
             case "menu":
