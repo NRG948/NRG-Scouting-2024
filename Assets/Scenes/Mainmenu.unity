@@ -1247,6 +1247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   darkMode: 0
+  pinkMode: 1
 --- !u!1 &318023165
 GameObject:
   m_ObjectHideFlags: 0

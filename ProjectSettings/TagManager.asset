@@ -21,6 +21,7 @@ TagManager:
   - BackgroundBox
   - BackgroundDesign
   - Title
+  - TitleBox
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,11 @@ public class ThemeManager : MonoBehaviour
     private Color hotPink = new Color(1f, 0.15686275f, 0.521156863f, 1f);
     private Color darkPink = new Color(0.81568627f, 0.007874314f, 0.35686275f, 1f);
     private Color lightPink = new Color(1f, 0.43137255f, 0.79215686f, 1f);
-    
+    private Color pinkRed = new Color(1f, 0f, 0.11111111111f, 1f);
+    private Color pinkYellow = new Color(0.9725491f, 0.8588236f, 0.08235294f);
+    private Color pinkGrey = new Color(0.5176471f, 0.5529412f, 0.5568628f, 1f);
+    private Color pinkBlue = new Color(0.121885f, 0.4774481f, 0.7830189f, 1f);
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,22 +55,17 @@ public class ThemeManager : MonoBehaviour
         }
         if (pinkMode)
         {
-            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "PinkHouse"; }
+            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "HotPinkHouse"; }
 
-            ColorAllWithTag("HighlightRed", darkRed);
-            ColorAllWithTag("HighlightYellow", darkYellow);
-            ColorAllWithTag("HighlightGrey", darkGrey);
-            ColorAllWithTag("HighlightBlue", darkBlue);
+            ColorAllWithTag("HighlightRed", pinkRed);
+            ColorAllWithTag("HighlightYellow", pinkYellow);
+            ColorAllWithTag("HighlightGrey", pinkGrey);
+            ColorAllWithTag("HighlightBlue", pinkBlue);
 
-            ColorAllWithTag("HighlightRedText", darkRed);
-            ColorAllWithTag("HighlightYellowText", darkYellow);
-            ColorAllWithTag("HighlightGreyText", darkGrey);
-            ColorAllWithTag("HighlightBlueText", darkBlue);
-
-            ColorAllWithTag("HighlightRedBorder", darkBackgroundBox);
-            ColorAllWithTag("HighlightYellowBorder", darkBackgroundBox);
-            ColorAllWithTag("HighlightGreyBorder", darkBackgroundBox);
-            ColorAllWithTag("HighlightBlueBorder", darkBackgroundBox);
+            ColorAllWithTag("HighlightRedBorder", pinkRed);
+            ColorAllWithTag("HighlightYellowBorder", pinkYellow);
+            ColorAllWithTag("HighlightGreyBorder", pinkGrey);
+            ColorAllWithTag("HighlightBlueBorder", pinkBlue);
 
             ColorAllWithTag("TitleText", white);
             ColorAllWithTag("Title", white);
