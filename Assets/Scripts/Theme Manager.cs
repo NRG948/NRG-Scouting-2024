@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ThemeManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class ThemeManager : MonoBehaviour
     void Start()
     {
         if (darkMode) {
-            GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "DarkHouse";
+            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "DarkHouse"; }
             
             ColorAllWithTag("HighlightRed", darkRed);
             ColorAllWithTag("HighlightYellow", darkYellow);
