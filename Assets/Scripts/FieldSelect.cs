@@ -38,6 +38,7 @@ public class FieldSelect : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData) {
         selector.lockToMouse();
+        HapticManager.LightFeedback();
     }
 
     public void changeColor() {
