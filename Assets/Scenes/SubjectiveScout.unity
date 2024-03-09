@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1802,19 +1802,20 @@ MonoBehaviour:
   subjectiveMatch:
     TeamNumber: 0
     MatchType: 
-    DataQuality: 0
     MatchNumber: 0
+    DataQuality: 0
     Replay: 0
     AllianceColor: 
     DriverStation: 0
     ScouterName: 
-    HPAtAmp: 0
-    Coopertition: 0
+    HumanAtAmp: 0
+    AutoPickups: 
     CanScoreSub: 0
     CanScorePodium: 0
-    Feeder: 0
     CanScoreOther: 0
-    Notes: 
+    Feeder: 0
+    HumanPlayerComments: 
+    Comments: 
   pit:
     TeamName: 
     TeamNumber: 0
@@ -1873,7 +1874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &458210811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3560,7 +3561,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
+  m_SizeDelta: {x: 100, y: 2600}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &869206963
 MonoBehaviour:
@@ -3800,7 +3801,7 @@ GameObject:
   - component: {fileID: 966487167}
   - component: {fileID: 966487166}
   m_Layer: 5
-  m_Name: Shooting
+  m_Name: ShootingCapabilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5646,9 +5647,9 @@ RectTransform:
   - {fileID: 759222658}
   m_Father: {fileID: 869206962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -1300}
   m_SizeDelta: {x: 1720, y: 2600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1277869138
@@ -6041,9 +6042,9 @@ RectTransform:
   - {fileID: 1478264037}
   m_Father: {fileID: 6232179429905142724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -1450}
   m_SizeDelta: {x: 1720, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409686966
@@ -7205,7 +7206,7 @@ RectTransform:
   m_Father: {fileID: 1590509872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8783,7 +8784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2134635424
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9370,9 +9371,9 @@ RectTransform:
   - {fileID: 647064944095454022}
   m_Father: {fileID: 6232179429905142724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -175}
   m_SizeDelta: {x: 1720, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738315826826141051
@@ -15106,9 +15107,9 @@ RectTransform:
   - {fileID: 6385227130724719761}
   m_Father: {fileID: 6232179429905142724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -825}
   m_SizeDelta: {x: 1720, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7643850844660084845

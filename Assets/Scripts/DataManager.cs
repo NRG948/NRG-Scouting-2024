@@ -343,6 +343,7 @@ public class DataManager : MonoBehaviour
         public bool CanScorePodium;
         public bool CanScoreOther;
         public bool Feeder;
+        public string HumanPlayerComments;
         public string Comments;
 
     }
