@@ -80,9 +80,10 @@ public class ThemeManager : MonoBehaviour
             ColorAllWithTag("BackgroundDesign", darkPink);
             ColorAllWithTag("ContentText", white);
             ColorAllWithTag("InputField", lighterPink);
+            ColorAllWithTag("SecondInputField", lighterPink);
         }
     }
-
+    
     // Update is called once per frame
     void Update()
     {

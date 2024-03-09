@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   darkMode: 0
-  pinkMode: 1
+  pinkMode: 0
 --- !u!114 &1502720228
 MonoBehaviour:
   m_ObjectHideFlags: 0

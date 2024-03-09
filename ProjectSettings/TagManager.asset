@@ -25,6 +25,7 @@ TagManager:
   - TextOnColor
   - HighlightGrey
   - InputField
+  - SecondInputField
   layers:
   - Default
   - TransparentFX
