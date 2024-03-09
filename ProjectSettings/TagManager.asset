@@ -24,6 +24,11 @@ TagManager:
   - SubtitleBox
   - Subtitle
   - InputField
+  - ContentText
+  - ButtonText
+  - Save
+  - Reset
+  - Download
   layers:
   - Default
   - TransparentFX

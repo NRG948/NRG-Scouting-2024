@@ -61,7 +61,7 @@ public class ThemeManager : MonoBehaviour
         }
         if (pinkMode)
         {
-            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "HotPinkHouse"; }
+            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "PinkHouse"; }
             //Main menu
             ColorAllWithTag("HighlightRed", pinkRed);
             ColorAllWithTag("HighlightYellow", pinkYellow);
