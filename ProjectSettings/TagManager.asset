@@ -21,7 +21,9 @@ TagManager:
   - BackgroundBox
   - BackgroundDesign
   - Title
-  - TitleBox
+  - SubtitleBox
+  - Subtitle
+  - InputField
   layers:
   - Default
   - TransparentFX

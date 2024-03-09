@@ -1324,7 +1324,7 @@ GameObject:
   - component: {fileID: 747065420}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1400,7 +1400,7 @@ GameObject:
   - component: {fileID: 776795648}
   m_Layer: 5
   m_Name: ScouterNameTitle
-  m_TagString: Untagged
+  m_TagString: SubtitleBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 823422662}
   m_Layer: 5
   m_Name: InputField (Name)
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1884,7 +1884,7 @@ GameObject:
   - component: {fileID: 928802712}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3320,7 +3320,7 @@ GameObject:
   - component: {fileID: 1592122607}
   m_Layer: 5
   m_Name: EventKeyTitle
-  m_TagString: Untagged
+  m_TagString: SubtitleBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3960,7 +3960,7 @@ GameObject:
   - component: {fileID: 1749155411}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4400,7 +4400,7 @@ GameObject:
   - component: {fileID: 1972819329}
   m_Layer: 5
   m_Name: Event Key
-  m_TagString: Untagged
+  m_TagString: Subtitle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4673,7 +4673,7 @@ GameObject:
   - component: {fileID: 2098205994}
   m_Layer: 5
   m_Name: InputField (ID)
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4847,7 +4847,7 @@ GameObject:
   - component: {fileID: 2108191091}
   m_Layer: 5
   m_Name: Event Key
-  m_TagString: Untagged
+  m_TagString: Subtitle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5664,7 +5664,7 @@ GameObject:
   - component: {fileID: 6758553275819230670}
   m_Layer: 5
   m_Name: Title
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5841,7 +5841,7 @@ GameObject:
   - component: {fileID: 7840565240447649115}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
