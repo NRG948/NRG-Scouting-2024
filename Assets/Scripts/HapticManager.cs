@@ -60,7 +60,7 @@ public class HapticManager : MonoBehaviour
      * <param name="x"> times LightFeedback repeats </param>
      * <param name="timeInterval"> time interval between repeats </param>
     */
-    public static IEnumerator RepeatedLightFeedback(int x = 1, float timeInterval = 0.3f)
+    public static IEnumerator RepeatLightFeedback(int x = 1, float timeInterval = 0.3f)
     {
         for (int i = 0; i < x; i++)
         {
@@ -74,7 +74,7 @@ public class HapticManager : MonoBehaviour
     * <param name="x"> times HeavyFeedback repeats </param>
     * <param name="timeInterval"> time interval between repeats </param>
     */
-    public static IEnumerator RepeatedHeavyFeedback(int x = 1, float timeInterval = 0.3f)
+    public static IEnumerator RepeatHeavyFeedback(int x = 1, float timeInterval = 0.3f)
     {
         for (int i = 0; i < x; i++)
         {
