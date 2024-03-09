@@ -9,7 +9,17 @@ public class AutoFieldMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateFieldOrientation();
+        var temp = GetComponent<RectTransform>().localScale;
+
+        if (PlayerPrefs.GetInt("FlipField", 0) == 1) {
+            temp.y = -1;
+            temp.x = -1;
+        } else {
+            temp.x = 1;
+            temp.y = 1;
+        }
+
+        GetComponent<RectTransform>().localScale = temp;
     }
 
     // Update is called once per frame
@@ -21,7 +31,7 @@ public class AutoFieldMap : MonoBehaviour
     public void UpdateFieldOrientation() {
         var temp = GetComponent<RectTransform>().localScale;
 
-        if (manager.match.AllianceColor == "Red") {
+        if (manager.subjectiveMatch.AllianceColor == "Red") {
             temp.x = 1;
         } else {
             temp.x = -1;

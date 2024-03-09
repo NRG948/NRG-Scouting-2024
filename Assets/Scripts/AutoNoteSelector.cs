@@ -18,30 +18,14 @@ public class AutoNoteSelector : MonoBehaviour, IPointerClickHandler
     private TMP_Text label;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         ring = gameObject.transform.GetChild(1).gameObject;
         tag = gameObject.transform.GetChild(2).gameObject;
         label = tag.GetComponent<TMP_Text>();
         pos = gameObject.GetComponent<RectTransform>().localPosition;
 
-        var temp = tag.GetComponent<RectTransform>().localScale;
-
-        if (manager.field.manager.match.AllianceColor == "Red") {
-            temp.x = 1;
-        } else {
-            temp.x = -1;
-        }
-
-        if (PlayerPrefs.GetInt("FlipField", 0) == 1) {
-            temp.y = -1;
-            temp.x *= -1;
-        } else {
-            temp.y = 1;
-        }
-
-        tag.GetComponent<RectTransform>().localScale = temp;
-
+        UpdateLabelOrientation();
         UpdateColor();
     }
 
@@ -66,6 +50,25 @@ public class AutoNoteSelector : MonoBehaviour, IPointerClickHandler
 
         ring.GetComponent<Image>().color = color;
         label.color = color;
+    }
+
+    public void UpdateLabelOrientation() {
+        var temp = tag.GetComponent<RectTransform>().localScale;
+
+        if (manager.field.manager.subjectiveMatch.AllianceColor == "Red") {
+            temp.x = 1;
+        } else {
+            temp.x = -1;
+        }
+
+        if (PlayerPrefs.GetInt("FlipField", 0) == 1) {
+            temp.y = -1;
+            temp.x *= -1;
+        } else {
+            temp.y = 1;
+        }
+
+        tag.GetComponent<RectTransform>().localScale = temp;
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
