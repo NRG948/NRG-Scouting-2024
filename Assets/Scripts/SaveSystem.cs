@@ -13,6 +13,7 @@ public class SaveSystem : MonoBehaviour
     public TMP_InputField inputFieldID;
     public Toggle autoFill;
     public Toggle flipField;
+    public Toggle hapticFeedback;
     public Toggle militaryTime;
     public APIMatchFile matchJson;
 
@@ -25,6 +26,7 @@ public class SaveSystem : MonoBehaviour
         inputFieldID.text = PlayerPrefs.GetString("EventKey");
         autoFill.isOn = PlayerPrefs.GetInt("Autofill",0) == 1;
         flipField.isOn = PlayerPrefs.GetInt("FlipField",0) == 1;
+        hapticFeedback.isOn = PlayerPrefs.GetInt("Haptic",0) == 1;
         militaryTime.isOn = PlayerPrefs.GetInt("MilitaryTime",0) == 1;
 
         
@@ -37,6 +39,7 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetString("EventKey", inputFieldID.text == "" ? "2002nrg" : inputFieldID.text);
         PlayerPrefs.SetInt("Autofill", autoFill.isOn ? 1 : 0);
         PlayerPrefs.SetInt("FlipField", flipField.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("Haptic", hapticFeedback.isOn ? 1 : 0);
         PlayerPrefs.SetInt("MilitaryTime", militaryTime.isOn ? 1 : 0);
 
         if (autoFill.isOn) { ApiRequest(inputFieldID.text); }
@@ -48,6 +51,7 @@ public class SaveSystem : MonoBehaviour
     public void DeletData()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Haptic", 0);
     }
 
 
