@@ -180,6 +180,22 @@ public class DataManager : MonoBehaviour
         GameObject.Find("TeamName").GetComponent<TMP_Text>().text = "";
     }
 
+    public void AutoFillTeamNamePit()
+    {
+        int pageNum = pit.TeamNumber / 500;
+        if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find("TeamName").GetComponent<TMP_InputField>().text = ""; return; }
+        TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
+        foreach (APITeam team in teamNameJson.teams)
+        {
+            if (pit.TeamNumber == team.team_number)
+            {
+                GameObject.Find("TeamName").GetComponent<TMP_InputField>().text = team.nickname;
+                return;
+            }
+        }
+        GameObject.Find("TeamName").GetComponent<TMP_InputField>().text = "";
+    }
+
     public void AutoFillTeamNameSubjective()
     {
         int pageNum = subjectiveMatch.TeamNumber / 500;
