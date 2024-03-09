@@ -31,25 +31,27 @@ public class HapticManager : MonoBehaviour
 
     /** 
      * <summary> Repeats HeavyFeedback indefinitely; must call StopCoroutine() to stop </summary>
+     * <param name="timeInterval"> The time interval between repeats </param>
     */
-    public static IEnumerator RepeatedHeavyFeedback()
+    public static IEnumerator RepeatedHeavyFeedback(float timeInterval = 0.3f)
     {
         while (true)
         {
             HeavyFeedback();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(timeInterval);
         }
     }
 
     /** 
      * <summary> Repeats LightFeedback indefinitely; must call StopCoroutine() to stop </summary>
+     * <param name="timeInterval"> The time interval between repeats </param>
     */
-    public static IEnumerator RepeatedLightFeedback()
+    public static IEnumerator RepeatedLightFeedback(float timeInterval = 0.3f)
     {
         while (true)
         {
             LightFeedback();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(timeInterval);
         }
     }
 
