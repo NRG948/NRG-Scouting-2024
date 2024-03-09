@@ -93,28 +93,10 @@ public class DataManager : MonoBehaviour
         string fileName = $"{subjectiveMatch.TeamNumber}_{subjectiveMatch.MatchType}_{subjectiveMatch.MatchNumber}_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(subjectiveMatch, true);
         File.WriteAllText(subjectivePath + fileName, jsonData);
-        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data", true));
-    }
-    /*public void SaveAllianceScout()
-    {
-        if (subjectiveMatch.MatchNumber == 0 || subjectiveMatch.Team1 == 0 || subjectiveMatch.Team2 == 0 || subjectiveMatch.Team3 == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing match number.",false,true)); return; }
-        //if (allianceMatch.Team1DriverSkill == 0 || allianceMatch.Team2DriverSkill == 0 || allianceMatch.Team3DriverSkill == 0 || allianceMatch.Team1Defense == 0 || allianceMatch.Team2Defense == 0 || allianceMatch.Team3Defense == 0)
-        //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("MISSING DATA DETECTED! DATA NOT SAVED! Please rank every team before continuing.")); return; }
-        //if (allianceMatch.Team1Defense == allianceMatch.Team2Defense || allianceMatch.Team2Defense == allianceMatch.Team3Defense || allianceMatch.Team1Defense == allianceMatch.Team3Defense)
-        //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check defense ratings.")); return; }
-        //if (allianceMatch.Team1DriverSkill == allianceMatch.Team2DriverSkill || allianceMatch.Team2DriverSkill == allianceMatch.Team3DriverSkill || allianceMatch.Team1DriverSkill == allianceMatch.Team3DriverSkill)
-        //{ StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("CONFLICTS DETECTED! DATA NOT SAVED! Please check driver skill ratings.")); return; }
-        string subjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
-        if (!(Directory.Exists(subjectivePath)))
-        {
-            Directory.CreateDirectory(subjectivePath);
-        }
-        string currentTime = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString().Truncate(10, "");
-        string fileName = $"{subjectiveMatch.MatchType}_{subjectiveMatch.MatchNumber}_{subjectiveMatch.AllianceColor}_{currentTime}.json";
-        string jsonData = JsonUtility.ToJson(subjectiveMatch, true);
-        File.WriteAllText(subjectivePath + fileName, jsonData);
+        //Debug.Log("wrote data to " + subjectivePath + fileName);
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data",true));
-    }*/
+    }
+
 
     public void SavePitScout()
     {
@@ -181,64 +163,7 @@ public class DataManager : MonoBehaviour
         }
         GameObject.Find("TeamName").GetComponent<TMP_Text>().text = "";
     }
-    /*public void AutoFillTeamNumberSubjective()
-    {
-        Debug.Log("start");
-        string matchNum = GameObject.Find("Match Number").GetComponent<TMP_InputField>().text;
-        string matchType = GameObject.Find("Match Type").GetComponent<TMP_Dropdown>().captionText.text;
-        string allianceColor = GameObject.Find("Alliance Color").GetComponent<TMP_Dropdown>().captionText.text;
-        string matchKey = PlayerPrefs.GetString("EventKey", "2002nrg");
-        Debug.Log("get valuess");
 
-        if (PlayerPrefs.GetInt("Autofill") == 0 || !(PlayerPrefs.HasKey("Autofill"))) { return; }
-        Debug.Log("get valuess");
-
-        if (matchNum == "") { return; }
-        switch (matchType)
-        {
-            case "Qualifications": matchKey = matchKey + "_qm" + matchNum; break;
-            case "Playoffs": matchKey = matchKey + "_sf" + matchNum + "m1"; break;
-            case "Finals": matchKey = matchKey + "_f1m" + matchNum; break;
-        }
-        string filePath = Application.persistentDataPath + "/cache";
-        if (!(Directory.Exists(filePath))) { return; }
-        filePath = filePath + "/" + PlayerPrefs.GetString("EventKey") + ".json";
-        if (!File.Exists(filePath)) { return; }
-        apiMatch = JsonUtility.FromJson<APIMatchFile>(File.ReadAllText(filePath));
-
-        Debug.Log("foreach");
-        foreach (var match in apiMatch.matches)
-        {
-            Debug.Log("key");
-            Debug.Log(matchKey);
-            if (match.key == matchKey)
-            {
-                Debug.Log("alliance color");
-
-                switch (allianceColor)
-                {
-                    case "Red": 
-                        GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[0].TrimStart("frc");
-                        GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[1].TrimStart("frc");
-                        GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[2].TrimStart("frc");
-                        Debug.Log("fill");
-
-                        return;
-                    case "Blue":
-                        GameObject.Find("Team One").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[0].TrimStart("frc");
-                        GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[1].TrimStart("frc");
-                        GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[2].TrimStart("frc");
-                        Debug.Log("fill");
-
-                        return;
-                }
-            }
-        }
-        GameObject.Find("Team One").GetComponent<TMP_InputField>().text = "";
-        GameObject.Find("Team Two").GetComponent<TMP_InputField>().text = "";
-        GameObject.Find("Team Three").GetComponent<TMP_InputField>().text = "";
-    }
-    */
     public void AutoFillTeamNameObjective()
     {
         int pageNum = match.TeamNumber / 500;
@@ -337,7 +262,7 @@ public class DataManager : MonoBehaviour
         public string AllianceColor;
         public int DriverStation;
         public string ScouterName;
-        public bool HumanAtAmp;
+        public bool HPAtAmp;
         public string AutoPickups;
         public bool CanScoreSub;
         public bool CanScorePodium;
