@@ -33,7 +33,7 @@ public class MenuTitle : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout")
         {
-            pageNames = new string[] { "Setup", "Misc","Comments" };
+            pageNames = new string[] { "Setup", "Misc","Comments", "Help" };
         }
         UpdatePage(0);
     }
