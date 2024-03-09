@@ -78,13 +78,8 @@ public class ThemeManager : MonoBehaviour
             ColorAllWithTag("Background", hotPink);
             ColorAllWithTag("BackgroundBox", lightPink);
             ColorAllWithTag("BackgroundDesign", darkPink);
-
-            //Settings
-            ColorAllWithTag("InputField", lighterPink);
             ColorAllWithTag("ContentText", white);
-            ColorAllWithTag("Save", red);
-            ColorAllWithTag("Reset", blue);
-            ColorAllWithTag("Download", orange);
+            ColorAllWithTag("InputField", lighterPink);
         }
     }
 

@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 30200917}
   m_Layer: 5
   m_Name: DownloadTeamNames
-  m_TagString: Download
+  m_TagString: HighlightYellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 345936903}
   m_Layer: 5
   m_Name: 'Canvas '
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 452869260}
   m_Layer: 5
   m_Name: Save
-  m_TagString: Save
+  m_TagString: HighlightRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1400,7 +1400,7 @@ GameObject:
   - component: {fileID: 776795648}
   m_Layer: 5
   m_Name: ScouterNameTitle
-  m_TagString: SubtitleBox
+  m_TagString: HighlightGrey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2056,7 +2056,7 @@ GameObject:
   - component: {fileID: 1131243642}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: ButtonText
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2266,7 +2266,7 @@ GameObject:
   - component: {fileID: 1190767261}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: ButtonText
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2807,7 +2807,7 @@ GameObject:
   - component: {fileID: 1428461114}
   m_Layer: 5
   m_Name: Delete
-  m_TagString: Reset
+  m_TagString: HighlightBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3320,7 +3320,7 @@ GameObject:
   - component: {fileID: 1592122607}
   m_Layer: 5
   m_Name: EventKeyTitle
-  m_TagString: SubtitleBox
+  m_TagString: HighlightGrey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4400,7 +4400,7 @@ GameObject:
   - component: {fileID: 1972819329}
   m_Layer: 5
   m_Name: Event Key
-  m_TagString: Subtitle
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4535,7 +4535,7 @@ GameObject:
   - component: {fileID: 2089662112}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: ButtonText
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4847,7 +4847,7 @@ GameObject:
   - component: {fileID: 2108191091}
   m_Layer: 5
   m_Name: Event Key
-  m_TagString: Subtitle
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
