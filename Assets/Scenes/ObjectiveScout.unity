@@ -473,6 +473,11 @@ PrefabInstance:
       propertyPath: key
       value: Onstage
       objectReference: {fileID: 0}
+    - target: {fileID: 4860843253062155819, guid: ea55cbd5d1999e649ac158222c038cb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 6387081102841323676, guid: ea55cbd5d1999e649ac158222c038cb7,
         type: 3}
       propertyPath: m_Name
@@ -804,6 +809,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExampleIncrementer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -1170,6 +1190,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExampleIncrementer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -1811,6 +1846,11 @@ PrefabInstance:
       propertyPath: key
       value: Spotlight
       objectReference: {fileID: 0}
+    - target: {fileID: 4860843253062155819, guid: ea55cbd5d1999e649ac158222c038cb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 6387081102841323676, guid: ea55cbd5d1999e649ac158222c038cb7,
         type: 3}
       propertyPath: m_Name
@@ -2301,6 +2341,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExampleIncrementer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -4764,6 +4819,11 @@ PrefabInstance:
       propertyPath: key
       value: LeftWing
       objectReference: {fileID: 0}
+    - target: {fileID: 4860843253062155819, guid: ea55cbd5d1999e649ac158222c038cb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 6387081102841323676, guid: ea55cbd5d1999e649ac158222c038cb7,
         type: 3}
       propertyPath: m_Name
@@ -5044,6 +5104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: key
       value: Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860843253062155819, guid: ea55cbd5d1999e649ac158222c038cb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 6387081102841323676, guid: ea55cbd5d1999e649ac158222c038cb7,
         type: 3}
@@ -6173,6 +6238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: key
       value: Park
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860843253062155819, guid: ea55cbd5d1999e649ac158222c038cb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 6387081102841323676, guid: ea55cbd5d1999e649ac158222c038cb7,
         type: 3}
@@ -7679,6 +7749,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExampleIncrementer
       objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Sprite
@@ -8164,6 +8249,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExampleIncrementer
       objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Sprite
@@ -8648,6 +8748,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExampleIncrementer
       objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Sprite
@@ -9108,6 +9223,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExampleIncrementer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -9853,6 +9983,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExampleIncrementer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -11147,7 +11292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a12951be4e408541905117fce239fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  darkMode: 0
+  darkMode: 1
   pinkMode: 0
 --- !u!1 &1895446491
 GameObject:
@@ -12628,6 +12773,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExampleIncrementer
       objectReference: {fileID: 0}
+    - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100889532067834470, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105464988502092283, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
+      objectReference: {fileID: 0}
     - target: {fileID: 5967613249580884295, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Sprite
@@ -12986,6 +13146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: key
       value: Preload
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860843253062155819, guid: ea55cbd5d1999e649ac158222c038cb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 6387081102841323676, guid: ea55cbd5d1999e649ac158222c038cb7,
         type: 3}
@@ -13959,7 +14124,7 @@ GameObject:
   - component: {fileID: 7084804324710392209}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14452,7 +14617,7 @@ GameObject:
   - component: {fileID: 944457628192685371}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14878,7 +15043,7 @@ GameObject:
   - component: {fileID: 4906825747658869267}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15557,7 +15722,7 @@ GameObject:
   - component: {fileID: 253149425152776189}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17153,7 +17318,7 @@ GameObject:
   - component: {fileID: 5082593813400959707}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17897,7 +18062,7 @@ GameObject:
   - component: {fileID: 9006922170937557980}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18377,7 +18542,7 @@ GameObject:
   - component: {fileID: 7329922783600291725}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18728,7 +18893,7 @@ GameObject:
   - component: {fileID: 5484887007199875404}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21332,7 +21497,7 @@ GameObject:
   - component: {fileID: 396926903157412117}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21942,7 +22107,7 @@ GameObject:
   - component: {fileID: 8196256809195191215}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23816,7 +23981,7 @@ GameObject:
   - component: {fileID: 3082897742100697542}
   m_Layer: 5
   m_Name: Comments
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24561,36 +24726,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8216665869220555703}
   m_CullTransparentMesh: 1
---- !u!114 &8216665869220555701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8216665869220555703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!224 &8216665869220555702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24622,7 +24757,6 @@ GameObject:
   - component: {fileID: 8216665869220555702}
   - component: {fileID: 8216665869220555699}
   - component: {fileID: 8216665869220555700}
-  - component: {fileID: 8216665869220555701}
   m_Layer: 0
   m_Name: Viewport
   m_TagString: Untagged
