@@ -14,6 +14,8 @@ public class ThemeManager : MonoBehaviour
     private Color darkGrey = new Color(0.6269776f, 0.7433963f, 0.719469f, 1f);
     private Color darkBlue = new Color(0.6588235f, 0.9276033f, 0.9921569f, 1f);
     private Color white = new Color(1f, 1f, 1f, 1f);
+    private Color offWhite = new Color(0.95f, 0.95f, 0.95f, 1f);
+    private Color greyishWhite = new Color(0.85f, 0.85f, 0.85f, 1f);
     private Color darkBackground = new Color(0.04348518f, 0.03633317f, 0.07924521f, 1f);
     private Color darkBackgroundBox = new Color(0.2215663f, 0.2329649f, 0.2603773f, 1f);
 
@@ -33,7 +35,7 @@ public class ThemeManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if (darkMode) {
             if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "DarkHouse"; }
@@ -58,6 +60,9 @@ public class ThemeManager : MonoBehaviour
             ColorAllWithTag("Background", darkBackground);
             ColorAllWithTag("BackgroundBox", darkBackgroundBox);
             ColorAllWithTag("BackgroundDesign", darkBackground);
+            ColorAllWithTag("ContentText", white);
+            ColorAllWithTag("TextOnColor", offWhite);
+
         }
         if (pinkMode)
         {

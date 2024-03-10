@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 203136875}
   m_Layer: 5
   m_Name: Onstage
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2573,7 +2573,7 @@ GameObject:
   - component: {fileID: 425306083}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2708,7 +2708,7 @@ GameObject:
   - component: {fileID: 442973966}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3065,7 +3065,7 @@ GameObject:
   - component: {fileID: 487400581}
   m_Layer: 5
   m_Name: Load
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3276,6 +3276,7 @@ MonoBehaviour:
     CanScorePodium: 0
     CanScoreOther: 0
     Feeder: 0
+    Coopertition: 0
     HumanPlayerComments: 
     Comments: 
   pit:
@@ -3490,7 +3491,7 @@ GameObject:
   - component: {fileID: 638915669}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3697,7 +3698,7 @@ GameObject:
   - component: {fileID: 655757508}
   m_Layer: 5
   m_Name: Tele-Op Ground Source
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4317,7 +4318,7 @@ GameObject:
   - component: {fileID: 821366352}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4651,7 +4652,7 @@ GameObject:
   - component: {fileID: 873264095}
   m_Layer: 5
   m_Name: Spotlight
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5700,7 +5701,7 @@ GameObject:
   - component: {fileID: 1033549535}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6763,7 +6764,7 @@ GameObject:
   - component: {fileID: 1269095333}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7054,7 +7055,7 @@ GameObject:
   - component: {fileID: 1375621117}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7189,7 +7190,7 @@ GameObject:
   - component: {fileID: 1376684451}
   m_Layer: 5
   m_Name: Tele-op Speaker Amp
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7343,7 +7344,7 @@ GameObject:
   - component: {fileID: 1417064294}
   m_Layer: 5
   m_Name: Park Trap
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7938,7 +7939,7 @@ GameObject:
   - component: {fileID: 1479731852}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9628,7 +9629,7 @@ GameObject:
   - component: {fileID: 1607896140}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10188,7 +10189,7 @@ GameObject:
   - component: {fileID: 1669472689}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10323,7 +10324,7 @@ GameObject:
   - component: {fileID: 1693438425}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10513,7 +10514,7 @@ GameObject:
   - component: {fileID: 1810841919}
   m_Layer: 5
   m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10787,7 +10788,7 @@ GameObject:
   - component: {fileID: 1835284142}
   m_Layer: 5
   m_Name: Auto Wing Center
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11502,7 +11503,7 @@ GameObject:
   - component: {fileID: 1919525948}
   m_Layer: 5
   m_Name: Auto Speaker Amp
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11888,7 +11889,7 @@ GameObject:
   - component: {fileID: 1997354791}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12142,7 +12143,7 @@ GameObject:
   - component: {fileID: 2014246774}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12402,7 +12403,7 @@ GameObject:
   - component: {fileID: 2038024858}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13507,7 +13508,7 @@ GameObject:
   - component: {fileID: 152798992367917322}
   m_Layer: 5
   m_Name: DataQuality
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13820,7 +13821,7 @@ GameObject:
   - component: {fileID: 3309901742913531170}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14042,7 +14043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14233,7 +14234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15246,7 +15247,7 @@ GameObject:
   - component: {fileID: 8191216472268358438}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16939,7 +16940,7 @@ GameObject:
   - component: {fileID: 4459944743372387316}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17320,7 +17321,7 @@ GameObject:
   - component: {fileID: 5810299426014281365}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18293,7 +18294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19930,7 +19931,7 @@ GameObject:
   - component: {fileID: 6295921280625904001}
   m_Layer: 5
   m_Name: Comment Scroll
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20728,7 +20729,7 @@ GameObject:
   - component: {fileID: 8115138511321121677}
   m_Layer: 5
   m_Name: Auto Stop
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21757,7 +21758,7 @@ GameObject:
   - component: {fileID: 2167172743298522458}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23221,7 +23222,7 @@ GameObject:
   - component: {fileID: 7491857347560005873}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25323,7 +25324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
