@@ -14,6 +14,7 @@ public class MenuTitle : MonoBehaviour
     public TMP_InputField Team3;
     public GameObject Content;
     public AlertBox alert;
+    public GameObject help;
     private int currentPage = 0;
     public bool alertOn = false;
     // Start is called before the first frame update
@@ -43,7 +44,14 @@ public class MenuTitle : MonoBehaviour
 
         if (currentPage < pageNames.Length) {
             transform.GetComponent<TMP_Text>().text = pageNames[currentPage];
+            
+            if (SceneManager.GetActiveScene().name == "SubjectiveScout")
+            {
+                help.gameObject.SetActive(pageNames[currentPage] == "Comments");
+            }
+            
         }
+
     }
 
     public void UpdateTeamNames() // Updates the team NUMBERS, im bad at naming things

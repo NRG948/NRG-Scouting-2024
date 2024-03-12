@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class AutoSelectManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class AutoSelectManager : MonoBehaviour
         currentNote.UpdateColor();
 
         lineManager.DrawLines();
+        GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", notes.ToCommaSeparatedString(),true);
     }
 
     public void removeLastNote() {
@@ -54,6 +56,7 @@ public class AutoSelectManager : MonoBehaviour
         }
 
         lineManager.DrawLines();
+        GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", notes.ToCommaSeparatedString(), true);
     }
 
     public AutoNoteSelector getNote(int index) {
