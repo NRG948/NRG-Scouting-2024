@@ -19,6 +19,7 @@ public class ThemeManager : MonoBehaviour
     private readonly Color lightGrey = new Color(0.75f, 0.75f, 0.75f, 1f);
     private readonly Color darkBackground = new Color(0.04348518f, 0.03633317f, 0.07924521f, 1f);
     private readonly Color darkBackgroundBox = new Color(0.2215663f, 0.2329649f, 0.2603773f, 1f);
+    private readonly Color offsetBackground = new Color(0.172f, 0.172f, 0.219f);
 
     private readonly Color hotPink = new Color(1f, 0.15686275f, 0.521156863f, 1f);
     private readonly Color darkPink = new Color(0.81568627f, 0.007874314f, 0.35686275f, 1f);
@@ -36,9 +37,15 @@ public class ThemeManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void OnEnable()
+    void OnEnable() {
+        darkMode = PlayerPrefs.GetInt("DarkMode",0) == 1;
+        UpdateColor();
+    }
+    public void UpdateColor()
     {
+        
         if (darkMode) {
+            Debug.Log("Updating color!");
             if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "DarkHouse"; }
             
             ColorAllWithTag("HighlightRed", darkRed);
@@ -65,6 +72,7 @@ public class ThemeManager : MonoBehaviour
             ColorAllWithTag("TextOnColor", offWhite);
             ColorAllWithTag("InputField", darkGrey);
             ColorAllWithTag("SecondInputField", darkGrey);
+            ColorAllWithTag("OffsetBackground", offsetBackground);
         }
         if (pinkMode)
         {

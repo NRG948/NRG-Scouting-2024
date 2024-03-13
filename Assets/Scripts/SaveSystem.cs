@@ -7,6 +7,7 @@ using System.Net;
 using static APITest;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class SaveSystem : MonoBehaviour
 {
     public TMP_InputField inputField;
@@ -15,6 +16,7 @@ public class SaveSystem : MonoBehaviour
     public Toggle flipField;
     public Toggle hapticFeedback;
     public Toggle militaryTime;
+    public Toggle darkMode;
     public APIMatchFile matchJson;
 
 
@@ -28,6 +30,8 @@ public class SaveSystem : MonoBehaviour
         flipField.isOn = PlayerPrefs.GetInt("FlipField",0) == 1;
         hapticFeedback.isOn = PlayerPrefs.GetInt("Haptic",0) == 1;
         militaryTime.isOn = PlayerPrefs.GetInt("MilitaryTime",0) == 1;
+        darkMode.isOn = PlayerPrefs.GetInt("DarkMode", 0) == 1;
+
 
         
 
@@ -38,13 +42,17 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetString("Name", inputField.text);
         PlayerPrefs.SetString("EventKey", inputFieldID.text == "" ? "2002nrg" : inputFieldID.text);
         PlayerPrefs.SetInt("Autofill", autoFill.isOn ? 1 : 0);
+        
         PlayerPrefs.SetInt("FlipField", flipField.isOn ? 1 : 0);
         PlayerPrefs.SetInt("Haptic", hapticFeedback.isOn ? 1 : 0);
         PlayerPrefs.SetInt("MilitaryTime", militaryTime.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("DarkMode", darkMode.isOn ? 1 : 0);
 
-        if (autoFill.isOn) { ApiRequest(inputFieldID.text); }
         // Extra stuff
         //fileJson = JsonUtility.FromJson<APIMatchFile>(rawJson);
+        if (autoFill.isOn) { ApiRequest(inputFieldID.text); }
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully saved.", true));
+        
     }
 
 
@@ -57,6 +65,7 @@ public class SaveSystem : MonoBehaviour
 
     string ApiRequest(string eventKey)
     {
+        Debug.Log("Autofill is on");
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://www.thebluealliance.com/api/v3/event/" + eventKey + "/matches/simple");
         request.Headers.Add("X-TBA-Auth-Key", "ayLg4jZVBMJ4BFKqDzt8Sn7nGTYqDgB4VEB0ZxbMXH3MVJVnhAChBZZSyuSEuEVH");
         request.Method = "GET";
@@ -86,7 +95,7 @@ public class SaveSystem : MonoBehaviour
                 else
                 {
                     
-                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
+                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill.",true));
                     Debug.Log($"Error: {response.StatusCode}");
                     return $"Error: {response.StatusCode}";
                 }
@@ -98,6 +107,7 @@ public class SaveSystem : MonoBehaviour
             StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
             return $"WebException: {ex.Message}";
         }
+
     }
     [System.Serializable]
     public class APIMatchFile

@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 19528999}
   m_Layer: 5
   m_Name: FeederBot
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 60296179}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 104299407}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 183932644}
   m_Layer: 5
   m_Name: Title
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2201,7 +2201,7 @@ GameObject:
   - component: {fileID: 257099342}
   m_Layer: 0
   m_Name: Background Design
-  m_TagString: Untagged
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2274,7 +2274,7 @@ GameObject:
   - component: {fileID: 295254386}
   m_Layer: 5
   m_Name: Help
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2478,7 +2478,7 @@ GameObject:
   - component: {fileID: 311089304}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3462,7 +3462,7 @@ GameObject:
   - component: {fileID: 461023990}
   m_Layer: 5
   m_Name: TextBox
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3676,7 +3676,7 @@ GameObject:
   - component: {fileID: 470483174}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3827,7 +3827,7 @@ GameObject:
   - component: {fileID: 509186465}
   m_Layer: 5
   m_Name: Checkmark (2)
-  m_TagString: Untagged
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3903,7 +3903,7 @@ GameObject:
   - component: {fileID: 509833373}
   m_Layer: 5
   m_Name: Placeholder
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4725,7 +4725,7 @@ GameObject:
   - component: {fileID: 648827143}
   m_Layer: 5
   m_Name: HumanPlayerSkill
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4876,7 +4876,7 @@ GameObject:
   - component: {fileID: 688316178}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5242,7 +5242,7 @@ GameObject:
   - component: {fileID: 759222659}
   m_Layer: 5
   m_Name: StratComments
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5590,7 +5590,7 @@ GameObject:
   - component: {fileID: 770976841}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5837,7 +5837,7 @@ GameObject:
   - component: {fileID: 790578888}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6421,6 +6421,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870987554}
   m_CullTransparentMesh: 1
+--- !u!1 &878191843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878191845}
+  - component: {fileID: 878191844}
+  m_Layer: 0
+  m_Name: ThemeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878191844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878191843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a12951be4e408541905117fce239fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkMode: 1
+  pinkMode: 0
+--- !u!4 &878191845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878191843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 258.14014, y: 460.3902, z: -9.134587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881086431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6768,7 +6814,7 @@ GameObject:
   - component: {fileID: 966487166}
   m_Layer: 5
   m_Name: ShootingCapabilities
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6885,7 +6931,7 @@ GameObject:
   - component: {fileID: 976794706}
   m_Layer: 5
   m_Name: Placeholder
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7657,7 +7703,7 @@ GameObject:
   - component: {fileID: 1068822281}
   m_Layer: 5
   m_Name: Handle
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7732,7 +7778,7 @@ GameObject:
   - component: {fileID: 1071872474}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7808,7 +7854,7 @@ GameObject:
   - component: {fileID: 1108000886}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8905,7 +8951,7 @@ GameObject:
   - component: {fileID: 1277869138}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9057,7 +9103,7 @@ GameObject:
   - component: {fileID: 1307968002}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9849,7 +9895,7 @@ GameObject:
   - component: {fileID: 1409686966}
   m_Layer: 5
   m_Name: HPAtAmp
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10097,7 +10143,7 @@ GameObject:
   - component: {fileID: 1457020112}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10232,7 +10278,7 @@ GameObject:
   - component: {fileID: 1477915548}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10944,7 +10990,7 @@ GameObject:
   - component: {fileID: 1596847555}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11204,7 +11250,7 @@ GameObject:
   - component: {fileID: 1631434405}
   m_Layer: 5
   m_Name: Center Notes
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11647,7 +11693,7 @@ GameObject:
   - component: {fileID: 1786841483}
   m_Layer: 5
   m_Name: Handle
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11835,7 +11881,7 @@ GameObject:
   - component: {fileID: 1798525721}
   m_Layer: 5
   m_Name: Checkmark (5)
-  m_TagString: Untagged
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12219,7 +12265,7 @@ GameObject:
   - component: {fileID: 1862895707}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12292,7 +12338,7 @@ GameObject:
   - component: {fileID: 1863715120}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12464,7 +12510,7 @@ GameObject:
   - component: {fileID: 1870910122}
   m_Layer: 5
   m_Name: Checkmark (1)
-  m_TagString: Untagged
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12961,7 +13007,7 @@ GameObject:
   - component: {fileID: 1908810865}
   m_Layer: 5
   m_Name: Checkmark (4)
-  m_TagString: Untagged
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13036,7 +13082,7 @@ GameObject:
   - component: {fileID: 1956661351}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13410,7 +13456,7 @@ GameObject:
   - component: {fileID: 2011249376}
   m_Layer: 5
   m_Name: Checkmark (3)
-  m_TagString: Untagged
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14106,9 +14152,9 @@ RectTransform:
   - {fileID: 1400505182144801127}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &201036521142936317
@@ -14159,7 +14205,7 @@ GameObject:
   - component: {fileID: 7111504243929888061}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14223,7 +14269,7 @@ GameObject:
   - component: {fileID: 4341236965525654324}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14360,7 +14406,7 @@ GameObject:
   - component: {fileID: 6064525024249304338}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14444,7 +14490,7 @@ GameObject:
   - component: {fileID: 8192806197581815703}
   m_Layer: 5
   m_Name: Alliance Color Number
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14964,7 +15010,7 @@ GameObject:
   - component: {fileID: 2402177196299772267}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15245,7 +15291,7 @@ GameObject:
   - component: {fileID: 8078927760434793328}
   m_Layer: 5
   m_Name: Label
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15529,7 +15575,7 @@ GameObject:
   - component: {fileID: 3327486336898560265}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15861,7 +15907,7 @@ GameObject:
   - component: {fileID: 2554765336841599361}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: HighlightRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16143,7 +16189,7 @@ GameObject:
   - component: {fileID: 1108648819962867857}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16259,7 +16305,7 @@ GameObject:
   - component: {fileID: 4608798240654162934}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16462,7 +16508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16802,7 +16848,7 @@ GameObject:
   - component: {fileID: 4892828517183134071}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16850,7 +16896,7 @@ GameObject:
   - component: {fileID: 5577380730171243664}
   m_Layer: 5
   m_Name: Label
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16886,7 +16932,7 @@ GameObject:
   - component: {fileID: 8677996257744201240}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16937,9 +16983,9 @@ RectTransform:
   - {fileID: 5760841799099605765}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1510, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3560298954923017758
@@ -17168,7 +17214,7 @@ GameObject:
   - component: {fileID: 3561644366057738544}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17243,7 +17289,7 @@ GameObject:
   - component: {fileID: 8675796078361081479}
   m_Layer: 5
   m_Name: Match Data
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17352,7 +17398,7 @@ GameObject:
   - component: {fileID: 4669222024177252483}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: HighlightBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17488,7 +17534,7 @@ GameObject:
   - component: {fileID: 6072890268693679256}
   m_Layer: 5
   m_Name: RawImage
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17823,7 +17869,7 @@ GameObject:
   - component: {fileID: 5793840402605150655}
   m_Layer: 5
   m_Name: Match Type
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17931,7 +17977,7 @@ GameObject:
   - component: {fileID: 6783727689664695706}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17949,7 +17995,7 @@ GameObject:
   - component: {fileID: 8636494184596405498}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17970,9 +18016,9 @@ RectTransform:
   - {fileID: 654970316995969302}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 535, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4312120169513010587
@@ -17996,7 +18042,7 @@ GameObject:
   - component: {fileID: 8476003456589393729}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18044,7 +18090,7 @@ GameObject:
   - component: {fileID: 4496908295701869825}
   m_Layer: 5
   m_Name: DataQuality
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18557,7 +18603,7 @@ GameObject:
   - component: {fileID: 7700301221092609013}
   m_Layer: 5
   m_Name: Checkmark
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18842,7 +18888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 78890e87ad90cbb4db19fd3c22ed24d3, type: 3}
-  m_Color: {r: 0.18854392, g: 0.23831052, b: 0.3433962, a: 1}
+  m_Color: {r: 0.3647059, g: 0.13725491, b: 0.11764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18928,11 +18974,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7631139971782145344}
-  - component: {fileID: 8772770442236180108}
   - component: {fileID: 2298879952871484360}
+  - component: {fileID: 7631139971782145345}
   m_Layer: 5
   m_Name: ExampleBoolean
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18991,7 +19037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &5015050407485331461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19025,7 +19071,7 @@ GameObject:
   - component: {fileID: 3561765065749099742}
   m_Layer: 5
   m_Name: TeamName
-  m_TagString: Untagged
+  m_TagString: TitleText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19169,7 +19215,7 @@ GameObject:
   - component: {fileID: 6706940209216537314}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19189,7 +19235,7 @@ GameObject:
   - component: {fileID: 5053030033105209630}
   m_Layer: 5
   m_Name: HomeButton
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19230,9 +19276,9 @@ RectTransform:
   - {fileID: 4930637005384406910}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 860, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5345304329515428901
@@ -19480,7 +19526,7 @@ GameObject:
   - component: {fileID: 4423692418934711946}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19673,7 +19719,7 @@ GameObject:
   - component: {fileID: 6385227130724719762}
   m_Layer: 5
   m_Name: Match Number
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19748,7 +19794,7 @@ GameObject:
   - component: {fileID: 8621672773577045740}
   m_Layer: 5
   m_Name: Placeholder
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19818,7 +19864,7 @@ GameObject:
   - component: {fileID: 7085808669378730989}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19875,7 +19921,7 @@ GameObject:
   - component: {fileID: 4934972641099208264}
   m_Layer: 5
   m_Name: Placeholder
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20275,7 +20321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20401,7 +20447,7 @@ GameObject:
   - component: {fileID: 7057320351014803828}
   m_Layer: 5
   m_Name: Scouter Name
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20695,7 +20741,7 @@ GameObject:
   - component: {fileID: 6089740864567654262}
   m_Layer: 5
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20713,7 +20759,7 @@ GameObject:
   - component: {fileID: 2336586365727955266}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20731,7 +20777,7 @@ GameObject:
   - component: {fileID: 8560768854019789847}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20760,9 +20806,9 @@ RectTransform:
   - {fileID: 266527577059885127}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1185, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6943095762345084026
@@ -20834,7 +20880,7 @@ GameObject:
   - component: {fileID: 3266425247858182107}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20854,7 +20900,7 @@ GameObject:
   - component: {fileID: 8593829144176050628}
   m_Layer: 5
   m_Name: TeamNumber
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21073,7 +21119,7 @@ GameObject:
   - component: {fileID: 1349836325867158488}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21229,7 +21275,7 @@ GameObject:
   - component: {fileID: 7636927159651074198}
   m_Layer: 5
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21248,7 +21294,7 @@ GameObject:
   - component: {fileID: 4200721259819593806}
   m_Layer: 5
   m_Name: Save
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21293,7 +21339,7 @@ GameObject:
   - component: {fileID: 5604755845922756516}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21348,7 +21394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21762,7 +21808,7 @@ GameObject:
   - component: {fileID: 8129908968316225589}
   m_Layer: 5
   m_Name: Name
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21788,6 +21834,66 @@ RectTransform:
   m_AnchoredPosition: {x: 331, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7631139971782145345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938751907253095839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8560768854019789847}
+  toggleTransition: 1
+  graphic: {fileID: 4892828517183134071}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2298879952871484360}
+        m_TargetAssemblyTypeName: BoolButton, Assembly-CSharp
+        m_MethodName: Get
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!114 &7636927159651074198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21857,7 +21963,7 @@ GameObject:
   - component: {fileID: 5141911273437839877}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22315,7 +22421,7 @@ GameObject:
   - component: {fileID: 1172167274526693683}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22524,7 +22630,7 @@ GameObject:
   - component: {fileID: 5548919006766201674}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22772,7 +22878,7 @@ GameObject:
   - component: {fileID: 8537792568435350939}
   m_Layer: 5
   m_Name: Title
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22810,7 +22916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9294118, g: 0.7568628, b: 0.5568628, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -23063,66 +23169,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8772770442236180108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4938751907253095839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.9294118, g: 0.7568628, b: 0.5568628, a: 1}
-    m_HighlightedColor: {r: 0.79514813, g: 0.65865654, b: 0.5004503, a: 1}
-    m_PressedColor: {r: 0.68733144, g: 0.567631, b: 0.42888737, a: 1}
-    m_SelectedColor: {r: 0.66576815, g: 0.54726976, b: 0.41184303, a: 1}
-    m_DisabledColor: {r: 0.6862745, g: 0.5686275, b: 0.427451, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 8560768854019789847}
-  toggleTransition: 1
-  graphic: {fileID: 4892828517183134071}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2298879952871484360}
-        m_TargetAssemblyTypeName: BoolButton, Assembly-CSharp
-        m_MethodName: Get
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_IsOn: 0
 --- !u!1 &8812651961674802733
 GameObject:
   m_ObjectHideFlags: 0
@@ -23136,7 +23182,7 @@ GameObject:
   - component: {fileID: 1667087980398526172}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23412,7 +23458,7 @@ GameObject:
   - component: {fileID: 6375370394852699070}
   m_Layer: 5
   m_Name: Placeholder
-  m_TagString: Untagged
+  m_TagString: TextOnColor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23428,3 +23474,4 @@ SceneRoots:
   - {fileID: 1061378939}
   - {fileID: 449999452}
   - {fileID: 1766229769}
+  - {fileID: 878191845}

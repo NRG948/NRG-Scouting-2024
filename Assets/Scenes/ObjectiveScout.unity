@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -805,6 +805,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.92941177
       objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
+      objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Name
@@ -1185,6 +1190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.92941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
       objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -2337,6 +2347,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.92941177
       objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
+      objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Name
@@ -2898,7 +2913,7 @@ GameObject:
   - component: {fileID: 453372218}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2973,7 +2988,7 @@ GameObject:
   - component: {fileID: 460218786}
   m_Layer: 0
   m_Name: Background Design
-  m_TagString: BackgroundDesign
+  m_TagString: OffsetBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3383,6 +3398,52 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 921288292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &599915894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599915896}
+  - component: {fileID: 599915895}
+  m_Layer: 0
+  m_Name: ThemeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &599915895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599915894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a12951be4e408541905117fce239fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkMode: 1
+  pinkMode: 0
+--- !u!4 &599915896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599915894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 248.24687, y: 486.3929, z: -0.0034179688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624074428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,7 +3532,7 @@ GameObject:
   - component: {fileID: 637813786}
   m_Layer: 5
   m_Name: Right Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4508,7 +4569,7 @@ GameObject:
   - component: {fileID: 823353415}
   m_Layer: 5
   m_Name: Right Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5352,7 +5413,7 @@ GameObject:
   - component: {fileID: 926042810}
   m_Layer: 5
   m_Name: Left Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5583,7 +5644,7 @@ GameObject:
   - component: {fileID: 988459555}
   m_Layer: 5
   m_Name: Left Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6759,7 +6820,7 @@ GameObject:
   - component: {fileID: 1254544318}
   m_Layer: 5
   m_Name: Left Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6969,7 +7030,7 @@ GameObject:
   - component: {fileID: 1331812979}
   m_Layer: 5
   m_Name: Right Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7050,7 +7111,7 @@ GameObject:
   - component: {fileID: 1344129310}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7339,7 +7400,7 @@ GameObject:
   - component: {fileID: 1406579295}
   m_Layer: 5
   m_Name: Right Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7743,6 +7804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
       objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -8244,6 +8310,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8901961
       objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
+      objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Name
@@ -8743,6 +8814,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8901961
       objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
+      objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Name
@@ -9218,6 +9294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.92941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
       objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
@@ -9979,6 +10060,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8901961
       objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
+      objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Name
@@ -10259,7 +10345,7 @@ GameObject:
   - component: {fileID: 1664784788}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11154,7 +11240,6 @@ GameObject:
   - component: {fileID: 1873645937}
   - component: {fileID: 1873645936}
   - component: {fileID: 1873645939}
-  - component: {fileID: 1873645940}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11280,20 +11365,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &1873645940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873645935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a12951be4e408541905117fce239fc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  darkMode: 1
-  pinkMode: 0
 --- !u!1 &1895446491
 GameObject:
   m_ObjectHideFlags: 0
@@ -11887,7 +11958,7 @@ GameObject:
   - component: {fileID: 1974696457}
   m_Layer: 5
   m_Name: Left Arrow
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12768,6 +12839,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.92941177
       objectReference: {fileID: 0}
+    - target: {fileID: 2438085468088967026, guid: 35f626d5fe43e4344a75a9d9012b42fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: ContentText
+      objectReference: {fileID: 0}
     - target: {fileID: 2927956737517981393, guid: 35f626d5fe43e4344a75a9d9012b42fa,
         type: 3}
       propertyPath: m_Name
@@ -13543,7 +13619,7 @@ GameObject:
   - component: {fileID: 2127964725}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13636,7 +13712,7 @@ GameObject:
   - component: {fileID: 7578766970060251433}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: HighlightBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14071,7 +14147,7 @@ GameObject:
   - component: {fileID: 6102606409794572591}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16718,7 +16794,7 @@ GameObject:
   - component: {fileID: 4751280454892969268}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17318,7 +17394,7 @@ GameObject:
   - component: {fileID: 5082593813400959707}
   m_Layer: 5
   m_Name: Background
-  m_TagString: InputField
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18062,7 +18138,7 @@ GameObject:
   - component: {fileID: 9006922170937557980}
   m_Layer: 5
   m_Name: Background
-  m_TagString: InputField
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18893,7 +18969,7 @@ GameObject:
   - component: {fileID: 5484887007199875404}
   m_Layer: 5
   m_Name: Background
-  m_TagString: InputField
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20193,7 +20269,7 @@ GameObject:
   - component: {fileID: 4034028173248609239}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: HighlightRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20296,7 +20372,7 @@ GameObject:
   - component: {fileID: 6625013343657843088}
   m_Layer: 5
   m_Name: Title
-  m_TagString: Untagged
+  m_TagString: ContentText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20646,7 +20722,7 @@ GameObject:
   - component: {fileID: 5421508049563806211}
   m_Layer: 5
   m_Name: RawImage
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20854,7 +20930,7 @@ GameObject:
   - component: {fileID: 8528272833250923864}
   m_Layer: 5
   m_Name: Box
-  m_TagString: HighlightGrey
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21275,7 +21351,7 @@ GameObject:
   - component: {fileID: 3682410560365343034}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21497,7 +21573,7 @@ GameObject:
   - component: {fileID: 396926903157412117}
   m_Layer: 5
   m_Name: Background
-  m_TagString: InputField
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21813,7 +21889,7 @@ GameObject:
   - component: {fileID: 7896080694446985011}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21888,7 +21964,7 @@ GameObject:
   - component: {fileID: 8875854431055736334}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22226,7 +22302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6446548643262031647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22583,7 +22659,7 @@ GameObject:
   - component: {fileID: 199435166134284991}
   m_Layer: 5
   m_Name: Selected
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23365,6 +23441,7 @@ MonoBehaviour:
   Team3: {fileID: 0}
   Content: {fileID: 8216665869801134490}
   alert: {fileID: 8738277986825798507}
+  help: {fileID: 0}
   alertOn: 0
 --- !u!222 &7224529611239099091
 CanvasRenderer:
@@ -24472,7 +24549,7 @@ GameObject:
   - component: {fileID: 4691909946156323135}
   m_Layer: 5
   m_Name: Box
-  m_TagString: HighlightGrey
+  m_TagString: BackgroundBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26190,3 +26267,4 @@ SceneRoots:
   - {fileID: 2125304742}
   - {fileID: 1816442284}
   - {fileID: 1947241038}
+  - {fileID: 599915896}

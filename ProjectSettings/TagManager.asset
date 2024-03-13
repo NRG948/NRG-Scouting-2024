@@ -26,6 +26,7 @@ TagManager:
   - HighlightGrey
   - InputField
   - SecondInputField
+  - OffsetBackground
   layers:
   - Default
   - TransparentFX
