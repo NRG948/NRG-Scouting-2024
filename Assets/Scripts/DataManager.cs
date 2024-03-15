@@ -113,7 +113,7 @@ public class DataManager : MonoBehaviour
         StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data", true));
     }
 
-    public void AutofillTeamNumberObjective()
+    public void AutofillTeamNumber()
     {
         string matchNum = GameObject.Find("Match Number").GetComponent<TMP_InputField>().text;
         string matchType = GameObject.Find("Match Type").GetComponent<TMP_Dropdown>().captionText.text;
@@ -121,7 +121,7 @@ public class DataManager : MonoBehaviour
         int teamIndex = Int32.Parse(GameObject.Find("Alliance Color Number").GetComponent<TMP_Dropdown>().captionText.text.Split(" ")[1]) - 1; // Index in a list
         string matchKey = PlayerPrefs.GetString("EventKey","2002nrg");
         if (PlayerPrefs.GetInt("Autofill") == 0 || !(PlayerPrefs.HasKey("Autofill"))) { return; }
-        if (matchNum == "") { return; }
+        if (matchNum == "") { GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = ""; return; }
         switch (matchType)
         {
             case "Qualifications": matchKey = matchKey + "_qm" + matchNum; break;
@@ -138,31 +138,18 @@ public class DataManager : MonoBehaviour
         {
             if (match.key == matchKey)
             {
-
+                
                 switch (allianceColor)
                 {
                     case "Red": GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = match.alliances.red.team_keys[teamIndex].TrimStart("frc"); return;
                     case "Blue": GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = match.alliances.blue.team_keys[teamIndex].TrimStart("frc"); return;
+
                 }
             }
         }
-        GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = "";
+       
     }
-    public void AutofillTeamNumberSubjective()
-    {
-        int pageNum = match.TeamNumber / 500;
-        if (!File.Exists($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json")) { GameObject.Find("TeamName").GetComponent<TMP_Text>().text = ""; return; }
-        TeamList teamNameJson = JsonUtility.FromJson<TeamList>(File.ReadAllText($"{Application.persistentDataPath}/cache/teams/{pageNum * 500}.json"));
-        foreach (APITeam team in teamNameJson.teams)
-        {
-            if (subjectiveMatch.TeamNumber == team.team_number)
-            {
-                GameObject.Find("TeamName").GetComponent<TMP_Text>().text = team.nickname;
-                return;
-            }
-        }
-        GameObject.Find("TeamName").GetComponent<TMP_Text>().text = "";
-    }
+    
 
     public void AutoFillTeamNameObjective()
     {
@@ -215,10 +202,9 @@ public class DataManager : MonoBehaviour
 
     public void ClearTeam(int num=0)
     {
-        string numString = num == 0 ? "" : num.ToString();
-        GameObject.Find($"TeamName{numString}").GetComponent<TMP_Text>().text = ""; // Clears team name
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { subjectiveMatch.TeamNumber = 0; } // Resets team number (Subjective)
-        if (SceneManager.GetActiveScene().name == "ObjectiveScout") { match.TeamNumber = 0; } // Resets team number (Objective)
+        GameObject.Find($"TeamName").GetComponent<TMP_Text>().text = ""; // Clears team name
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout") { subjectiveMatch.TeamNumber = 0; GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = ""; } // Resets team number (Subjective)
+        if (SceneManager.GetActiveScene().name == "ObjectiveScout") { match.TeamNumber = 0; GameObject.Find("TeamNumber").GetComponent<TMP_InputField>().text = ""; } // Resets team number (Objective)
     }
     
 

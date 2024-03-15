@@ -35,7 +35,7 @@ public class DropdownScript : MonoBehaviour, IPointerClickHandler
 
         if (key == "AllianceColor" || key == "MatchType")
         {
-            dataManager.AutofillTeamNumberObjective();
+            dataManager.AutofillTeamNumber();
             dataManager.AutoFillTeamNameObjective();
         }
     }

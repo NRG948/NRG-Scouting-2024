@@ -49,7 +49,7 @@ public class TextBox : MonoBehaviour
         {
             if (key == "MatchNumber")
             {
-                dataManager.AutofillTeamNumberObjective();
+                dataManager.AutofillTeamNumber();
             }
             if (Directory.Exists(Application.persistentDataPath + "/cache/teams"))
             {

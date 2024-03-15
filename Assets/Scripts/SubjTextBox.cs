@@ -51,7 +51,7 @@ public class SubjTextBox : MonoBehaviour
         {
             if (key == "MatchNumber")
             {
-                dataManager.AutofillTeamNumberSubjective();
+                dataManager.AutofillTeamNumber();
             }
             if (Directory.Exists(Application.persistentDataPath + "/cache/teams"))
             {
