@@ -11,9 +11,9 @@ using static UnityEngine.Rendering.VolumeComponent;
 
 public class LDV_EditMatch : MonoBehaviour
 {
-    LocalDataViewer.Match objFileJson;
-    LocalDataViewer.AllianceMatch subjFileJson;
-    LocalDataViewer.Pit pitFileJson;
+    DataManager.Match objFileJson;
+    DataManager.SubjectiveMatch subjFileJson;
+    DataManager.Pit pitFileJson;
     public string mode;
     string[] fieldNames;
     FieldInfo[] fields;
@@ -38,7 +38,7 @@ public class LDV_EditMatch : MonoBehaviour
         globalFilePath = filePath;
         switch (key) {
             case "obj":
-                objFileJson = JsonUtility.FromJson<LocalDataViewer.Match>(File.ReadAllText(filePath));
+                objFileJson = JsonUtility.FromJson<DataManager.Match>(File.ReadAllText(filePath));
                 fields = objFileJson.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
                 fieldNames = new string[fields.Length];
                 for (int i = 0; i < fields.Length; i++) { fieldNames[i] = fields[i].Name; } // i hate this
@@ -47,7 +47,7 @@ public class LDV_EditMatch : MonoBehaviour
                 transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().AddOptions(fieldNames.Select(option => new TMP_Dropdown.OptionData(option)).ToList());
                 transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text = $"Editing Match {objFileJson.MatchNumber}";break;
             case "subj":
-                subjFileJson = JsonUtility.FromJson<LocalDataViewer.AllianceMatch>(File.ReadAllText(filePath));
+                subjFileJson = JsonUtility.FromJson<DataManager.SubjectiveMatch>(File.ReadAllText(filePath));
                 fields = subjFileJson.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
                 fieldNames = new string[fields.Length];
                 for (int i = 0; i < fields.Length; i++) { fieldNames[i] = fields[i].Name; } // i hate this
@@ -56,7 +56,7 @@ public class LDV_EditMatch : MonoBehaviour
                 transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().AddOptions(fieldNames.Select(option => new TMP_Dropdown.OptionData(option)).ToList());
                 transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().text = $"Editing Match {subjFileJson.MatchNumber} on the {subjFileJson} alliance"; break;
             case "pit":
-                pitFileJson = JsonUtility.FromJson<LocalDataViewer.Pit>(File.ReadAllText(filePath));
+                pitFileJson = JsonUtility.FromJson<DataManager.Pit>(File.ReadAllText(filePath));
                 fields = pitFileJson.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
                 fieldNames = new string[fields.Length];
                 for (int i = 0; i < fields.Length; i++) { fieldNames[i] = fields[i].Name; } // i hate this
@@ -108,6 +108,7 @@ public class LDV_EditMatch : MonoBehaviour
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
                 GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
                 break;
+
             case "subj":
                 localField = subjFileJson.GetType().GetField(transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().captionText.text);
                 switch (localField.FieldType.ToString())
@@ -119,13 +120,37 @@ public class LDV_EditMatch : MonoBehaviour
                     case "System.Boolean":
                         localField.SetValue(subjFileJson, savedValue.ToLower() == "true" ? true : false); break;
                     case "System.String":
-                        localField.SetValue(subjFileJson, savedValue); break;
+
+                        // Test case for AutoPickups Format
+                        if (localField.Name == "AutoPickups")
+                        {
+                            string[] autoPickupTestCase = savedValue.Split(new string[] { ", " }, StringSplitOptions.None);
+                            if (autoPickupTestCase.Length == 1 || autoPickupTestCase.Length > 8)
+                            { goto AutoPickupFailure; }
+                            foreach (var item in autoPickupTestCase)
+                            {
+                                if (autoPickupTestCase.Count(s => s == item) > 1) { goto AutoPickupFailure; }
+                                if (Int32.TryParse(item, out parsedValue)) { if (parsedValue <= 7) { localField.SetValue(subjFileJson, savedValue); goto AutoPickupSuccess; } }
+                            }
+                        }
+                        
+                        // Other strings don't require a test case
+                        else
+                        {
+
+                            localField.SetValue(subjFileJson, savedValue); break;
+                        }
+                        // This only runs if AutoPickups is enabled and the test case doesn't break (the test case only breaks when it succeeds)
+                        AutoPickupFailure:
+                        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("DATA INCORRECTLY FORMATTED! Each number should have a comma and a space after it, such as \"1, 2, 3\". Please ask your strategy coordinator for help.")); return;
                 }
+                AutoPickupSuccess:
                 File.WriteAllText(globalFilePath, JsonUtility.ToJson(subjFileJson));
                 transform.GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
                 GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
                 break;
+
             case "pit":
                 localField = pitFileJson.GetType().GetField(transform.GetChild(0).GetChild(1).GetComponent<TMP_Dropdown>().captionText.text);
                 switch (localField.FieldType.ToString())
