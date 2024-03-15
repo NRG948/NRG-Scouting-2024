@@ -48,7 +48,7 @@ public class ThemeManager : MonoBehaviour
         
         if (darkMode) {
             Debug.Log("Updating color!");
-            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.FindGameObjectWithTag("Title").GetComponent<TextMeshProUGUI>().text = "DarkHouse"; }
+            if (SceneManager.GetActiveScene().name == "Mainmenu") { GameObject.Find("MainTitle").GetComponent<TextMeshProUGUI>().text = "DarkHouse"; }
             
             ColorAllWithTag("HighlightRed", darkRed);
             ColorAllWithTag("HighlightYellow", darkYellow);
