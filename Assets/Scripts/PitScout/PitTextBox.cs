@@ -24,7 +24,7 @@ public class PitTextBox : MonoBehaviour
 
     public void GetText(string value)
     {
-        if (value == "") { return; }
+        if (value == "") { value = "0"; }
         bool IsInt = key == "TeamNumber" || key == "AutoPieces" || key == "CycleTimeSpeaker" || key == "CycleTimeAmp";
         if (IsInt)
         {
