@@ -27,6 +27,8 @@ TagManager:
   - InputField
   - SecondInputField
   - OffsetBackground
+  - PlaceholderYellowText
+  - PlaceholderRedText
   layers:
   - Default
   - TransparentFX
