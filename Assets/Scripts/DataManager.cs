@@ -69,7 +69,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveRobotScout()
     {
-        if (match.TeamNumber == 0 || match.MatchNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team or match number.",false,true));return; }
+        if (match.TeamNumber == 0 || match.MatchNumber == 0 || match.DataQuality == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team number, match number, or data quality.",false,true));return; }
         string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/obj/";
         if (!(Directory.Exists(objectivePath)))
         {
@@ -83,7 +83,7 @@ public class DataManager : MonoBehaviour
     }
     public void SaveSubjectiveRobotScout()
     {
-        if (subjectiveMatch.TeamNumber == 0 || subjectiveMatch.MatchNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team or match number.", false, true)); return; }
+        if (subjectiveMatch.TeamNumber == 0 || subjectiveMatch.MatchNumber == 0 || subjectiveMatch.DataQuality == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team nunmber, match number, or data quality.", false, true)); return; }
         string subjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
         if (!(Directory.Exists(subjectivePath)))
         {

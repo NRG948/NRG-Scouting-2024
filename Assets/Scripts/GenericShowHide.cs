@@ -17,10 +17,12 @@ public class GenericShowHide : MonoBehaviour
     }
     public void show()
     {
+        HapticManager.HeavyFeedback();
         transform.gameObject.SetActive(true);
     }
     public void hide()
     {
+        HapticManager.LightFeedback();
         transform.gameObject.SetActive(false);  
     }
 }
