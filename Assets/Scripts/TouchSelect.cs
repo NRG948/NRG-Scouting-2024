@@ -39,6 +39,7 @@ public class TouchSelect : MonoBehaviour
         transform.position = Input.mousePosition;
         Vector2 coords = getCoords();
         data.SetString("StartPos",coords.x + ", " + coords.y);
+        data.SetString("StartRegion", getFieldRegion());
         Debug.Log(getCoords());
         Debug.Log(getFieldRegion());
     }

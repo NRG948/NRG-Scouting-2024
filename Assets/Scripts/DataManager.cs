@@ -234,6 +234,7 @@ public class DataManager : MonoBehaviour
         public string ScouterName;
         public bool Preload;
         public string StartPos;
+        public string StartRegion;
         public bool LeftWing;
         public int AutoSpeaker;
         public int AutoAmp;
