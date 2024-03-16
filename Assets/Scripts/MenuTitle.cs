@@ -32,7 +32,7 @@ public class MenuTitle : MonoBehaviour
         {
             pageNames = new string[] { "Objective", "Subjective", "Pits" };
         }
-        if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout")
+        if (SceneManager.GetActiveScene().name == "SubjectiveScout" || SceneManager.GetActiveScene().name == "V2SubjectiveScout" || SceneManager.GetActiveScene().name == "BetterDarkSubjective")
         {
             pageNames = new string[] { "Setup", "Misc","Comments" };
         }
