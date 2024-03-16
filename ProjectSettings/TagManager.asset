@@ -29,6 +29,7 @@ TagManager:
   - OffsetBackground
   - PlaceholderYellowText
   - PlaceholderRedText
+  - DropDown
   layers:
   - Default
   - TransparentFX

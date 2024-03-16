@@ -22,6 +22,7 @@ public class ThemeManager : MonoBehaviour
     private readonly Color offsetBackground = new Color(0.172f, 0.172f, 0.219f);
     private readonly Color transparentYellow = new Color(1f, 0.8766348f, 0.2396226f, 0.2f);
     private readonly Color transparentRed = new Color(1f, 0.435849f, 0.4986054f, 0.2f);
+    private readonly Color transparentBlack = new Color(0f, 0f, 0f, 0.5f);
 
     private readonly Color hotPink = new Color(1f, 0.15686275f, 0.521156863f, 1f);
     private readonly Color darkPink = new Color(0.81568627f, 0.007874314f, 0.35686275f, 1f);
@@ -78,6 +79,8 @@ public class ThemeManager : MonoBehaviour
 
             ColorAllWithTag("PlaceholderYellowText", transparentYellow);
             ColorAllWithTag("PlaceholderRedText", transparentRed);
+
+            ColorAllWithTag("DropDown", transparentBlack);
         }
         if (pinkMode)
         {
