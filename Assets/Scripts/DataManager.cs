@@ -297,8 +297,8 @@ public class DataManager : MonoBehaviour
         public string ScoringPreference;
         public bool CanScoreAmp;
         public bool CanScoreSpeaker;
-        public int CycleTimeSpeaker;
-        public int CycleTimeAmp;
+        public string CycleTimeSpeaker;
+        public string CycleTimeAmp;
         public bool PickupFromGround;
         public bool PickupFromSource;
 
