@@ -20,7 +20,7 @@ public class MenuTitle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "ObjectiveScout")
+        if (SceneManager.GetActiveScene().name == "ObjectiveScout" || SceneManager.GetActiveScene().name == "BetterDarkObjective")
         {
             pageNames = new string[] { "Setup", "Auto", "Tele-Op", "Endgame" };
         }
