@@ -161,7 +161,7 @@ public class SaveSystem : MonoBehaviour
 
     }
 
-    SimpleTeam[] getEventTeams(string eventKey)
+    public static SimpleTeam[] getEventTeams(string eventKey)
     {
         try
         {
