@@ -10,7 +10,7 @@ using static SaveSystem;
 using UnityEditor.XR;
 
 public class GameManager : MonoBehaviour
-{   
+{
     //Game Statistics
     public string gamemode = "inactive"; //inactive, practice, marathon, sprint
     public string response = "";
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public SimpleTeam[] teams;
     public SimpleTeam[] questionQueue;
     public int questionNumber = -1;
-    public string eventKey = "2024wasno";
+    public string eventKey;
     public int currentErrorCount;
     public int currentErrorThreshold;
 
@@ -46,10 +46,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        eventKey = PlayerPrefs.GetString("EventKey");
         teams = SaveSystem.getEventTeams(eventKey);
         questionQueue = copyOf<SimpleTeam>(teams);
         Shuffle<SimpleTeam>(questionQueue);
 
+        Debug.Log(questionQueue.Length);
         nextQuestion();
     }
 
@@ -73,12 +75,18 @@ public class GameManager : MonoBehaviour
                     onCorrect();
                     Invoke("nextQuestion", 0.5f);
                 }
+                else
+                {
+                    onIncorrect();
+                    Invoke("resetQuestionColor", 0.5f);
+                    StartCoroutine(setQuestion(question, answer, 0.5f));
+                }
                 checkedCurrentAnswer = true;
             }
         }
         else if (isStarting)
         {
-            startCountDown.GetComponent<TMP_Text>().text = ((int) startTimeLeft).ToString();
+            startCountDown.GetComponent<TMP_Text>().text = ((int)startTimeLeft).ToString();
             startTimeLeft -= Time.deltaTime;
         }
     }
@@ -95,6 +103,12 @@ public class GameManager : MonoBehaviour
         resetHint();
         resetQuestionColor();
         inputBox.GetComponent<TMP_InputField>().ActivateInputField();
+    }
+
+    public IEnumerator setQuestion(int q, string a, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        setQuestion(q, a);
     }
 
     public void setQuestion(int q, string a)
@@ -116,7 +130,8 @@ public class GameManager : MonoBehaviour
         {
             hintText.GetComponent<TMP_Text>().text = "First letter: " + answer.Substring(0, 1);
             hintOverlay.SetActive(true);
-        } else
+        }
+        else
         {
             Debug.Log("Hint inaccessible: invalid gamemode");
         }
@@ -149,9 +164,10 @@ public class GameManager : MonoBehaviour
         questionText.GetComponent<TMP_Text>().text = "CORRECT";
         questionCorrectOverlay.SetActive(true);
     }
-    
+
     public void onIncorrect()
     {
+        questionText.GetComponent<TMP_Text>().text = "INCORRECT";
         questionIncorrectOverlay.SetActive(true);
     }
 
@@ -183,7 +199,7 @@ public class GameManager : MonoBehaviour
 
         int errorCount = 0;
 
-        int minError = (int) (percentError * 2f * Mathf.Sqrt(ans.Length));
+        int minError = (int)(percentError * 2f * Mathf.Sqrt(ans.Length));
 
         while (i < inp.Length && j < ans.Length)
         {
@@ -236,7 +252,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < word.Length; i++)
         {
             string l = word.Substring(i, 1);
-            if (inQuotation) {}
+            if (inQuotation) { }
             else if (indexBeforeTheEnd > 0)
             {
                 indexBeforeTheEnd--;
