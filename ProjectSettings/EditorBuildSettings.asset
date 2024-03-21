@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LocalDataViewer.unity
     guid: ab6e505d083472c45b61bd9f187b8147
+  - enabled: 1
+    path: Assets/Scenes/TeamGuesser.unity
+    guid: 5659af0b5d471784b85f88abb47343ec
   m_configObjects: {}
