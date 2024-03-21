@@ -104,8 +104,6 @@ public class GameManager : MonoBehaviour
         inputBox.GetComponent<TMP_InputField>().ActivateInputField();
     }
 
-
-
     public IEnumerator setQuestion(int q, string a, float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -174,6 +172,11 @@ public class GameManager : MonoBehaviour
 
     public void skip()
     {
+        if (gamemode == "marathon")
+        {
+            if (!lifeManager.RemoveLife()) ;
+            //TODO: code gameover...
+        }
         onIncorrect();
         lockInput();
         revealAnswer();
