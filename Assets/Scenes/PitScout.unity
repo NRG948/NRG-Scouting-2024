@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2701,7 +2701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a12951be4e408541905117fce239fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  darkMode: 1
+  darkMode: 0
   pinkMode: 0
 --- !u!4 &563628215
 Transform:
@@ -8034,6 +8034,7 @@ MonoBehaviour:
     ScouterName: 
     Preload: 0
     StartPos: 
+    StartRegion: 
     LeftWing: 0
     AutoSpeaker: 0
     AutoAmp: 0
@@ -20263,7 +20264,7 @@ GameObject:
   - component: {fileID: 4164811928244987715}
   m_Layer: 5
   m_Name: Text
-  m_TagString: HighlightYellow
+  m_TagString: HighlightYellowText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
