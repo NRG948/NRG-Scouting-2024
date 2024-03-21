@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
     public GameObject questionIncorrectOverlay;
     public GameObject startCountDown;
 
+    //Marathon GameObjects
+    public GameObject LifeContainer;
+    public LifeManager lifeManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,12 +79,6 @@ public class GameManager : MonoBehaviour
                     onCorrect();
                     Invoke("nextQuestion", 0.5f);
                 }
-                else
-                {
-                    onIncorrect();
-                    Invoke("resetQuestionColor", 0.5f);
-                    StartCoroutine(setQuestion(question, answer, 0.5f));
-                }
                 checkedCurrentAnswer = true;
             }
         }
@@ -90,6 +88,7 @@ public class GameManager : MonoBehaviour
             startTimeLeft -= Time.deltaTime;
         }
     }
+
     void nextQuestion()
     {
         questionNumber++;
@@ -104,6 +103,8 @@ public class GameManager : MonoBehaviour
         resetQuestionColor();
         inputBox.GetComponent<TMP_InputField>().ActivateInputField();
     }
+
+
 
     public IEnumerator setQuestion(int q, string a, float seconds)
     {
