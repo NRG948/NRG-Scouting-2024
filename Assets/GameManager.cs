@@ -7,45 +7,100 @@ using UnityEngine.UI;
 using UnityEngine.Windows;
 using TMPro;
 using static SaveSystem;
+using UnityEditor.XR;
 
 public class GameManager : MonoBehaviour
-{
+{   
+    //Game Statistics
     public string gamemode = "inactive"; //inactive, practice, marathon, sprint
     public string response = "";
-    public string answer = "Jack in the Bot";
-    public int question = 2910;
+    public string filteredReponse;
+    public string answer;
+    public string filteredAnswer;
+    public int question;
     public SimpleTeam[] teams;
     public SimpleTeam[] questionQueue;
-    public int questionNumber = 0;
+    public int questionNumber = -1;
     public string eventKey = "2024wasno";
+    public int currentErrorCount;
+    public int currentErrorThreshold;
 
+    //Input Timer
+    public float timeBetweenKeystrokes = 0f;
+    public float minTimeCheckingThreshold = 0.3f;
+    public bool checkedCurrentAnswer = true;
+
+    //Start Timer
+    public float startTimeLeft = 3f;
+    public bool isStarting = false;
+
+    //Associated GameObjects
     public GameObject inputBox;
     public GameObject hintText;
     public GameObject hintOverlay;
     public GameObject questionText;
     public GameObject questionCorrectOverlay;
-    public GameObject questionWrongOverlay;
+    public GameObject questionIncorrectOverlay;
+    public GameObject startCountDown;
+
     // Start is called before the first frame update
     void Start()
     {
         teams = SaveSystem.getEventTeams(eventKey);
         questionQueue = copyOf<SimpleTeam>(teams);
         Shuffle<SimpleTeam>(questionQueue);
+
+        nextQuestion();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gamemode != "inactive")
+        {
+            if (timeBetweenKeystrokes < minTimeCheckingThreshold)
+            {
+                timeBetweenKeystrokes += Time.deltaTime;
+            }
+            else if (!checkedCurrentAnswer)
+            {
+                Debug.Log("Answer checked");
 
+                float percentError = (gamemode == "sprint") ? 0.4f : 0.3f;
+                if (check(response, filteredAnswer, percentError))
+                {
+                    lockInput();
+                    onCorrect();
+                    Invoke("nextQuestion", 0.5f);
+                }
+                checkedCurrentAnswer = true;
+            }
+        }
+        else if (isStarting)
+        {
+            startCountDown.GetComponent<TMP_Text>().text = ((int) startTimeLeft).ToString();
+            startTimeLeft -= Time.deltaTime;
+        }
     }
     void nextQuestion()
     {
+        questionNumber++;
+        if (questionNumber >= questionQueue.Length)
+        {
+            Shuffle<SimpleTeam>(questionQueue);
+            questionNumber = 0;
+        }
+        setQuestion(questionQueue[questionNumber].team_number, questionQueue[questionNumber].nickname);
 
+        resetHint();
+        resetQuestionColor();
+        inputBox.GetComponent<TMP_InputField>().ActivateInputField();
     }
 
     public void setQuestion(int q, string a)
     {
         answer = a;
+        filteredAnswer = removeUnnecessary(a.ToLower());
         question = q;
         questionText.GetComponent<TMP_Text>().text = q.ToString();
     }
@@ -75,53 +130,60 @@ public class GameManager : MonoBehaviour
 
     public void setResponse()
     {
-        response = inputBox.GetComponent<InputField>().text;
+        response = inputBox.GetComponent<TMP_InputField>().text;
     }
 
-    public void checkAnswer()
+    public void onInputChange()
     {
-        float percentError = (gamemode == "sprint") ? 0.5f : 0.4f;
-        if (check(response, answer, percentError)) {
-            showCorrect();
-            Invoke("nextQuestion", 0.5f);
-        }
+        setResponse();
+        checkedCurrentAnswer = false;
+        timeBetweenKeystrokes = 0;
     }
     public void resetQuestionColor()
     {
         questionCorrectOverlay.SetActive(false);
-        questionWrongOverlay.SetActive(false);
+        questionIncorrectOverlay.SetActive(false);
     }
-    public void showCorrect()
+    public void onCorrect()
     {
         questionText.GetComponent<TMP_Text>().text = "CORRECT";
         questionCorrectOverlay.SetActive(true);
     }
     
-    public void showIncorrect()
+    public void onIncorrect()
     {
-        questionWrongOverlay.SetActive(true);
+        questionIncorrectOverlay.SetActive(true);
     }
 
     public void skip()
     {
+        onIncorrect();
+        lockInput();
         revealAnswer();
         Invoke("nextQuestion", 2);
     }
-
-    public bool check(string o, string a, float percentError)
+    public void lockInput()
     {
-        o = o.ToLower();
-        a = a.ToLower();
+        inputBox.GetComponent<TMP_InputField>().ActivateInputField();
+        inputBox.GetComponent<TMP_InputField>().text = "";
+    }
+    public void resetResponse()
+    {
+        response = "";
+        filteredReponse = "";
+    }
 
-        string inp = removeUnnecessary(o);
-        string ans = removeUnnecessary(a);
+    public bool check(string inp, string ans, float percentError)
+    {
+        inp = removeUnnecessary(inp.ToLower());
+        filteredReponse = inp;
 
         int i = 0;
         int j = 0;
 
         int errorCount = 0;
 
-        int minError = (int) (percentError * (inp.Length + ans.Length) / 2);
+        int minError = (int) (percentError * 2f * Mathf.Sqrt(ans.Length));
 
         while (i < inp.Length && j < ans.Length)
         {
@@ -150,8 +212,17 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            if (errorCount >= minError) { return false; }
+            if (errorCount / 2 > minError) { return false; }
         }
+
+        errorCount += 2 * Mathf.Abs(ans.Length - inp.Length);
+        Debug.Log("diff text: " + 2 * Mathf.Abs(ans.Length - inp.Length));
+
+        currentErrorCount = errorCount / 2;
+        currentErrorThreshold = minError;
+
+
+        if (errorCount / 2 > minError) { return false; }
 
         return true;
     }
@@ -159,11 +230,34 @@ public class GameManager : MonoBehaviour
     public string removeUnnecessary(string word)
     {
         string re = "";
+        int parenthesesCount = 0;
+        bool inQuotation = false;
+        int indexBeforeTheEnd = 0;
         for (int i = 0; i < word.Length; i++)
         {
-            if (word.Substring(i, 1) != " " &&
-                (word.Substring(i, 1) != "s" ||
-                    (i != word.Length - 1 && word.Substring(i, 1) != " ")))
+            string l = word.Substring(i, 1);
+            if (inQuotation) {}
+            else if (indexBeforeTheEnd > 0)
+            {
+                indexBeforeTheEnd--;
+            }
+            else if (i < word.Length - 2 && word.Substring(i, 3) == "the")
+            {
+                indexBeforeTheEnd = 2;
+            }
+            else if (l == "(")
+            {
+                parenthesesCount++;
+            }
+            else if (l == ")")
+            {
+                parenthesesCount--;
+            }
+            else if (l == "\"")
+            {
+                inQuotation = !inQuotation;
+            }
+            else if (parenthesesCount == 0 && l != " " && l != "-" && (l != "s" || (i != word.Length - 1 && l != " ")))
             {
                 re += word.Substring(i, 1);
             }
