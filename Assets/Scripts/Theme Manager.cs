@@ -27,10 +27,11 @@ public class ThemeManager : MonoBehaviour
     private readonly Color hotPink = new Color(1f, 0.15686275f, 0.521156863f, 1f);
     private readonly Color darkPink = new Color(0.81568627f, 0.007874314f, 0.35686275f, 1f);
     private readonly Color lightPink = new Color(1f, 0.43137255f, 0.79215686f, 1f);
-    private readonly Color pinkRed = new Color(1f, 0f, 0.11111111111f, 1f);
-    private readonly Color pinkYellow = new Color(0.9725491f, 0.8588236f, 0.08235294f);
-    private readonly Color pinkGrey = new Color(0.5176471f, 0.5529412f, 0.5568628f, 1f);
-    private readonly Color pinkBlue = new Color(0.121885f, 0.4774481f, 0.7830189f, 1f);
+    private readonly Color pinkRed = new Color(0.8941177f, 0f, 0.4392157f, 1f);
+    private readonly Color pinkYellow = new Color(0.99215691f, 0.1490196f, 0.6901961f);
+    private readonly Color pinkGrey = new Color(0.9137255f, 0f, 0.6183072f, 1f);
+    //private readonly Color pinkGrey = new Color(0.482353f, 0.482353f, 0.482353f, 1f);
+    private readonly Color pinkBlue = new Color(0.7254902f, 0f, 0.6235294f, 1f);
     private readonly Color lighterPink = new Color(1f, 0.567f, 1f, 1f);
     private readonly Color red = new Color(1f, 0f, 0f, 1f);
     private readonly Color blue = new Color(0f, 0.48f, 1f, 1f);
@@ -100,10 +101,8 @@ public class ThemeManager : MonoBehaviour
             ColorAllWithTag("Title", white);
             ColorAllWithTag("Background", hotPink);
             ColorAllWithTag("BackgroundBox", lightPink);
-            ColorAllWithTag("BackgroundDesign", darkPink);
-            ColorAllWithTag("ContentText", white);
-            ColorAllWithTag("InputField", lighterPink);
-            ColorAllWithTag("SecondInputField", lighterPink);
+            ColorAllWithTag("OffsetBackground", darkPink);
+            ColorAllWithTag("DropDown", pinkYellow);
         }
     }
     
