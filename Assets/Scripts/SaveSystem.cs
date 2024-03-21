@@ -17,6 +17,7 @@ public class SaveSystem : MonoBehaviour
     public Toggle hapticFeedback;
     public Toggle militaryTime;
     public Toggle darkMode;
+    public Toggle pinkMode;
     public APIMatchFile matchJson;
     public TeamFile teamsJson;
 
@@ -31,6 +32,8 @@ public class SaveSystem : MonoBehaviour
         hapticFeedback.isOn = PlayerPrefs.GetInt("Haptic", 0) == 1;
         militaryTime.isOn = PlayerPrefs.GetInt("MilitaryTime", 0) == 1;
         darkMode.isOn = PlayerPrefs.GetInt("DarkMode", 0) == 1;
+        pinkMode.isOn = PlayerPrefs.GetInt("PinkMode", 0) == 1;
+
     }
 
     public void SaveData()
@@ -43,6 +46,7 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetInt("Haptic", hapticFeedback.isOn ? 1 : 0);
         PlayerPrefs.SetInt("MilitaryTime", militaryTime.isOn ? 1 : 0);
         PlayerPrefs.SetInt("DarkMode", darkMode.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("PinkMode", pinkMode.isOn ? 1 : 0);
 
         // Extra stuff
         //fileJson = JsonUtility.FromJson<APIMatchFile>(rawJson);

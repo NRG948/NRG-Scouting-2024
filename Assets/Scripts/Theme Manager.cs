@@ -42,7 +42,8 @@ public class ThemeManager : MonoBehaviour
 
     // Start is called before the first frame update
     void OnEnable() {
-        darkMode = PlayerPrefs.GetInt("DarkMode",0) == 1;
+        darkMode = PlayerPrefs.GetInt("DarkMode", 0) == 1;
+        pinkMode = PlayerPrefs.GetInt("PinkMode", 0) == 1;
         UpdateColor();
     }
     public void UpdateColor()
