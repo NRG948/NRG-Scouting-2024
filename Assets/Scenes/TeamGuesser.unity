@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4828,6 +4828,7 @@ GameObject:
   - component: {fileID: 2019596218}
   - component: {fileID: 2019596220}
   - component: {fileID: 2019596219}
+  - component: {fileID: 2019596221}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -4874,7 +4875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00:00
+  m_text: 00:00.00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4951,6 +4952,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019596217}
   m_CullTransparentMesh: 1
+--- !u!114 &2019596221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019596217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490a07f880ab8024c9a30a06ec4a67ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayMinutes: 0
+  displaySeconds: 0
+  displayMilliseconds: 0
 --- !u!1 &2021192573
 GameObject:
   m_ObjectHideFlags: 0
