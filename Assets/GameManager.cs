@@ -170,11 +170,13 @@ public class GameManager : MonoBehaviour
 
     public void skip()
     {
+        /**
         if (gamemode == "marathon")
         {
             if (!lifeManager.RemoveLife()) ;
             //TODO: code gameover...
         }
+        **/
         onIncorrect();
         lockInput();
         revealAnswer();
