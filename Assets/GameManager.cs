@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     public GameObject startCountDown;
 
     //Marathon GameObjects
-    public GameObject LifeContainer;
-    public LifeManager lifeManager;
+    //public GameObject LifeContainer;
+    //public LifeManager lifeManager;
 
     // Start is called before the first frame update
     void Start()
@@ -54,8 +54,6 @@ public class GameManager : MonoBehaviour
         teams = SaveSystem.getEventTeams(eventKey);
         questionQueue = copyOf<SimpleTeam>(teams);
         Shuffle<SimpleTeam>(questionQueue);
-
-        Debug.Log(questionQueue.Length);
         nextQuestion();
     }
 
