@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public GameObject questionCorrectOverlay;
     public GameObject questionIncorrectOverlay;
     public GameObject startCountDown;
+    public GameObject startButton;
 
     //Score
     public ScoreManager scoreManager;
@@ -57,20 +58,7 @@ public class GameManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("LastQuestion")) { PlayerPrefs.SetInt("LastQuestion", -1); }
         eventKey = PlayerPrefs.GetString("EventKey");
-        teams = SaveSystem.getEventTeams(eventKey);
-        questionQueue = copyOf<SimpleTeam>(teams);
-        Shuffle<SimpleTeam>(questionQueue);
-        nextQuestion();
-
-        if (PlayerPrefs.GetInt("LastQuestion") != -1)
-        {
-            setQuestion(PlayerPrefs.GetInt("LastQuestion"), findTeamNicknameByNumber(PlayerPrefs.GetInt("LastQuestion")));
-            Debug.Log("overriden");
-
-            resetHint();
-            resetQuestionColor();
-            inputBox.GetComponent<TMP_InputField>().ActivateInputField();
-        }
+        lockInput();
     }
 
     // Update is called once per frame
@@ -103,6 +91,27 @@ public class GameManager : MonoBehaviour
             startCountDown.GetComponent<TMP_Text>().text = ((int)startTimeLeft).ToString();
             startTimeLeft -= Time.deltaTime;
         }
+    }
+
+    public void startGame()
+    {
+        gamemode = "practice";
+        teams = SaveSystem.getEventTeams(eventKey);
+        questionQueue = copyOf<SimpleTeam>(teams);
+        Shuffle<SimpleTeam>(questionQueue);
+        nextQuestion();
+
+        if (PlayerPrefs.GetInt("LastQuestion") != -1)
+        {
+            setQuestion(PlayerPrefs.GetInt("LastQuestion"), findTeamNicknameByNumber(PlayerPrefs.GetInt("LastQuestion")));
+            Debug.Log("overriden");
+
+            resetHint();
+            resetQuestionColor();
+            inputBox.GetComponent<TMP_InputField>().ActivateInputField();
+        }
+
+        startButton.SetActive(false);
     }
 
     void nextQuestion()
@@ -197,15 +206,18 @@ public class GameManager : MonoBehaviour
             //TODO: code gameover...
         }
         **/
-        scoreManager.resetStreak();
-        onIncorrect();
-        lockInput();
-        revealAnswer();
-        Invoke("nextQuestion", 2);
+        if (gamemode != "inactive")
+        {
+            scoreManager.resetStreak();
+            onIncorrect();
+            lockInput();
+            revealAnswer();
+            Invoke("nextQuestion", 2);
+        }
     }
     public void lockInput()
     {
-        inputBox.GetComponent<TMP_InputField>().ActivateInputField();
+        inputBox.GetComponent<TMP_InputField>().DeactivateInputField();
         inputBox.GetComponent<TMP_InputField>().text = "";
     }
     public void resetResponse()
