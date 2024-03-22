@@ -7,8 +7,6 @@ using UnityEngine.UI;
 using UnityEngine.Windows;
 using TMPro;
 using static SaveSystem;
-using UnityEditor.XR;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
