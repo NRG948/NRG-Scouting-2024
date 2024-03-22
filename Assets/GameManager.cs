@@ -8,6 +8,7 @@ using UnityEngine.Windows;
 using TMPro;
 using static SaveSystem;
 using UnityEditor.XR;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class GameManager : MonoBehaviour
     public GameObject questionIncorrectOverlay;
     public GameObject startCountDown;
 
+    //Score
+    public ScoreManager scoreManager;
+    
+
     //Marathon GameObjects
     //public GameObject LifeContainer;
     //public LifeManager lifeManager;
@@ -50,11 +55,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!PlayerPrefs.HasKey("LastQuestion")) { PlayerPrefs.SetInt("LastQuestion", -1); }
         eventKey = PlayerPrefs.GetString("EventKey");
         teams = SaveSystem.getEventTeams(eventKey);
         questionQueue = copyOf<SimpleTeam>(teams);
         Shuffle<SimpleTeam>(questionQueue);
         nextQuestion();
+
+        if (PlayerPrefs.GetInt("LastQuestion") != -1)
+        {
+            setQuestion(PlayerPrefs.GetInt("LastQuestion"), findTeamNicknameByNumber(PlayerPrefs.GetInt("LastQuestion")));
+            Debug.Log("overriden");
+
+            resetHint();
+            resetQuestionColor();
+            inputBox.GetComponent<TMP_InputField>().ActivateInputField();
+        }
     }
 
     // Update is called once per frame
@@ -75,6 +91,8 @@ public class GameManager : MonoBehaviour
                 {
                     lockInput();
                     onCorrect();
+                    scoreManager.incrementStreak();
+                    PlayerPrefs.SetInt("LastQuestion", -1);
                     Invoke("nextQuestion", 0.5f);
                 }
                 checkedCurrentAnswer = true;
@@ -100,6 +118,8 @@ public class GameManager : MonoBehaviour
         resetHint();
         resetQuestionColor();
         inputBox.GetComponent<TMP_InputField>().ActivateInputField();
+
+        if (PlayerPrefs.GetInt("LastQuestion") == -1) { PlayerPrefs.SetInt("LastQuestion", question); }
     }
 
     public IEnumerator setQuestion(int q, string a, float seconds)
@@ -177,6 +197,7 @@ public class GameManager : MonoBehaviour
             //TODO: code gameover...
         }
         **/
+        scoreManager.resetStreak();
         onIncorrect();
         lockInput();
         revealAnswer();
@@ -304,5 +325,18 @@ public class GameManager : MonoBehaviour
             c[i] = array[i];
         }
         return c;
+    }
+    
+    public string findTeamNicknameByNumber(int number)
+    {
+        for (int i = 0; i < teams.Length; i++)
+        {
+            if (teams[i].team_number == number)
+            {
+                return teams[i].nickname;
+            }
+        }
+
+        return "";
     }
 }
