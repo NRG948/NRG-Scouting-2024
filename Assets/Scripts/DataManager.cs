@@ -264,6 +264,7 @@ public class DataManager : MonoBehaviour
         public string ScouterName;
         public bool Preload;
         public string StartPos;
+        private string StartRegion; // idk what this does, nothing in this version tho
         public bool LeftWing;
         public int AutoSpeaker;
         public int AutoAmp;
@@ -275,7 +276,6 @@ public class DataManager : MonoBehaviour
         public int SpeakerNotesUnamped;
         public int SpeakerNotesAmped;
         public int AmpNotes;
-        public bool Feeder;
         public bool Coopertition;
         public bool Onstage;
         public bool Park;
