@@ -69,7 +69,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveRobotScout()
     {
-        if (match.TeamNumber == 0 || match.MatchNumber == 0 || match.DataQuality == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team number, match number, or data quality.",false,true));return; }
+        if (match.TeamNumber == 0 || match.MatchNumber == 0 || match.DataQuality == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("COULDN'T SAVE! Missing team number, match number, or data quality.",false,true));return; }
         string objectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/obj/";
         if (!(Directory.Exists(objectivePath)))
         {
@@ -79,11 +79,11 @@ public class DataManager : MonoBehaviour
         string fileName = $"{match.TeamNumber}_{match.MatchType}_{match.MatchNumber}_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(match, true);
         File.WriteAllText(objectivePath + fileName, jsonData);
-        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data",true));
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully Saved Data",true));
     }
     public void SaveSubjectiveRobotScout()
     {
-        if (subjectiveMatch.TeamNumber == 0 || subjectiveMatch.MatchNumber == 0 || subjectiveMatch.DataQuality == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team nunmber, match number, or data quality.", false, true)); return; }
+        if (subjectiveMatch.TeamNumber == 0 || subjectiveMatch.MatchNumber == 0 || subjectiveMatch.DataQuality == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("COULDN'T SAVE! Missing team nunmber, match number, or data quality.", false, true)); return; }
         string subjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/subj/";
         if (!(Directory.Exists(subjectivePath)))
         {
@@ -94,13 +94,13 @@ public class DataManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(subjectiveMatch, true);
         File.WriteAllText(subjectivePath + fileName, jsonData);
         //Debug.Log("wrote data to " + subjectivePath + fileName);
-        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data",true));
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully Saved Data",true));
     }
 
 
     public void SavePitScout()
     {
-        if (pit.TeamNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("COULDN'T SAVE! Missing team number.")); return; }
+        if (pit.TeamNumber == 0) { StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("COULDN'T SAVE! Missing team number.")); return; }
         string pitjectivePath = $"{Application.persistentDataPath}/{PlayerPrefs.GetString("EventKey")}/pit/";
         if (!(Directory.Exists(pitjectivePath)))
         {
@@ -110,7 +110,7 @@ public class DataManager : MonoBehaviour
         string fileName = $"{pit.TeamNumber}_pit_{currentTime}.json";
         string jsonData = JsonUtility.ToJson(pit, true);
         File.WriteAllText(pitjectivePath + fileName, jsonData);
-        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully Saved Data", true));
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully Saved Data", true));
     }
 
     public void AutofillTeamNumber()

@@ -26,7 +26,7 @@ public class MatchDownloader : MonoBehaviour
         Directory.CreateDirectory(teamCachePath);
         for (int i = 0; i < 20; i++)
         {
-            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse($"Downloading teams {i*500}-{(i+1)*500-1}"));
+            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox($"Downloading teams {i*500}-{(i+1)*500-1}"));
             APIRequest(i);
         }
 
@@ -59,7 +59,7 @@ public class MatchDownloader : MonoBehaviour
                 else
                 {
 
-                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Teams could not be downloaded. Please check your internet connection, or disable autofill."));
+                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Teams could not be downloaded. Please check your internet connection, or disable autofill."));
                     Debug.Log($"Error: {response.StatusCode}");
 
                 }
@@ -68,7 +68,7 @@ public class MatchDownloader : MonoBehaviour
         catch (WebException ex)
         {
             Debug.Log($"WebException: {ex.Message}");
-            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Teams could not be downloaded. Please check your internet connection, or disable autofill."));
+            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Teams could not be downloaded. Please check your internet connection, or disable autofill."));
 
         }
     }

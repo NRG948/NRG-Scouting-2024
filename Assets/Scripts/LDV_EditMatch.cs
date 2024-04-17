@@ -106,7 +106,7 @@ public class LDV_EditMatch : MonoBehaviour
                 File.WriteAllText(globalFilePath, JsonUtility.ToJson(objFileJson));
                 transform.GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
-                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
+                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully updated data.");
                 break;
 
             case "subj":
@@ -142,13 +142,13 @@ public class LDV_EditMatch : MonoBehaviour
                         }
                         // This only runs if AutoPickups is enabled and the test case doesn't break (the test case only breaks when it succeeds)
                         AutoPickupFailure:
-                        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("DATA INCORRECTLY FORMATTED! Each number should have a comma and a space after it, such as \"1, 2, 3\". Please ask your strategy coordinator for help.")); return;
+                        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("DATA INCORRECTLY FORMATTED! Each number should have a comma and a space after it, such as \"1, 2, 3\". Please ask your strategy coordinator for help.")); return;
                 }
                 AutoPickupSuccess:
                 File.WriteAllText(globalFilePath, JsonUtility.ToJson(subjFileJson));
                 transform.GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
-                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
+                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully updated data.");
                 break;
 
             case "pit":
@@ -167,7 +167,7 @@ public class LDV_EditMatch : MonoBehaviour
                 File.WriteAllText(globalFilePath, JsonUtility.ToJson(pitFileJson));
                 transform.GetChild(0).gameObject.SetActive(false);
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().Start();
-                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully updated data.");
+                GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully updated data.");
                 break;
         }
     }

@@ -52,7 +52,7 @@ public class SaveSystem : MonoBehaviour
         //fileJson = JsonUtility.FromJson<APIMatchFile>(rawJson);
         if (autoFill.isOn) { ApiRequestMatches(inputFieldID.text); }
         ApiRequestTeams(inputFieldID.text);
-        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Successfully saved.", true));
+        StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Successfully saved.", true));
 
     }
 
@@ -96,7 +96,7 @@ public class SaveSystem : MonoBehaviour
                 else
                 {
 
-                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill.", true));
+                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Matches could not be downloaded. Please check your internet connection, or disable autofill.", true));
                     Debug.Log($"Error: {response.StatusCode}");
                     return $"Error: {response.StatusCode}";
                 }
@@ -105,7 +105,7 @@ public class SaveSystem : MonoBehaviour
         catch (WebException ex)
         {
             Debug.Log($"WebException: {ex.Message}");
-            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
+            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Matches could not be downloaded. Please check your internet connection, or disable autofill."));
             return $"WebException: {ex.Message}";
         }
 
@@ -150,7 +150,7 @@ public class SaveSystem : MonoBehaviour
                 else
                 {
 
-                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Teams could not be downloaded. Please check your internet connection, or disable autofill.", true));
+                    StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Teams could not be downloaded. Please check your internet connection, or disable autofill.", true));
                     Debug.Log($"Error: {response.StatusCode}");
                     return $"Error: {response.StatusCode}";
                 }
@@ -159,7 +159,7 @@ public class SaveSystem : MonoBehaviour
         catch (WebException ex)
         {
             Debug.Log($"WebException: {ex.Message}");
-            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxNoResponse("Teams could not be downloaded. Please check your internet connection, or disable autofill."));
+            StartCoroutine(GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowNotificationBox("Teams could not be downloaded. Please check your internet connection, or disable autofill."));
             return $"WebException: {ex.Message}";
         }
 

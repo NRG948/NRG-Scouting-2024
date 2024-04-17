@@ -152,7 +152,7 @@ public class LocalDataViewer : MonoBehaviour
 
     public void delete(string filePath) {
         deletionFilepath = filePath;
-        GameObject.Find("AlertBox").GetComponent<AlertBox>().outwardFacing("Are you sure you want to delete this match? It will be lost forever (A long time)!|ldvDelete");
+        GameObject.Find("AlertBox").GetComponent<AlertBox>().ShowBoxByMessageKey("Are you sure you want to delete this match? It will be lost forever (A long time)!|ldvDelete");
     }
     public void confirmDelete()
     {

@@ -1,83 +1,112 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
-using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AlertBox : MonoBehaviour
 {
-    public bool no;
-    public bool yes;
-    public GameObject yesButton;
-    public GameObject noButton;
+    private bool _selectNo;
+    private bool _selectYes;
+
+    private Transform _alertBoxTransform;
+    public GameObject YesButton;
+    public GameObject NoButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        transform.GetChild(0).gameObject.SetActive(false);
+        _alertBoxTransform = transform.GetChild(0);
+        _alertBoxTransform.gameObject.SetActive(false);
     }
 
- 
-    public void outwardFacing(string messageKey)
+
+    /// <summary>
+    /// Shows alert box.
+    /// </summary>
+    /// <param name="messageKey"></param> Concatenated message key split by |.
+    public void ShowBoxByMessageKey(string messageKey)
     {
-        string message = messageKey.Split('|')[0];
-        string key = messageKey.Split("|")[1];
-        StartCoroutine(ShowBox(message, key));
+        var temp = messageKey.Split('|');
+        string message = temp[0];
+        string key = temp[1];
+
+        StartCoroutine(ShowDecisionBox(message, key));
     }
-    public IEnumerator ShowBoxNoResponse(string message,bool kick=false,bool important=false)
+
+    /// <summary>
+    /// Shows optionless alert box.
+    /// </summary>
+    /// <param name="message"></param> The message to be displayed.
+    /// <param name="doesKick"></param> If the alert box transfers to the main menu.
+    /// <param name="isImportant"></param> If the alert box sends strong haptic feedback and a delay.
+    /// <returns></returns>
+    public IEnumerator ShowNotificationBox(string message, bool doesKick=false, bool isImportant=false)
     {
         HapticManager.LightFeedback();
-        yes = false;
-        yesButton.GetComponent<AlertBoxButton>().on = false;
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>().text = message;
-        transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
-        while (!(yes))
+
+        _selectYes = false;
+        YesButton.GetComponent<AlertBoxButton>().on = false;
+        _alertBoxTransform.gameObject.SetActive(true);
+        _alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
+        _alertBoxTransform.GetChild(3).gameObject.SetActive(false);
+
+        while (!_selectYes)
         {
-            yes = yesButton.GetComponent<AlertBoxButton>().on;
-            if (important) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
+            _selectYes = YesButton.GetComponent<AlertBoxButton>().on;
+            if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
         }
+
         HapticManager.HeavyFeedback();
-        transform.GetChild(0).gameObject.SetActive(false);
-        if (kick) { SceneManager.LoadScene(0); }
+
+        _alertBoxTransform.gameObject.SetActive(false);
+        if (doesKick) { SceneManager.LoadScene(0); }
     }
-    private IEnumerator ShowBox(string message,string key,bool important=false)
+
+    /// <summary>
+    /// Shows alert box with confirmation.
+    /// </summary>
+    /// <param name="message"></param> The message to be displayed.
+    /// <param name="key"></param> The key referring to the action executed upon positive confirmation.
+    /// <param name="isImportant"></param> If the alert box sends strong haptic feedback and a delay.
+    /// <returns></returns>
+    private IEnumerator ShowDecisionBox(string message, string key, bool isImportant=false)
     {
         HapticManager.LightFeedback();
-        no = false;
-        yes = false;
-        yesButton.GetComponent<AlertBoxButton>().on = false; noButton.GetComponent<AlertBoxButton>().on = false;
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
-        transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>().text = message;
-        while (!(no || yes))
+
+        _selectNo = false;
+        _selectYes = false;
+        YesButton.GetComponent<AlertBoxButton>().on = false; NoButton.GetComponent<AlertBoxButton>().on = false;
+        _alertBoxTransform.gameObject.SetActive(true);
+        _alertBoxTransform.GetChild(3).gameObject.SetActive(true);
+        _alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
+
+        while (!(_selectNo || _selectYes))
         {
-            yes = yesButton.GetComponent<AlertBoxButton>().on;
-            no = noButton.GetComponent<AlertBoxButton>().on;
-            if (important) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
+            _selectYes = YesButton.GetComponent<AlertBoxButton>().on;
+            _selectNo = NoButton.GetComponent<AlertBoxButton>().on;
+            if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
 
         };
         HapticManager.HeavyFeedback();
-        transform.GetChild(0).gameObject.SetActive(false);
-        if (yes)
+        _alertBoxTransform.gameObject.SetActive(false);
+        if (_selectYes)
         {
-            StupidSpaghettiCode(key);
+            CallAlertAction(key);
         }
     }
-    // Update is called once per frame
-    public void setTrue()
-    {
-        no=true;
-        yes=true;
-    }
-    public void setFalse() { no = true; }
 
-    private void StupidSpaghettiCode(string key) { 
-    
+    public void SetTrue() { _selectNo = _selectYes = true; }
+
+    public void SetFalse() { _selectNo = true; }
+
+    /// <summary>
+    /// Calls the alert action.
+    /// </summary>
+    /// <param name="key"></param> The key referring to the action executed.
+    private void CallAlertAction(string key)
+    {    
         switch (key)
         {
             case "settingsSave":
@@ -97,7 +126,7 @@ public class AlertBox : MonoBehaviour
             case "exit":
                 Application.Quit(); break;
             case "ldvDeleteAllConfirm":
-                StartCoroutine(ShowBox("Please understand that you are DELETING ALL SAVED DATA FOR THIS EVENT. Your scouting team will not be held responsible for your actions.", "ldvDeleteAll",true));break;
+                StartCoroutine(ShowDecisionBox("Please understand that you are DELETING ALL SAVED DATA FOR THIS EVENT. Your scouting team will not be held responsible for your actions.", "ldvDeleteAll",true));break;
             case "ldvDeleteAll":
                 GameObject.Find("LocalDataViewer").GetComponent<LocalDataViewer>().deleteFullEvent();break;
             case "downloadMatches":
