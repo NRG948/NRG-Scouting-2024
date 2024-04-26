@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4627,11 +4627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 5
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 5
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &554199936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,11 +5045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 3
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 3
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &613598204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6532,11 +6532,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 4
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 4
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &779155067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7673,11 +7673,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 2
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 2
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &961234549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8331,11 +8331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 0
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 0
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &1033429839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11153,11 +11153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 7
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 7
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &1446437960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11854,11 +11854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 6
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 6
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &1512972857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12249,11 +12249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc15a58b6b646848bc54820b2b7130e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1779716232}
-  index: -1
-  current: 0
-  id: 1
-  pos: {x: 0, y: 0}
+  AutoSelectManager: {fileID: 1779716232}
+  OrderIndex: -1
+  IsCurrent: 0
+  NodeIdentifier: 1
+  MapPosition: {x: 0, y: 0}
 --- !u!114 &1597865628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12863,14 +12863,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7ac5088f40dc34fb6eb60ad56f92b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineManager: {fileID: 885290237}
-  currentNoteIndex: -1
-  alphabet: 4100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a00
-  currentNoteColor: {r: 1, g: 0.98389417, b: 0.6094339, a: 1}
-  defaultNoteColor: {r: 0.9764706, g: 0.9607843, b: 0.9490196, a: 1}
-  unselectedNoteColor: {r: 0.6377357, g: 0.6377357, b: 0.6377357, a: 1}
-  startingNoteColor: {r: 0.5943396, g: 1, b: 0.66935897, a: 1}
-  field: {fileID: 1900927766}
+  LineManager: {fileID: 885290237}
+  CurrentNodeIndex: -1
+  Alphabet: 4100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a00
+  FieldMap: {fileID: 1900927769}
+  CurrentNodeColor: {r: 0.6434674, g: 0.90943396, b: 0.68723404, a: 1}
+  DefaultNodeColor: {r: 0.9764706, g: 0.9607843, b: 0.9490196, a: 1}
+  UnselectedNodeColor: {r: 0.7735849, g: 0.7283375, b: 0.7283375, a: 1}
+  StartingNodeColor: {r: 0.96981126, g: 0.8564105, b: 0.62763256, a: 1}
 --- !u!224 &1779716233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14098,7 +14098,7 @@ GameObject:
   - component: {fileID: 1900927765}
   - component: {fileID: 1900927768}
   - component: {fileID: 1900927767}
-  - component: {fileID: 1900927766}
+  - component: {fileID: 1900927769}
   m_Layer: 5
   m_Name: AutoSelect
   m_TagString: Untagged
@@ -14128,19 +14128,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1651.0148, y: 1544.3481}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1900927766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900927764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd7ce1f6904019745a735eeff290071b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 449999451}
 --- !u!114 &1900927767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14179,6 +14166,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900927764}
   m_CullTransparentMesh: 1
+--- !u!114 &1900927769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900927764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201dc42fb5d7ae741a813526d76680fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataManager: {fileID: 449999451}
 --- !u!1 &1904483323
 GameObject:
   m_ObjectHideFlags: 0
@@ -14535,7 +14535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004367469
@@ -14550,7 +14550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2272491b20c4734594836e528246240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: {fileID: 0}
+  group: {fileID: 2004367470}
   animationState: none
   fadeSpeed: 0.1
   animationTime: 0
@@ -15795,7 +15795,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1900927766}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AutoFieldMap, Assembly-CSharp
         m_MethodName: UpdateFieldOrientation
         m_Mode: 1
@@ -18855,7 +18855,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4488676905061821889}
         m_TargetAssemblyTypeName: AlertBox, Assembly-CSharp
-        m_MethodName: outwardFacing
+        m_MethodName: ShowBoxByMessageKey
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19211,7 +19211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4488676905061821889}
         m_TargetAssemblyTypeName: AlertBox, Assembly-CSharp
-        m_MethodName: outwardFacing
+        m_MethodName: ShowBoxByMessageKey
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19841,10 +19841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b3013c98b2bd149a033695f8710472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  no: 0
-  yes: 0
-  yesButton: {fileID: 2223023076381627231}
-  noButton: {fileID: 573531445064865694}
+  YesButton: {fileID: 2223023076381627231}
+  NoButton: {fileID: 573531445064865694}
 --- !u!114 &4496908295701869825
 MonoBehaviour:
   m_ObjectHideFlags: 0

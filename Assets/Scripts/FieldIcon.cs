@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class FieldIcon : MonoBehaviour
 {
-    public RectTransform myRectTransform;
-    public DataManager manager;
-    public string color = "Red";
+    public RectTransform IconRectTransform;
+    public DataManager Manager;
+    public string Color = "Red";
 
     // Start is called before the first frame update
     
     void Start()
     {
-        var temp = myRectTransform.localScale;
+        var temp = IconRectTransform.localScale;
 
         temp.x = -1;
 
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
             temp.y = -1;
-            if (color == "Red") {
+            if (Color == "Red") {
                 temp.x = 1;
             } else {
                 temp.x = -1;
@@ -27,33 +27,27 @@ public class FieldIcon : MonoBehaviour
             temp.y = 1;
         }
 
-        myRectTransform.localScale = temp;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        IconRectTransform.localScale = temp;
     }
 
     public void changeColor() {
-        color = manager.match.AllianceColor;
-        var temp = myRectTransform.localScale;
+        Color = Manager.match.AllianceColor;
+        var temp = IconRectTransform.localScale;
 
-        if (color == "Red") {
+        if (Color == "Red") {
             temp.x = -1;
         } else {
             temp.x = 1;
         }
 
         if (PlayerPrefs.GetInt("FlipField",0) == 1) {
-            if (color == "Red") {
+            if (Color == "Red") {
                 temp.x = 1;
             } else {
                 temp.x = -1;
             }
         }
         
-        myRectTransform.localScale = temp;
+        IconRectTransform.localScale = temp;
     }
 }

@@ -6,70 +6,84 @@ using Unity.VisualScripting;
 
 public class AutoSelectManager : MonoBehaviour
 {
-    public LineManager lineManager;
-    public ArrayList notes = new ArrayList();
-    public int currentNoteIndex = -1;
-    public char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-    public Color currentNoteColor;
-    public Color defaultNoteColor;
-    public Color unselectedNoteColor;
-    public Color startingNoteColor;
-    public AutoFieldMap field;
+    public LineManager LineManager;
+    public ArrayList AutoSelectNodes = new ArrayList();
+    public int CurrentNodeIndex = -1;
+    public char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+    public AutoSelectMap FieldMap;
 
-    public void addNote(int id) {
-        //Unhighlighting old note, if there is one
-        if (currentNoteIndex > -1) {
-            var previousNote = getNote((int) notes[currentNoteIndex]);
-            previousNote.current = false;
-            previousNote.UpdateColor();
+    public Color CurrentNodeColor;
+    public Color DefaultNodeColor;
+    public Color UnselectedNodeColor;
+    public Color StartingNodeColor;
+
+    public void AddNode(int id)
+    {
+        //Unhighlighting old node, if there is one
+        if (CurrentNodeIndex > -1)
+        {
+            var previousNode = GetNode((int) AutoSelectNodes[CurrentNodeIndex]);
+            previousNode.IsCurrent = false;
+            previousNode.UpdateColor();
         }
 
-        notes.Add(id);
-        currentNoteIndex++;
+        AutoSelectNodes.Add(id);
+        CurrentNodeIndex++;
 
-        //Highlighting new current note
-        var currentNote = getNote((int) notes[currentNoteIndex]);
-        currentNote.current = true;
-        currentNote.UpdateColor();
+        //Highlighting new current node
+        var currentNode = GetNode((int) AutoSelectNodes[CurrentNodeIndex]);
+        currentNode.IsCurrent = true;
+        currentNode.UpdateColor();
 
-        lineManager.DrawLines();
-        GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", notes.ToCommaSeparatedString(),true);
+        LineManager.DrawLines();
+        GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", AutoSelectNodes.ToCommaSeparatedString(),true);
     }
 
-    public void removeLastNote() {
-        if (notes.Count > 0) {
+    public void RemoveLastNode()
+    {
+        if (AutoSelectNodes.Count > 0)
+        {
             HapticManager.HeavyFeedback();
-            var lastNote = getNote((int) notes[currentNoteIndex]);
-            lastNote.Unselect();
-            lastNote.UpdateColor();
-            notes.RemoveAt(notes.Count - 1);
-            currentNoteIndex--;
 
-            //Highlighting new current note, if there is one
-            if (currentNoteIndex > -1) {
-                var currentNote = getNote((int) notes[currentNoteIndex]);
-                currentNote.current = true;
-                currentNote.UpdateColor();
+            var finalNode = GetNode((int) AutoSelectNodes[CurrentNodeIndex]);
+            finalNode.Deselect();
+            finalNode.UpdateColor();
+
+            AutoSelectNodes.RemoveAt(AutoSelectNodes.Count - 1);
+            CurrentNodeIndex--;
+
+            //Highlighting new current node, if there is one
+            if (CurrentNodeIndex > -1)
+            {
+                var currentNode = GetNode((int) AutoSelectNodes[CurrentNodeIndex]);
+                currentNode.IsCurrent = true;
+                currentNode.UpdateColor();
             }
-        } else {
+        }
+        else
+        {
             Debug.Log("No Path Selected");
         }
 
-        lineManager.DrawLines();
-        GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", notes.ToCommaSeparatedString(), true);
+        LineManager.DrawLines();
+        GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", AutoSelectNodes.ToCommaSeparatedString(), true);
     }
 
-    public AutoNoteSelector getNote(int index) {
-        return gameObject.transform.GetChild(index).gameObject.GetComponent<AutoNoteSelector>();
+    public AutoSelectNode GetNode(int index)
+    {
+        return gameObject.transform.GetChild(index).gameObject.GetComponent<AutoSelectNode>();
     }
 
-    public int[] getAutoPath() {
-        return notes.Cast<int>().ToArray();
+    public int[] GetAutoPath()
+    {
+        return AutoSelectNodes.Cast<int>().ToArray();
     }
     
-    public void UpdateAllLabelOrientations() {
-        foreach (Transform child in transform) {
-            child.gameObject.GetComponent<AutoNoteSelector>().UpdateLabelOrientation();
+    public void UpdateAllLabelOrientations()
+    {
+        foreach (Transform node in transform)
+        {
+            node.gameObject.GetComponent<AutoSelectNode>().UpdateLabelOrientation();
         }
     }
 }

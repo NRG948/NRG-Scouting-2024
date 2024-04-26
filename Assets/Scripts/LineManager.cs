@@ -25,11 +25,11 @@ public class LineManager : MonoBehaviour
             Destroy(oldLine.gameObject);
         }
 
-        for (int i = 0; i < manager.notes.Count - 1; i++) {
+        for (int i = 0; i < manager.AutoSelectNodes.Count - 1; i++) {
             var newLine = Instantiate(line);
             newLine.transform.SetParent(gameObject.transform, false);
-            newLine.GetComponent<LineUIRender>().pos1 = manager.getNote((int) manager.notes[i]).pos;
-            newLine.GetComponent<LineUIRender>().pos2 = manager.getNote((int) manager.notes[i + 1]).pos;
+            newLine.GetComponent<LineUIRender>().pos1 = manager.GetNode((int) manager.AutoSelectNodes[i]).MapPosition;
+            newLine.GetComponent<LineUIRender>().pos2 = manager.GetNode((int) manager.AutoSelectNodes[i + 1]).MapPosition;
         }
     }
 }

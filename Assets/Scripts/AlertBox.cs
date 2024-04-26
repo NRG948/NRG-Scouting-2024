@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class AlertBox : MonoBehaviour
 {
-    private bool _selectNo;
-    private bool _selectYes;
+    private bool selectNo;
+    private bool selectYes;
 
-    private Transform _alertBoxTransform;
+    private Transform alertBoxTransform;
     public GameObject YesButton;
     public GameObject NoButton;
 
     // Start is called before the first frame update
     void Start()
     {
-        _alertBoxTransform = transform.GetChild(0);
-        _alertBoxTransform.gameObject.SetActive(false);
+        alertBoxTransform = transform.GetChild(0);
+        alertBoxTransform.gameObject.SetActive(false);
     }
 
 
@@ -44,22 +44,22 @@ public class AlertBox : MonoBehaviour
     {
         HapticManager.LightFeedback();
 
-        _selectYes = false;
+        selectYes = false;
         YesButton.GetComponent<AlertBoxButton>().on = false;
-        _alertBoxTransform.gameObject.SetActive(true);
-        _alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
-        _alertBoxTransform.GetChild(3).gameObject.SetActive(false);
+        alertBoxTransform.gameObject.SetActive(true);
+        alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
+        alertBoxTransform.GetChild(3).gameObject.SetActive(false);
 
-        while (!_selectYes)
+        while (!selectYes)
         {
-            _selectYes = YesButton.GetComponent<AlertBoxButton>().on;
+            selectYes = YesButton.GetComponent<AlertBoxButton>().on;
             if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
         }
 
         HapticManager.HeavyFeedback();
 
-        _alertBoxTransform.gameObject.SetActive(false);
+        alertBoxTransform.gameObject.SetActive(false);
         if (doesKick) { SceneManager.LoadScene(0); }
     }
 
@@ -74,32 +74,32 @@ public class AlertBox : MonoBehaviour
     {
         HapticManager.LightFeedback();
 
-        _selectNo = false;
-        _selectYes = false;
+        selectNo = false;
+        selectYes = false;
         YesButton.GetComponent<AlertBoxButton>().on = false; NoButton.GetComponent<AlertBoxButton>().on = false;
-        _alertBoxTransform.gameObject.SetActive(true);
-        _alertBoxTransform.GetChild(3).gameObject.SetActive(true);
-        _alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
+        alertBoxTransform.gameObject.SetActive(true);
+        alertBoxTransform.GetChild(3).gameObject.SetActive(true);
+        alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
 
-        while (!(_selectNo || _selectYes))
+        while (!(selectNo || selectYes))
         {
-            _selectYes = YesButton.GetComponent<AlertBoxButton>().on;
-            _selectNo = NoButton.GetComponent<AlertBoxButton>().on;
+            selectYes = YesButton.GetComponent<AlertBoxButton>().on;
+            selectNo = NoButton.GetComponent<AlertBoxButton>().on;
             if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
 
         };
         HapticManager.HeavyFeedback();
-        _alertBoxTransform.gameObject.SetActive(false);
-        if (_selectYes)
+        alertBoxTransform.gameObject.SetActive(false);
+        if (selectYes)
         {
             CallAlertAction(key);
         }
     }
 
-    public void SetTrue() { _selectNo = _selectYes = true; }
+    public void SetTrue() { selectNo = selectYes = true; }
 
-    public void SetFalse() { _selectNo = true; }
+    public void SetFalse() { selectNo = true; }
 
     /// <summary>
     /// Calls the alert action.

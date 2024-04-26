@@ -1,28 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AtAmp : MonoBehaviour
+public class AtAmp : MonoBehaviour //Deprecated
 {
-    private GameObject DataManObject;
+    private GameObject dataManagerObject;
     private DataManager dataManager;
     private ToggleGroup toggleGroup;
 
     // Start is called before the first frame update
     void Start()
     {
-        DataManObject = GameObject.Find("DataManager");
-        dataManager = DataManObject.GetComponent<DataManager>();
+        dataManagerObject = GameObject.Find("DataManager");
+        dataManager = dataManagerObject.GetComponent<DataManager>();
         toggleGroup = gameObject.GetComponent<ToggleGroup>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    /*public void valueChanged(int value)
+    /*public void onValueChanged(int value)
     {
         if (toggleGroup.AnyTogglesOn()) { HapticManager.LightFeedback(); }
         else { HapticManager.HeavyFeedback(); }
