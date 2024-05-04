@@ -14550,10 +14550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2272491b20c4734594836e528246240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: {fileID: 2004367470}
-  animationState: none
-  fadeSpeed: 0.1
-  animationTime: 0
+  FadeSpeed: 0.1
 --- !u!225 &2004367470
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15795,8 +15792,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AutoFieldMap, Assembly-CSharp
+      - m_Target: {fileID: 1900927769}
+        m_TargetAssemblyTypeName: AutoSelectMap, Assembly-CSharp
         m_MethodName: UpdateFieldOrientation
         m_Mode: 1
         m_Arguments:
@@ -17971,7 +17968,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3591821493759575339}
         m_TargetAssemblyTypeName: AlertBoxButton, Assembly-CSharp
-        m_MethodName: SetTrue
+        m_MethodName: SetToPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18522,7 +18519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fbd7a20d028524fa3204ff636d5b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
+  pressed: 0
 --- !u!1 &3596242252396713970
 GameObject:
   m_ObjectHideFlags: 0
@@ -21368,7 +21365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fbd7a20d028524fa3204ff636d5b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
+  pressed: 0
 --- !u!114 &6089740864567654262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23707,7 +23704,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6082932085346107750}
         m_TargetAssemblyTypeName: AlertBoxButton, Assembly-CSharp
-        m_MethodName: SetTrue
+        m_MethodName: SetToPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

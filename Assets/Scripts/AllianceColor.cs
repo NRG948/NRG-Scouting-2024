@@ -13,6 +13,9 @@ public class AllianceColor : MonoBehaviour
         image = gameObject.GetComponent<Image>();
     }
 
+    /// <summary>
+    /// Updates sprite color based on alliance.
+    /// </summary>
     public void UpdateColor()
     {
         image.color = (data.match.AllianceColor == "red") ? new(222, 75, 62, 255) : new(76, 159, 230, 255);

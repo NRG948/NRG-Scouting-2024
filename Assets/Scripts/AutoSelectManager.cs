@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
@@ -17,6 +16,10 @@ public class AutoSelectManager : MonoBehaviour
     public Color UnselectedNodeColor;
     public Color StartingNodeColor;
 
+    /// <summary>
+    /// Adds node based on id to the path and sets it to the current node.
+    /// </summary>
+    /// <param name="id"></param> The id of the node.
     public void AddNode(int id)
     {
         //Unhighlighting old node, if there is one
@@ -39,6 +42,9 @@ public class AutoSelectManager : MonoBehaviour
         GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", AutoSelectNodes.ToCommaSeparatedString(),true);
     }
 
+    /// <summary>
+    /// Removes last node in the path and sets the previous node to the current node.
+    /// </summary>
     public void RemoveLastNode()
     {
         if (AutoSelectNodes.Count > 0)
@@ -69,16 +75,28 @@ public class AutoSelectManager : MonoBehaviour
         GameObject.Find("DataManager").GetComponent<DataManager>().SetString("AutoPickups", AutoSelectNodes.ToCommaSeparatedString(), true);
     }
 
+    /// <summary>
+    /// Returns the node script of the given index of the path.
+    /// </summary>
+    /// <param name="index"></param> Some index in the path of nodes.
+    /// <returns></returns>
     public AutoSelectNode GetNode(int index)
     {
         return gameObject.transform.GetChild(index).gameObject.GetComponent<AutoSelectNode>();
     }
 
+    /// <summary>
+    /// Returns the path as an array of ids.
+    /// </summary>
+    /// <returns></returns> The path as an array of ids.
     public int[] GetAutoPath()
     {
         return AutoSelectNodes.Cast<int>().ToArray();
     }
     
+    /// <summary>
+    /// Updates orientations of the node labels based on alliance color and FlipField setting.
+    /// </summary>
     public void UpdateAllLabelOrientations()
     {
         foreach (Transform node in transform)

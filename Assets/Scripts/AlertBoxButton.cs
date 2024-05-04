@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class AlertBoxButton : MonoBehaviour
 {
-    public bool on;
+    public bool pressed;
     
-    public void SetTrue() { on = true; }
+    /// <summary>
+    /// Set button options in AlertBox to true.
+    /// </summary>
+    public void SetToPressed() { pressed = true; }
 }

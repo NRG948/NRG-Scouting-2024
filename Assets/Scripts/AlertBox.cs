@@ -45,14 +45,14 @@ public class AlertBox : MonoBehaviour
         HapticManager.LightFeedback();
 
         selectYes = false;
-        YesButton.GetComponent<AlertBoxButton>().on = false;
+        YesButton.GetComponent<AlertBoxButton>().pressed = false;
         alertBoxTransform.gameObject.SetActive(true);
         alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
         alertBoxTransform.GetChild(3).gameObject.SetActive(false);
 
         while (!selectYes)
         {
-            selectYes = YesButton.GetComponent<AlertBoxButton>().on;
+            selectYes = YesButton.GetComponent<AlertBoxButton>().pressed;
             if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
         }
@@ -76,15 +76,15 @@ public class AlertBox : MonoBehaviour
 
         selectNo = false;
         selectYes = false;
-        YesButton.GetComponent<AlertBoxButton>().on = false; NoButton.GetComponent<AlertBoxButton>().on = false;
+        YesButton.GetComponent<AlertBoxButton>().pressed = false; NoButton.GetComponent<AlertBoxButton>().pressed = false;
         alertBoxTransform.gameObject.SetActive(true);
         alertBoxTransform.GetChild(3).gameObject.SetActive(true);
         alertBoxTransform.GetChild(1).GetComponent<TMP_Text>().text = message;
 
         while (!(selectNo || selectYes))
         {
-            selectYes = YesButton.GetComponent<AlertBoxButton>().on;
-            selectNo = NoButton.GetComponent<AlertBoxButton>().on;
+            selectYes = YesButton.GetComponent<AlertBoxButton>().pressed;
+            selectNo = NoButton.GetComponent<AlertBoxButton>().pressed;
             if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
 

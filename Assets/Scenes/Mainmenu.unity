@@ -2726,7 +2726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fbd7a20d028524fa3204ff636d5b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
+  pressed: 0
 --- !u!114 &1014048153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2773,7 +2773,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1014048152}
         m_TargetAssemblyTypeName: AlertBoxButton, Assembly-CSharp
-        m_MethodName: SetTrue
+        m_MethodName: SetToPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fbd7a20d028524fa3204ff636d5b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on: 0
+  pressed: 0
 --- !u!114 &1069867307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,7 +2920,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1069867306}
         m_TargetAssemblyTypeName: AlertBoxButton, Assembly-CSharp
-        m_MethodName: SetTrue
+        m_MethodName: SetToPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
