@@ -69,3 +69,5 @@ UserSettings/Layouts/default-2022.dwlt
 UserSettings/EditorUserSettings.asset
 UserSettings/EditorUserSettings.asset
 UserSettings/Layouts/default-2022.dwlt
+.DS_Store
+build_BurstDebugInformation_DoNotShip/StaticLibraries/lib_burst_generated.txt
