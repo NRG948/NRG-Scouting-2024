@@ -282,8 +282,7 @@ public class DataManager : MonoBehaviour
         public int TeamNumber;
         public string Interviewer;
         public string Interviewee;
-        public string RobotHeight;
-        public string RobotLengthWidth;
+        public bool FitsUnderStage;
         public string RobotWeight;
         public bool Vision;
         public string VisionCapability;
@@ -302,7 +301,9 @@ public class DataManager : MonoBehaviour
         public string CycleTimeAmp;
         public bool PickupFromGround;
         public bool PickupFromSource;
-
+        public bool CanFeedPass;
+        public bool CanDefend;
+        public string Strategy;
         public string DriverExperience;
         public string TeamComments;
         public string PersonalComments;

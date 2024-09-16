@@ -16,6 +16,7 @@ public class AlertBox : MonoBehaviour
     void Start()
     {
         alertBoxTransform = transform.GetChild(0);
+        Debug.Log(alertBoxTransform.gameObject);
         alertBoxTransform.gameObject.SetActive(false);
     }
 
@@ -56,7 +57,7 @@ public class AlertBox : MonoBehaviour
             if (isImportant) { HapticManager.HeavyFeedback(); yield return new WaitForSeconds(0.3f); }
             yield return null;
         }
-
+        Debug.Log("got here");
         HapticManager.HeavyFeedback();
 
         alertBoxTransform.gameObject.SetActive(false);
@@ -73,7 +74,6 @@ public class AlertBox : MonoBehaviour
     private IEnumerator ShowDecisionBox(string message, string key, bool isImportant=false)
     {
         HapticManager.LightFeedback();
-
         selectNo = false;
         selectYes = false;
         YesButton.GetComponent<AlertBoxButton>().pressed = false; NoButton.GetComponent<AlertBoxButton>().pressed = false;

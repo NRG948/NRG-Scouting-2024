@@ -26,7 +26,7 @@ public class MenuTitle : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "PitScout")
         {
-            pageNames = new string[] { "Setup", "Robot", "Auto", "Scoring", "Pickup", "Comments" };
+            pageNames = new string[] { "Setup", "Robot", "Auto", "Scoring", "Pickup", "Strategy", "Comments" };
         }
         if (SceneManager.GetActiveScene().name == "LocalDataViewer")
         {
@@ -80,7 +80,7 @@ public class MenuTitle : MonoBehaviour
         if (!alertOn && Input.GetMouseButton(0)) {
             if (-Content.GetComponent<RectTransform>().anchoredPosition.x / 2400 > pageNames.Length - 0.98)
             {
-                alert.ShowBoxByMessageKey($"Are you sure you want to save?|{(SceneManager.GetActiveScene().name == "ObjectiveScout" ? "objsave" : SceneManager.GetActiveScene().name == "SubjectiveScout" ? "subjSave" : "pitSave")}");
+                alert.ShowBoxByMessageKey($"Are you sure you want to save?|{(SceneManager.GetActiveScene().name == "ObjectiveScout" ? "objSave" : SceneManager.GetActiveScene().name == "SubjectiveScout" ? "subjSave" : "pitSave")}");
                 alertOn = true;
             }
             if (Content.GetComponent<RectTransform>().anchoredPosition.x > 100) {

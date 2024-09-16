@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028373, g: 0.22571398, b: 0.30692294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3674,8 +3674,7 @@ MonoBehaviour:
     TeamNumber: 0
     Interviewer: 
     Interviewee: 
-    RobotHeight: 
-    RobotLengthWidth: 
+    FitsUnderStage: 0
     RobotWeight: 
     Vision: 0
     VisionCapability: 
@@ -3692,6 +3691,9 @@ MonoBehaviour:
     CycleTimeAmp: 0
     PickupFromGround: 0
     PickupFromSource: 0
+    CanFeedPass: 0
+    CanDefend: 0
+    Strategy: 
     DriverExperience: 
     TeamComments: 
     PersonalComments: 
@@ -6971,7 +6973,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1779716232}
         m_TargetAssemblyTypeName: AutoSelectManager, Assembly-CSharp
-        m_MethodName: removeLastNote
+        m_MethodName: RemoveLastNode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15574,9 +15576,9 @@ RectTransform:
   - {fileID: 1400505182144801127}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &201036521142936317
@@ -18374,9 +18376,9 @@ RectTransform:
   - {fileID: 5760841799099605765}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1510, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3560298954923017758
@@ -19387,9 +19389,9 @@ RectTransform:
   - {fileID: 654970316995969302}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 535, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4312120169513010587
@@ -20613,9 +20615,9 @@ RectTransform:
   - {fileID: 4930637005384406910}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 860, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5345304329515428901
@@ -22068,9 +22070,9 @@ RectTransform:
   - {fileID: 266527577059885127}
   m_Father: {fileID: 6654412253362947189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1185, y: -149.134}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6943095762345084026
